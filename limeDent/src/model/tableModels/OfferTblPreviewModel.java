@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
 import controller.observer.OfferTblPreviewObserver;
-import controller.observer.PatientListObserver;
 import model.OfferTblPreviewData;
 
 

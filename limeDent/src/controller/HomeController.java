@@ -47,6 +47,9 @@ public class HomeController implements PatientListObserver {
 	}
 	
 	
+	/**
+	 * Method for starting PatientCheck tread.
+	 */
 	public void startPatientCheckThread() {
 		
 		patientCheck.start();

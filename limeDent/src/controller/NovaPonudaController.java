@@ -12,7 +12,6 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 import controller.observer.OfferListObservable;
 import controller.observer.OfferTblPreviewObserver;
-import controller.observer.PatientListObservable;
 import controller.observer.ProductListObservable;
 import controller.observer.ProductListObserver;
 import dao.OfferDAO;
