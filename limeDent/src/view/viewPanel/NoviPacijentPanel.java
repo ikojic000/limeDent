@@ -29,15 +29,18 @@ import raven.glasspanepopup.GlassPanePopup;
 import view.View;
 
 
+/**
+ * 
+ * @author ikojic000
+ * 
+ *         The NoviPacijentPanel class extends RoundedShadowPanel and represents
+ *         a panel for adding new patient. It contains components for adding
+ *         patients data
+ * 
+ */
 public class NoviPacijentPanel extends RoundedShadowPanel {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4464610519421738643L;
-	/**
-	 * 
-	 */
 	private TextField txtAdresa;
 	private TextField txtJMBG;
 	private ButtonShadow btnDodaj;
@@ -65,6 +68,14 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	private boolean isMailValid = true;
 	private ArrayList<Boolean> checkers = new ArrayList<>();
 	
+	/**
+	 * 
+	 * Constructs a new NoviPacijentPanel with the given CardPanel and View / JFrame
+	 * objects. Initializes all UI components and sets up the panel's layout.
+	 * 
+	 * @param cardParent the CardPanel parent for this panel
+	 * @param view       the View parent for this panel
+	 */
 	public NoviPacijentPanel( CardPanel cardParent , View view ) {
 		
 		super( 20 );
@@ -169,6 +180,13 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Activates the panel by setting up various listeners for its components. These
+	 * listeners are used to handle events like button clicks, textfield input,
+	 * table selection, etc. Once activated, this panel becomes fully functional and
+	 * can be interacted with by the user.
+	 */
 	private void activatePanel() {
 		
 		txtOIB.addKeyListener( new KeyAdapter() {
@@ -260,6 +278,11 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Adds the input checkers to the list of checkers to be validated. If the list
+	 * is not empty, it clears the list before adding the checkers.
+	 */
 	private void addCheckers() {
 		
 		if ( !checkers.isEmpty() ) {
@@ -276,6 +299,13 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Checks if all the input fields are valid by iterating through the list of
+	 * checkers and returning false if any of them returns false.
+	 * 
+	 * @return boolean indicating if all the input fields are valid
+	 */
 	private boolean isAllValid() {
 		
 		addCheckers();
@@ -332,6 +362,29 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * This method clears all the UI fields that are related to the patient data.
+	 */
+	public void clearAll() {
+		
+		txtimePrezime.setText( "" );
+		txtOIB.setText( "" );
+		txtJMBG.setText( "" );
+		txtAdresa.setText( "" );
+		txtGrad.setText( "" );
+		txtBrojMobitela.setText( "" );
+		txtMail.setText( "" );
+		txtPovijestBolesti.setText( "" );
+		txtAlergije.setText( "" );
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Initiates the layout of the panel.
+	 */
 	private void initLayout() {
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -467,21 +520,12 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	}
 	
 	
-	public void clearAll() {
-		
-		txtimePrezime.setText( "" );
-		txtOIB.setText( "" );
-		txtJMBG.setText( "" );
-		txtAdresa.setText( "" );
-		txtGrad.setText( "" );
-		txtBrojMobitela.setText( "" );
-		txtMail.setText( "" );
-		txtPovijestBolesti.setText( "" );
-		txtAlergije.setText( "" );
-		
-	}
-	
-	
+	/**
+	 * 
+	 * Returns the label object that displays the title of the form.
+	 *
+	 * @return The `JLabel` object representing the title of the form.
+	 */
 	public JLabel getLblFormTitle() {
 		
 		return lblFormTitle;
@@ -489,6 +533,14 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the text field object that allows entering the patient's first and
+	 * last name.
+	 *
+	 * @return The `TextField` object representing the patient's first and last
+	 *         name.
+	 */
 	public TextField getTxtimePrezime() {
 		
 		return txtimePrezime;
@@ -496,6 +548,12 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the text field object that allows entering the patient's address.
+	 *
+	 * @return The `TextField` object representing the patient's address.
+	 */
 	public TextField getTxtAdresa() {
 		
 		return txtAdresa;
@@ -503,6 +561,12 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the text field object that allows entering the patient's JMBG number.
+	 *
+	 * @return The `TextField` object representing the patient's JMBG number.
+	 */
 	public TextField getTxtJMBG() {
 		
 		return txtJMBG;
@@ -510,6 +574,13 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the text field object that allows entering the patient's email
+	 * address.
+	 *
+	 * @return The `TextField` object representing the patient's email address.
+	 */
 	public TextField getTxtMail() {
 		
 		return txtMail;
@@ -517,6 +588,14 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the text field object that allows entering the patient's mobile phone
+	 * number.
+	 *
+	 * @return The `TextField` object representing the patient's mobile phone
+	 *         number.
+	 */
 	public TextField getTxtBrojMobitela() {
 		
 		return txtBrojMobitela;
@@ -524,6 +603,12 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the text field object that allows entering the patient's OIB number.
+	 *
+	 * @return The `TextField` object representing the patient's OIB number.
+	 */
 	public TextField getTxtOIB() {
 		
 		return txtOIB;
@@ -531,6 +616,12 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the text field object that allows entering the patient's city name.
+	 *
+	 * @return The `TextField` object representing the patient's city name.
+	 */
 	public TextField getTxtGrad() {
 		
 		return txtGrad;
@@ -538,6 +629,12 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the text area object that displays the patient's medical history.
+	 *
+	 * @return The `TextArea` object representing the patient's medical history.
+	 */
 	public TextArea getTxtPovijestBolesti() {
 		
 		return txtPovijestBolesti;
@@ -545,6 +642,12 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the text area object that displays the patient's allergies.
+	 *
+	 * @return The `TextArea` object representing the patient's allergies.
+	 */
 	public TextArea getTxtAlergije() {
 		
 		return txtAlergije;
@@ -552,6 +655,12 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the `CardPanel` object that this panel belongs to.
+	 *
+	 * @return The `CardPanel` object representing the parent panel.
+	 */
 	public CardPanel getCardParent() {
 		
 		return cardParent;

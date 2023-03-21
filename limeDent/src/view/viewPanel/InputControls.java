@@ -7,8 +7,22 @@ import java.util.regex.Pattern;
 import design.txtInput.TextField;
 
 
+/**
+ * 
+ * The InputControls class provides static methods for input validation of
+ * various types of input fields such as OIB, JMBG, phone number, and email.
+ */
 public class InputControls {
 	
+	/**
+	 * 
+	 * Validates the provided OIB (11 numeric characters) and sets helper text on
+	 * the given text field based on the validation result.
+	 * 
+	 * @param txtOIB The text field to validate.
+	 * 
+	 * @return true if the OIB is valid, false otherwise.
+	 */
 	public static boolean checkOIB( TextField txtOIB ) {
 		
 		String oib = txtOIB.getText();
@@ -59,6 +73,15 @@ public class InputControls {
 	}
 	
 	
+	/**
+	 * 
+	 * Validates the provided JMBG (13 numeric characters) and sets helper text on
+	 * the given text field based on the validation result.
+	 * 
+	 * @param txtJMBG The text field to validate.
+	 * 
+	 * @return true if the JMBG is valid, false otherwise.
+	 */
 	public static boolean checkJMBG( TextField txtJMBG ) {
 		
 		String jmbg = txtJMBG.getText();
@@ -109,6 +132,15 @@ public class InputControls {
 	}
 	
 	
+	/**
+	 * 
+	 * Validates the provided phone number using a regular expression and sets
+	 * helper text on the given text field based on the validation result.
+	 * 
+	 * @param txtBrojMobitela The text field to validate.
+	 * 
+	 * @return true if the phone number is valid, false otherwise.
+	 */
 	public static boolean checkPhone( TextField txtBrojMobitela ) {
 		
 		boolean isPhoneValid = true;
@@ -148,6 +180,15 @@ public class InputControls {
 	}
 	
 	
+	/**
+	 * 
+	 * Validates the provided email address using a regular expression and sets
+	 * helper text on the given text field based on the validation result.
+	 * 
+	 * @param txtMail The text field to validate.
+	 * 
+	 * @return true if the email address is valid, false otherwise.
+	 */
 	public static boolean checkMail( TextField txtMail ) {
 		
 		boolean isMailValid = true;

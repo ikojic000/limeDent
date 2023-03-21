@@ -41,11 +41,19 @@ import model.User;
 import view.View;
 
 
+/**
+ * 
+ * @author ikojic000
+ * 
+ *         A UI panel for creating new offer. This panel extends the
+ *         RoundedShadowPanel class. It includes various text fields, buttons,
+ *         labels, table, combobox .... Fields that user fills in will generate
+ *         in a PDF offer. This panel also contains a NovaPonudaController
+ *         object to handle user actions.
+ * 		
+ */
 public class NovaPonudaPanel extends RoundedShadowPanel {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4647942436198867355L;
 	private TextField txtNazivPonude;
 	private TextField txtImePrezime;
@@ -79,7 +87,12 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 	private LoginController loginController;
 	
 	/**
-	 * Create the panel.
+	 * 
+	 * Creates a new instance of the NovaPonudaPanel class with the specified
+	 * CardPanel and View / JFrame objects.
+	 * 
+	 * @param cardParent the parent CardPanel object of the panel
+	 * @param view       the View object representing the UI view
 	 */
 	public NovaPonudaPanel( CardPanel cardParent , View view ) {
 		
@@ -295,11 +308,18 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 		
 		initLayout();
 		activatePanel();
-		insertTableDataTest();
+		insertData();
 		
 	}
 	
 	
+	/**
+	 * 
+	 * Activates the panel by setting up various listeners for its components. These
+	 * listeners are used to handle events like button clicks, textfield input,
+	 * table selection, etc. Once activated, this panel becomes fully functional and
+	 * can be interacted with by the user.
+	 */
 	private void activatePanel() {
 		
 		txtKolicina.addFocusListener( new FocusAdapter() {
@@ -426,7 +446,7 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 			public void actionPerformed( ActionEvent e ) {
 				
 				User loggedInUser = loginController.getLoggedInUser();
-				Offer offer = new Offer( txtNazivPonude.getText() , loggedInUser.getId() , txtImePrezime.getText() ,
+				Offer offer = new Offer( txtNazivPonude.getText() , loggedInUser , txtImePrezime.getText() ,
 						LocalDateTime.now() , BigDecimal.valueOf( Double.parseDouble( lblUkupno.getText() ) ) ,
 						txtBiljeske.getText() );
 				
@@ -440,6 +460,112 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Inserts test data into the table, sets data in the combo box, and enables
+	 * autocomplete for patient name.
+	 */
+	public void insertData() {
+		
+		novaPonudaController.setTableData();
+		novaPonudaController.setComboBoxData();
+		novaPonudaController.autocopletePatient();
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Check if the entered quantity is valid.
+	 * 
+	 * @return true if the quantity is valid, false otherwise.
+	 */
+	private boolean checkKolicina() {
+		
+		boolean isKolicinaValid = true;
+		int kolicina = 0;
+		
+		try {
+			
+			kolicina = Integer.parseInt( txtKolicina.getText() );
+			
+		} catch ( NumberFormatException e ) {
+			
+			isKolicinaValid = false;
+			
+		}
+		
+		if ( kolicina < 0 ) {
+			
+			isKolicinaValid = false;
+			
+		}
+		
+		return isKolicinaValid;
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Check if the entered discount percentage is valid.
+	 * 
+	 * @return true if the discount percentage is valid, false otherwise.
+	 */
+	private boolean checkPopust() {
+		
+		boolean isPopustValid = true;
+		int popust = 0;
+		
+		try {
+			
+			popust = Integer.parseInt( txtPopust.getText() );
+			
+		} catch ( NumberFormatException e ) {
+			
+			isPopustValid = false;
+			
+		}
+		
+		if ( popust < 0 || popust > 99 ) {
+			
+			isPopustValid = false;
+			
+		}
+		
+		return isPopustValid;
+		
+	}
+	
+	
+	/**
+	 * 
+	 * This method clears all the UI fields that are related to the patient data.
+	 */
+	public void clearAll() {
+		
+		txtNazivPonude.setText( "" );
+		txtImePrezime.setText( "" );
+		txtKolicina.setText( "1" );
+		txtPopust.setText( "0" );
+		txtBiljeske.setText( "" );
+		rbBtnGotovina.setSelected( false );
+		rbBtnKartice.setSelected( false );
+		novaPonudaController.clearTable();
+		
+		if ( cbArtikli.getItemCount() >= 0 ) {
+			
+			cbArtikli.setSelectedIndex( 0 );
+			
+		}
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Initiates the layout of the panel.
+	 */
 	private void initLayout() {
 		
 		GridBagLayout gbl_mainPanel = new GridBagLayout();
@@ -602,83 +728,10 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 	}
 	
 	
-	public void insertTableDataTest() {
-		
-		novaPonudaController.setTableData();
-		novaPonudaController.setComboBoxData();
-		novaPonudaController.autocopletePatient();
-		
-	}
-	
-	
-	private boolean checkKolicina() {
-		
-		boolean isKolicinaValid = true;
-		int kolicina = 0;
-		
-		try {
-			
-			kolicina = Integer.parseInt( txtKolicina.getText() );
-			
-		} catch ( NumberFormatException e ) {
-			
-			isKolicinaValid = false;
-			
-		}
-		
-		if ( kolicina < 0 ) {
-			
-			isKolicinaValid = false;
-			
-		}
-		
-		return isKolicinaValid;
-		
-	}
-	
-	
-	private boolean checkPopust() {
-		
-		boolean isPopustValid = true;
-		int popust = 0;
-		
-		try {
-			
-			popust = Integer.parseInt( txtPopust.getText() );
-			
-		} catch ( NumberFormatException e ) {
-			
-			isPopustValid = false;
-			
-		}
-		
-		if ( popust < 0 || popust > 99 ) {
-			
-			isPopustValid = false;
-			
-		}
-		
-		return isPopustValid;
-		
-	}
-	
-	
-	public void clearAll() {
-		
-		txtNazivPonude.setText( "" );
-		txtImePrezime.setText( "" );
-		cbArtikli.setSelectedIndex( 0 );
-		txtKolicina.setText( "1" );
-		txtPopust.setText( "0" );
-		txtBiljeske.setText( "" );
-		rbBtnGotovina.setSelected( false );
-		rbBtnKartice.setSelected( false );
-		novaPonudaController.clearTable();
-		
-	}
-	
-	
 	/**
+	 * 
+	 * Returns the text field for the offer name.
+	 * 
 	 * @return the txtNazivPonude
 	 */
 	public TextField getTxtNazivPonude() {
@@ -689,6 +742,9 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 	
 	
 	/**
+	 * 
+	 * Returns the text field for the customer name.
+	 * 
 	 * @return the txtImePrezime
 	 */
 	public TextField getTxtImePrezime() {
@@ -699,6 +755,9 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 	
 	
 	/**
+	 * 
+	 * Returns the text field for the quantity of products.
+	 * 
 	 * @return the txtKolicina
 	 */
 	public TextField getTxtKolicina() {
@@ -709,6 +768,9 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 	
 	
 	/**
+	 * 
+	 * Returns the text field for the discount percentage.
+	 * 
 	 * @return the txtPopust
 	 */
 	public TextField getTxtPopust() {
@@ -719,6 +781,9 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 	
 	
 	/**
+	 * 
+	 * Returns the table that displays the list of products.
+	 * 
 	 * @return the table
 	 */
 	public CustomTable getTable() {
@@ -729,6 +794,9 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 	
 	
 	/**
+	 * 
+	 * Returns the text area for notes.
+	 * 
 	 * @return the txtBiljeske
 	 */
 	public TextArea getTxtBiljeske() {
@@ -739,6 +807,9 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 	
 	
 	/**
+	 * 
+	 * Returns the combo box for selecting products.
+	 * 
 	 * @return the cbArtikli
 	 */
 	public ComboBox<Product> getCbArtikli() {
@@ -749,6 +820,9 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 	
 	
 	/**
+	 * 
+	 * Returns the label for the total price.
+	 * 
 	 * @return the lblUkupno
 	 */
 	public JLabel getLblUkupno() {
@@ -759,6 +833,9 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 	
 	
 	/**
+	 * 
+	 * Returns the text field for the price of a product.
+	 * 
 	 * @return the txtCijena
 	 */
 	public TextField getTxtCijena() {
@@ -769,6 +846,9 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 	
 	
 	/**
+	 * 
+	 * Sets the login controller.
+	 * 
 	 * @param loginController the loginController to set
 	 */
 	public void setLoginController( LoginController loginController ) {

@@ -6,6 +6,7 @@ import model.Product;
 
 
 /**
+ * 
  * @author ikojic000
  * 
  *         DeleteProductCommand is a class that implements the ProductCommand
@@ -21,6 +22,7 @@ public class DeleteProductCommand implements ProductCommand {
 	private ProductDAO productDAO;
 	
 	/**
+	 * 
 	 * Constructs a new DeleteProductCommand object with the given Product and
 	 * initializes the ProductDAO.
 	 * 
@@ -35,6 +37,7 @@ public class DeleteProductCommand implements ProductCommand {
 	
 	
 	/**
+	 * 
 	 * Returns a String containing the name of the Product object to be deleted.
 	 * 
 	 * @return the name of the Product object
@@ -48,6 +51,7 @@ public class DeleteProductCommand implements ProductCommand {
 	
 	
 	/**
+	 * 
 	 * Deletes the Product object from the database and prints its information to
 	 * the console.
 	 */
@@ -62,6 +66,7 @@ public class DeleteProductCommand implements ProductCommand {
 	
 	
 	/**
+	 * 
 	 * Adds the previously deleted Product object back to the database and prints
 	 * its information to the console.
 	 */
@@ -76,20 +81,7 @@ public class DeleteProductCommand implements ProductCommand {
 	
 	
 	/**
-	 * Deletes the Product object from the database again (re-deletes it) and prints
-	 * its information to the console.
-	 */
-	@Override
-	public void redo() {
-		
-		System.out.println(
-				"Product Info redo: " + product.getId() + " - " + product.getName() + " - " + product.getPrice() );
-		productDAO.deleteProduct( product );
-		
-	}
-	
-	
-	/**
+	 * 
 	 * Returns the Product object associated with this DeleteProductCommand.
 	 * 
 	 * @return the Product object to be deleted

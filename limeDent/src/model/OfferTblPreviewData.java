@@ -6,6 +6,7 @@ import java.math.RoundingMode;
 
 
 /**
+ * 
  * @author ikojic000
  * 
  *         OfferTblPreviewData represents preview data for an offer table. It
@@ -95,10 +96,8 @@ public class OfferTblPreviewData {
 	/**
 	 * 
 	 * Calculates the total cost after discount based on the total cost before
-	 * discount and the discount percentage.
-	 * 
-	 * The calculated total is rounded to 2 decimal places using the HALF_UP
-	 * rounding mode.
+	 * discount and the discount percentage. The calculated total is rounded to 2
+	 * decimal places using the HALF_UP rounding mode.
 	 */
 	private void calculateTotalWithDiscount() {
 		

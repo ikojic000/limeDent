@@ -29,6 +29,14 @@ import model.User;
 import view.panel.titleBar.Buttont;
 
 
+/**
+ * 
+ * @author ikojic000
+ * 
+ *         The ViewLogin class extends the JFrame class and provides a graphical
+ *         user interface for the login screen.
+ * 		
+ */
 @SuppressWarnings( "serial" )
 public class ViewLogin extends JFrame {
 	
@@ -48,6 +56,11 @@ public class ViewLogin extends JFrame {
 	private Notification notification;
 	private LoginController loginController;
 	
+	/**
+	 * 
+	 * Constructs a new instance of the ViewLogin class, which sets the application
+	 * icon and initializes the loginController and view fields.
+	 */
 	public ViewLogin() {
 		
 //		TASKBAR APP ICON
@@ -163,6 +176,12 @@ public class ViewLogin extends JFrame {
 	}
 	
 	
+	/**
+	 * 
+	 * This method adds action listeners to the minimize and close buttons, the
+	 * panel, and the login button. It also handles user login and displays error
+	 * messages if necessary.
+	 */
 	private void activatePanel() {
 		
 //		MINIMIZE AND CLOSE LISTENERS
@@ -242,6 +261,14 @@ public class ViewLogin extends JFrame {
 	}
 	
 	
+	/**
+	 * 
+	 * This method displays an error message depending on the type of the result
+	 * returned by the checkCredentials method. If the result is a String, the error
+	 * message is displayed. Otherwise, a default error message is displayed.
+	 * 
+	 * @param result The result object returned by the checkCredentials method.
+	 */
 	private void resultMessage( Object result ) {
 		
 		if ( result instanceof String ) {

@@ -39,6 +39,13 @@ import raven.glasspanepopup.GlassPanePopup;
 import view.View;
 
 
+/**
+ * 
+ * @author ikojic000
+ * 
+ *         A class that represents the home panel for the application that
+ *         extends RoundedShadowPanel
+ */
 public class HomePanel extends RoundedShadowPanel {
 	
 	private static final long serialVersionUID = -3312651701806916282L;
@@ -62,6 +69,14 @@ public class HomePanel extends RoundedShadowPanel {
 	private DetaljiPanel detaljiPanel;
 	private HomeController homeController;
 	
+	/**
+	 * 
+	 * Constructs a new HomePanel object with the specified CardPanel and View
+	 * objects
+	 * 
+	 * @param cardParent - the parent panel for the card layout
+	 * @param view       - the view object / frame for the application
+	 */
 	public HomePanel( CardPanel cardParent , View view ) {
 		
 		super( 20 );
@@ -171,73 +186,6 @@ public class HomePanel extends RoundedShadowPanel {
 		
 		initLayout();
 		activatePanel();
-		
-	}
-	
-	
-	private void initLayout() {
-		
-		GridBagLayout gbl_mainPanel = new GridBagLayout();
-		gbl_mainPanel.columnWidths = new int[] { 35 , 170 , 170 , 240 , 240 , 35 , 0 };
-		gbl_mainPanel.rowHeights = new int[] { 75 , 470 , 45 , 65 , 65 , 65 , 65 , 60 , 30 , 0 };
-		gbl_mainPanel.columnWeights = new double[] { 1.0 , 0.0 , 1.0 , 1.0 , 1.0 , 1.0 , Double.MIN_VALUE };
-		gbl_mainPanel.rowWeights = new double[] { 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 1.0 ,
-												  Double.MIN_VALUE };
-		
-		setLayout( gbl_mainPanel );
-		
-		GridBagConstraints gbc_lblSearch = new GridBagConstraints();
-		gbc_lblSearch.gridx = 0;
-		gbc_lblSearch.gridy = 0;
-		gbc_lblSearch.anchor = GridBagConstraints.EAST;
-		gbc_lblSearch.insets = new Insets( 20 , 0 , 5 , 5 );
-		add( lblSearch , gbc_lblSearch );
-		
-		GridBagConstraints gbc_txtSearch = new GridBagConstraints();
-		gbc_txtSearch.gridwidth = 2;
-		gbc_txtSearch.anchor = GridBagConstraints.SOUTHWEST;
-		gbc_txtSearch.fill = GridBagConstraints.VERTICAL;
-		gbc_txtSearch.insets = new Insets( 10 , 0 , 5 , 5 );
-		gbc_txtSearch.gridx = 1;
-		gbc_txtSearch.gridy = 0;
-		add( txtSearch , gbc_txtSearch );
-		
-		GridBagConstraints gbc_btnIzbrisi = new GridBagConstraints();
-		gbc_btnIzbrisi.anchor = GridBagConstraints.SOUTHEAST;
-		gbc_btnIzbrisi.insets = new Insets( 0 , 0 , 5 , 5 );
-		gbc_btnIzbrisi.gridx = 3;
-		gbc_btnIzbrisi.gridy = 0;
-		add( btnIzbrisi , gbc_btnIzbrisi );
-		
-		GridBagConstraints gbc_btnDodaj = new GridBagConstraints();
-		gbc_btnDodaj.anchor = GridBagConstraints.SOUTHEAST;
-		gbc_btnDodaj.insets = new Insets( 0 , 0 , 5 , 5 );
-		gbc_btnDodaj.gridx = 4;
-		gbc_btnDodaj.gridy = 0;
-		add( btnDodaj , gbc_btnDodaj );
-		
-		GridBagConstraints gbc_tableScrollPane = new GridBagConstraints();
-		gbc_tableScrollPane.gridheight = 6;
-		gbc_tableScrollPane.fill = GridBagConstraints.BOTH;
-		gbc_tableScrollPane.insets = new Insets( 10 , 10 , 10 , 10 );
-		gbc_tableScrollPane.gridwidth = 4;
-		gbc_tableScrollPane.gridx = 1;
-		gbc_tableScrollPane.gridy = 1;
-		add( tableScrollPane , gbc_tableScrollPane );
-		
-		GridBagConstraints gbc_btnDetalji = new GridBagConstraints();
-		gbc_btnDetalji.anchor = GridBagConstraints.NORTHWEST;
-		gbc_btnDetalji.insets = new Insets( 0 , 0 , 5 , 5 );
-		gbc_btnDetalji.gridx = 1;
-		gbc_btnDetalji.gridy = 7;
-		add( btnDetalji , gbc_btnDetalji );
-		
-		GridBagConstraints gbc_btnPregled = new GridBagConstraints();
-		gbc_btnPregled.anchor = GridBagConstraints.NORTHEAST;
-		gbc_btnPregled.insets = new Insets( 0 , 0 , 5 , 5 );
-		gbc_btnPregled.gridx = 4;
-		gbc_btnPregled.gridy = 7;
-		add( btnPregled , gbc_btnPregled );
 		
 	}
 	
@@ -446,24 +394,10 @@ public class HomePanel extends RoundedShadowPanel {
 	}
 	
 	
-	private void insertTableData() {
-		
-		homeController.setTableData();
-		
-	}
-	
-	
-	public void clearAll() {
-		
-		txtSearch.setText( "" );
-		homeController.setTableData();
-		table.clearSelection();
-		
-		this.requestFocus();
-		
-	}
-	
-	
+	/**
+	 * Method used as Table Listener. It enables or disables buttons depending of
+	 * table selection.
+	 */
 	private void btnEnableDisable() {
 		
 		if ( table.getSelectionModel().isSelectionEmpty() ) {
@@ -485,6 +419,108 @@ public class HomePanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Inserts the table data.
+	 */
+	private void insertTableData() {
+		
+		homeController.setTableData();
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Clears all input fields and selections.
+	 */
+	public void clearAll() {
+		
+		txtSearch.setText( "" );
+		homeController.setTableData();
+		table.clearSelection();
+		this.requestFocus();
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Initiates the layout of the panel.
+	 */
+	private void initLayout() {
+		
+		GridBagLayout gbl_mainPanel = new GridBagLayout();
+		gbl_mainPanel.columnWidths = new int[] { 35 , 170 , 170 , 240 , 240 , 35 , 0 };
+		gbl_mainPanel.rowHeights = new int[] { 75 , 470 , 45 , 65 , 65 , 65 , 65 , 60 , 30 , 0 };
+		gbl_mainPanel.columnWeights = new double[] { 1.0 , 0.0 , 1.0 , 1.0 , 1.0 , 1.0 , Double.MIN_VALUE };
+		gbl_mainPanel.rowWeights = new double[] { 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 1.0 ,
+												  Double.MIN_VALUE };
+		
+		setLayout( gbl_mainPanel );
+		
+		GridBagConstraints gbc_lblSearch = new GridBagConstraints();
+		gbc_lblSearch.gridx = 0;
+		gbc_lblSearch.gridy = 0;
+		gbc_lblSearch.anchor = GridBagConstraints.EAST;
+		gbc_lblSearch.insets = new Insets( 20 , 0 , 5 , 5 );
+		add( lblSearch , gbc_lblSearch );
+		
+		GridBagConstraints gbc_txtSearch = new GridBagConstraints();
+		gbc_txtSearch.gridwidth = 2;
+		gbc_txtSearch.anchor = GridBagConstraints.SOUTHWEST;
+		gbc_txtSearch.fill = GridBagConstraints.VERTICAL;
+		gbc_txtSearch.insets = new Insets( 10 , 0 , 5 , 5 );
+		gbc_txtSearch.gridx = 1;
+		gbc_txtSearch.gridy = 0;
+		add( txtSearch , gbc_txtSearch );
+		
+		GridBagConstraints gbc_btnIzbrisi = new GridBagConstraints();
+		gbc_btnIzbrisi.anchor = GridBagConstraints.SOUTHEAST;
+		gbc_btnIzbrisi.insets = new Insets( 0 , 0 , 5 , 5 );
+		gbc_btnIzbrisi.gridx = 3;
+		gbc_btnIzbrisi.gridy = 0;
+		add( btnIzbrisi , gbc_btnIzbrisi );
+		
+		GridBagConstraints gbc_btnDodaj = new GridBagConstraints();
+		gbc_btnDodaj.anchor = GridBagConstraints.SOUTHEAST;
+		gbc_btnDodaj.insets = new Insets( 0 , 0 , 5 , 5 );
+		gbc_btnDodaj.gridx = 4;
+		gbc_btnDodaj.gridy = 0;
+		add( btnDodaj , gbc_btnDodaj );
+		
+		GridBagConstraints gbc_tableScrollPane = new GridBagConstraints();
+		gbc_tableScrollPane.gridheight = 6;
+		gbc_tableScrollPane.fill = GridBagConstraints.BOTH;
+		gbc_tableScrollPane.insets = new Insets( 10 , 10 , 10 , 10 );
+		gbc_tableScrollPane.gridwidth = 4;
+		gbc_tableScrollPane.gridx = 1;
+		gbc_tableScrollPane.gridy = 1;
+		add( tableScrollPane , gbc_tableScrollPane );
+		
+		GridBagConstraints gbc_btnDetalji = new GridBagConstraints();
+		gbc_btnDetalji.anchor = GridBagConstraints.NORTHWEST;
+		gbc_btnDetalji.insets = new Insets( 0 , 0 , 5 , 5 );
+		gbc_btnDetalji.gridx = 1;
+		gbc_btnDetalji.gridy = 7;
+		add( btnDetalji , gbc_btnDetalji );
+		
+		GridBagConstraints gbc_btnPregled = new GridBagConstraints();
+		gbc_btnPregled.anchor = GridBagConstraints.NORTHEAST;
+		gbc_btnPregled.insets = new Insets( 0 , 0 , 5 , 5 );
+		gbc_btnPregled.gridx = 4;
+		gbc_btnPregled.gridy = 7;
+		add( btnPregled , gbc_btnPregled );
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Sets the NoviPregledPanel object for this class instance.
+	 *
+	 * @param noviPregledPanel the NoviPregledPanel to set
+	 */
 	public void setNoviPregledPanel( NoviPregledPanel noviPregledPanel ) {
 		
 		this.noviPregledPanel = noviPregledPanel;
@@ -492,21 +528,24 @@ public class HomePanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Sets the DetaljiPanel object for this class instance.
+	 *
+	 * @param detaljiPanel the DetaljiPanel to set
+	 */
 	public void setDetaljiPanel( DetaljiPanel detaljiPanel ) {
 		
 		this.detaljiPanel = detaljiPanel;
 		
 	}
 	
-	/*
-	 * 
-	 * Getters and setters for Panel components
-	 * 
-	 */
-	
 	
 	/**
-	 * @return the txtSearch
+	 * 
+	 * Returns the TextField object for the search field.
+	 *
+	 * @return the txtSearch TextField object
 	 */
 	public TextField getTxtSearch() {
 		
@@ -516,7 +555,10 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * @return the btnDodaj
+	 * 
+	 * Returns the ButtonShadow object for the "Dodaj" button.
+	 *
+	 * @return the btnDodaj ButtonShadow object
 	 */
 	public ButtonShadow getBtnDodaj() {
 		
@@ -526,7 +568,10 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * @return the btnIzbrisi
+	 * 
+	 * Returns the ButtonShadow object for the "Izbrisi" button.
+	 *
+	 * @return the btnIzbrisi ButtonShadow object
 	 */
 	public ButtonShadow getBtnIzbrisi() {
 		
@@ -536,7 +581,10 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * @return the btnPregled
+	 * 
+	 * Returns the ButtonShadow object for the "Pregled" button.
+	 *
+	 * @return the btnPregled ButtonShadow object
 	 */
 	public ButtonShadow getBtnPregled() {
 		
@@ -546,7 +594,10 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * @return the btnDetalji
+	 * 
+	 * Returns the ButtonShadow object for the "Detalji" button.
+	 *
+	 * @return the btnDetalji ButtonShadow object
 	 */
 	public ButtonShadow getBtnDetalji() {
 		
@@ -556,7 +607,10 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * @return the table
+	 * 
+	 * Returns the CustomTable object for this class instance.
+	 *
+	 * @return the table CustomTable object
 	 */
 	public CustomTable getTable() {
 		
@@ -566,7 +620,10 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * @return the cardParent
+	 * 
+	 * Returns the CardPanel object for this class instance.
+	 *
+	 * @return the cardParent CardPanel object
 	 */
 	public CardPanel getCardParent() {
 		

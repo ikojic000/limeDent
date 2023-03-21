@@ -5,6 +5,7 @@ import model.User;
 
 
 /**
+ * 
  * @author ikojic000
  * 
  *         UserObserver is an interface that represents an observer in the
@@ -15,6 +16,7 @@ import model.User;
 public interface UserObserver {
 	
 	/**
+	 * 
 	 * Updates the observer with the latest profile photo of the logged-in user.
 	 * 
 	 * @param loggedInUser the user whose profile photo has changed
@@ -22,6 +24,7 @@ public interface UserObserver {
 	void updateProfilePhoto( User loggedInUser );
 	
 	/**
+	 * 
 	 * Updates the observer with the latest information of the logged-in user.
 	 * 
 	 * @param loggedInUser the user whose information has changed

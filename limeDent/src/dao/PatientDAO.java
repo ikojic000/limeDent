@@ -20,6 +20,7 @@ import model.Patient;
 
 
 /**
+ * 
  * @author ikojic000
  * 
  *         The PatientDAO class represents the data access object for patients.
@@ -45,11 +46,12 @@ public class PatientDAO {
 	 */
 	public ArrayList<Patient> getAllPatients() {
 		
-		Connection connection = Database.getDatabase().getConnection();
 		ArrayList<Patient> allPatients = new ArrayList<Patient>();
 		
 		String sql = "SELECT p.*, m.date as lastExam " + "FROM patients p "
 				+ "LEFT JOIN (SELECT idPatient, MAX(date) AS date FROM medicalexam GROUP BY idPatient) m ON p.id = m.idPatient";
+		
+		Connection connection = Database.getDatabase().getConnection();
 		
 		try {
 			
@@ -112,8 +114,9 @@ public class PatientDAO {
 	public Patient getPatientByID( Integer id ) {
 		
 		Patient patient = null;
+		
 		String sql = "SELECT p.*, m.date AS lastExam\r\n" + "FROM patients p \r\n" + "LEFT JOIN (\r\n"
-				+ "  SELECT idPatient, MAX(date) AS date \r\n" + "  FROM medicalexam \r\n" + "  GROUP BY idPatient\r\n"
+				+ "  SELECT idPatient, MAX(date) AS date \r\n" + "  FROM medicalExam \r\n" + "  GROUP BY idPatient\r\n"
 				+ ") m ON p.id = m.idPatient \r\n" + "WHERE p.id = ?;";
 		
 		Connection connection = Database.getDatabase().getConnection();
@@ -178,11 +181,12 @@ public class PatientDAO {
 		String medicalHistory = patient.getMedicalHistory();
 		String alergies = patient.getAlergies();
 		
+		String sql = "insert into patients(imePrezime, mail, phone, oib, jmbg, patientAddress, patientCity, patientMedicalHistory, patientAlergies) values (?, ?, ?, ?, ?, ? ,?, ? ,?)";
+		
 		Connection connection = Database.getDatabase().getConnection();
 		
 		try {
 			
-			String sql = "insert into patients(imePrezime, mail, phone, oib, jmbg, patientAddress, patientCity, patientMedicalHistory, patientAlergies) values (?, ?, ?, ?, ?, ? ,?, ? ,?)";
 			PreparedStatement pst = connection.prepareStatement( sql );
 			pst.setString( 1 , name );
 			pst.setString( 2 , mail );
@@ -224,11 +228,12 @@ public class PatientDAO {
 		String medicalHistory = patient.getMedicalHistory();
 		String alergies = patient.getAlergies();
 		
+		String sql = "UPDATE patients SET imePrezime=?, mail=?, phone=?, patientAddress=?, patientCity=?, patientMedicalHistory=?, patientAlergies=?, oib=? ,jmbg=? where id = ?";
+		
 		Connection connection = Database.getDatabase().getConnection();
 		
 		try {
 			
-			String sql = "UPDATE patients SET imePrezime=?, mail=?, phone=?, patientAddress=?, patientCity=?, patientMedicalHistory=?, patientAlergies=?, oib=? ,jmbg=? where id = ?";
 			PreparedStatement pst = connection.prepareStatement( sql );
 			pst.setString( 1 , name );
 			pst.setString( 2 , mail );
@@ -262,11 +267,12 @@ public class PatientDAO {
 		Integer id = patient.getId();
 		byte[] profilePhotoBytes = getProfilePhotoBytes( patient.getProfilePhoto() );
 		
+		String sql = "UPDATE patients SET profilePhoto=? where id = ?";
+		
 		Connection connection = Database.getDatabase().getConnection();
 		
 		try {
 			
-			String sql = "UPDATE patients SET profilePhoto=? where id = ?";
 			PreparedStatement pst = connection.prepareStatement( sql );
 			pst.setBytes( 1 , profilePhotoBytes );
 			pst.setString( 2 , id.toString() );
@@ -286,7 +292,6 @@ public class PatientDAO {
 	 * Converts a profile photo to a byte array.
 	 * 
 	 * @param profile - the profile photo to convert
-	 * 
 	 * @return a byte array containing the profile photo data
 	 */
 	private byte[] getProfilePhotoBytes( ImageIcon profile ) {
@@ -362,7 +367,7 @@ public class PatientDAO {
 		
 		ArrayList<Patient> searchedPatients = new ArrayList<Patient>();
 		String sql = "SELECT p.*, m.date AS lastExam\r\n" + "FROM patients p \r\n" + "LEFT JOIN (\r\n"
-				+ "  SELECT idPatient, MAX(date) AS date \r\n" + "  FROM medicalexam \r\n" + "  GROUP BY idPatient\r\n"
+				+ "  SELECT idPatient, MAX(date) AS date \r\n" + "  FROM medicalExam \r\n" + "  GROUP BY idPatient\r\n"
 				+ ") m ON p.id = m.idPatient \r\n" + "WHERE p.imePrezime like ?;";
 		
 		Connection connection = Database.getDatabase().getConnection();

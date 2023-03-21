@@ -17,13 +17,8 @@ import java.sql.SQLException;
  */
 public class DatabaseConnectionThread extends Thread {
 	
-//	The amount of time to sleep between connection checks
 	private final static int SLEEP_TIME = 15 * 1000;
-	
-//	Flag indicating whether the thread should keep running or not
 	private boolean running;
-	
-//	The singleton instance of the database
 	private Database database;
 	
 	/**
@@ -40,7 +35,7 @@ public class DatabaseConnectionThread extends Thread {
 	
 	/**
 	 * 
-	 * Sets the running flag to false, which will cause the thread to stop running
+	 * Sets the running to false, which will cause the thread to stop running
 	 */
 	public void stopThread() {
 		
@@ -65,7 +60,6 @@ public class DatabaseConnectionThread extends Thread {
 			
 			try {
 				
-//				If the database connection is closed, attempt to reconnect
 				if ( database.getConnection().isClosed() ) {
 					
 					System.out.println( "Database disconnected...Trying to connect again" );
@@ -73,17 +67,14 @@ public class DatabaseConnectionThread extends Thread {
 					
 				} else {
 					
-//					If the database connection is open, print a message indicating that
 					System.out.println( "Database connected...Running on thread " + Thread.currentThread().getName() );
 					
 				}
 				
-//				Sleep for the specified amount of time before checking the connection again
 				Thread.sleep( SLEEP_TIME );
 				
 			} catch ( InterruptedException | SQLException e ) {
 				
-//				Print any exceptions that occur during the connection check
 				e.printStackTrace();
 				
 			}

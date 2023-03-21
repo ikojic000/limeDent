@@ -9,11 +9,29 @@ import model.Patient;
 import view.viewPanel.NoviPacijentPanel;
 
 
+/**
+ * 
+ * @author ikojic000
+ *
+ *         The NoviPacijentController class is responsible for managing and
+ *         controlling the functionality related to adding a new patient to the
+ *         system. It contains methods for adding a new patient to the database,
+ *         using the PatientDAO class. The class also has an instance variable
+ *         of type NoviPacijentPanel, which is used to access and manipulate the
+ *         graphical user interface elements related to adding a new patient.
+ */
 public class NoviPacijentController {
 	
 	private PatientDAO patientDAO;
 	private NoviPacijentPanel noviPacijentPanel;
 	
+	/**
+	 * 
+	 * Constructs a new NoviPacijentController object, initializing the patientDAO
+	 * and noviPacijentPanel instance variables.
+	 * 
+	 * @param noviPacijentPanel - the panel used to add a new patient
+	 */
 	public NoviPacijentController( NoviPacijentPanel noviPacijentPanel ) {
 		
 		this.noviPacijentPanel = noviPacijentPanel;
@@ -22,6 +40,13 @@ public class NoviPacijentController {
 	}
 	
 	
+	/**
+	 * 
+	 * Adds a new patient to the system by creating a new Patient object and adding
+	 * it to the database using the PatientDAO class. Notifies observers of the
+	 * PatientListObservable singleton object of the change. Also switches the
+	 * current visible panel to the home panel.
+	 */
 	public void addPatient() {
 		
 		Integer id = null;

@@ -6,13 +6,26 @@ import java.util.ArrayList;
 import model.Patient;
 
 
+/**
+ * 
+ * A class representing a thread that periodically checks if there are any
+ * changes in the list of patients stored in the application database compared
+ * to the list of patients displayed in the GUI, and updates the GUI
+ * accordingly.
+ */
 public class PatientCheck extends Thread {
 	
 	private boolean running;
-	private final static int SLEEP_TIME = 30 * 1000;
-	private HomeController homeController;
-	private ArrayList<Patient> databasePatients;
+	private final static int SLEEP_TIME = 30 * 1000; // sleep time in milliseconds
+	private HomeController homeController; // the controller for the home view of the application
+	private ArrayList<Patient> databasePatients; // a list of patients stored in the application database
 	
+	/**
+	 * 
+	 * Constructs a new instance of PatientCheck with the specified HomeController.
+	 * 
+	 * @param homeController - the controller for the home view of the application
+	 */
 	public PatientCheck( HomeController homeController ) {
 		
 		running = true;
@@ -21,6 +34,12 @@ public class PatientCheck extends Thread {
 	}
 	
 	
+	/**
+	 * 
+	 * The main logic of the thread. It periodically checks if there are any changes
+	 * in the list of patients stored in the application database compared to the
+	 * list of patients displayed in the GUI, and updates the GUI accordingly.
+	 */
 	@Override
 	public void run() {
 		
@@ -48,6 +67,16 @@ public class PatientCheck extends Thread {
 	}
 	
 	
+	/**
+	 * 
+	 * Checks if the list of patients stored in the application database is the same
+	 * size as the list of patients displayed in the GUI. If the sizes are
+	 * different, updates the GUI by calling the updatePatientList() method of the
+	 * homeController. Otherwise, compares the individual patients in both lists and
+	 * updates the GUI for each patient that has changed.
+	 * 
+	 * @param controllerPatients - the list of patients displayed in the GUI
+	 */
 	private void isSameData( ArrayList<Patient> controllerPatients ) {
 		
 		databasePatients = homeController.getPatients();
@@ -82,6 +111,16 @@ public class PatientCheck extends Thread {
 	}
 	
 	
+	/**
+	 * 
+	 * Updates the data of a patient displayed in the GUI with the data of the same
+	 * patient stored in the application database.
+	 * 
+	 * @param controllerPatient - the patient to update in the GUI
+	 * 
+	 * @param databasePatient   - the patient to get data from in the application
+	 *                          database
+	 */
 	private void setNewPatientData( Patient controllerPatient , Patient databasePatient ) {
 		
 		controllerPatient.setName( databasePatient.getName() );

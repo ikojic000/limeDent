@@ -71,6 +71,31 @@ public class Offer {
 	 * 
 	 * This constructor creates an Offer object with the specified properties.
 	 * 
+	 * @param title       The title of the Offer.
+	 * @param user        User object representing the user who made the Offer.
+	 * @param patientName The name of the patient for whom the Offer is made.
+	 * @param date        The date on which the Offer was made.
+	 * @param total       The total amount of the Offer.
+	 * @param notes       Any additional notes about the Offer.
+	 */
+	public Offer( String title , User author , String patientName , LocalDateTime date , BigDecimal total ,
+				  String notes ) {
+		
+		this.title = title;
+		this.authorID = author.getId();
+		this.authorName = author.getName() + " " + author.getLastName();
+		this.patientName = patientName;
+		this.date = date;
+		this.total = total;
+		this.notes = notes;
+		
+	}
+	
+	
+	/**
+	 * 
+	 * This constructor creates an Offer object with the specified properties.
+	 * 
 	 * @param id          The id of the Offer.
 	 * @param title       The title of the Offer.
 	 * @param authorID    The id of the author who made the Offer.

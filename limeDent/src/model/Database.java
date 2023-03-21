@@ -10,6 +10,7 @@ import java.util.Properties;
 
 
 /**
+ * 
  * @author ikojic000
  * 
  *         The Database class provides methods for connecting and disconnecting

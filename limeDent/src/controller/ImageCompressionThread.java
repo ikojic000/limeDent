@@ -20,13 +20,41 @@ import design.notification.Notification.NotificationType;
 import model.Patient;
 
 
+/**
+ * 
+ * @author ikojic000
+ * 
+ *         The ImageCompressionThread class is responsible for compressing
+ *         images that are larger than 512KB. If the image is already smaller
+ *         than 512KB, it sets the patient's profile photo and no compression is
+ *         performed. The compressed image is set as the patient's profile photo
+ *         and saved to the user's desktop. A notification is also displayed
+ *         indicating whether the compression was successful or not. This class
+ *         extends Thread class to enable running the compression process in a
+ *         separate thread.
+ * 
+ */
 public class ImageCompressionThread extends Thread {
 	
+	/** The selected image to be compressed */
 	private File selectedImage;
+	/** The patient whose image is being compressed */
 	private Patient patient;
+	/** The notification to display to the user after compression is complete */
 	private Notification notification;
-	private static final int MAX_SIZE = 512 * 1024; // maximum size in bytes
+	/** The maximum size that an image can have in bytes */
+	private static final int MAX_SIZE = 512 * 1024;
 	
+	/**
+	 * 
+	 * Constructs an ImageCompressionThread with the specified selected image,
+	 * patient and notification.
+	 * 
+	 * @param selectedImage the image to be compressed
+	 * @param patient       the patient whose image is being compressed
+	 * @param notification  the notification to display after compression is
+	 *                      complete
+	 */
 	public ImageCompressionThread( File selectedImage , Patient patient , Notification notification ) {
 		
 		this.selectedImage = selectedImage;
@@ -36,6 +64,13 @@ public class ImageCompressionThread extends Thread {
 	}
 	
 	
+	/**
+	 * 
+	 * This method is called when the thread is started. It compresses the image and
+	 * sets the compressed image as the patient's profile photo. If the image cannot
+	 * be compressed any further, a notification is displayed indicating that the
+	 * image is too large. The compressed image is also saved to the user's desktop.
+	 */
 	@Override
 	public void run() {
 		
@@ -49,14 +84,14 @@ public class ImageCompressionThread extends Thread {
 			
 			if ( selectedImage.length() <= MAX_SIZE ) {
 				
-				// image is already smaller than the maximum size
+//				image is already smaller than the maximum size
 				System.out.println( "Setting Patient ProfilePhoto from: " + Thread.currentThread().getName() );
 				patient.setProfilePhoto( new ImageIcon( selectedImage.getAbsolutePath() ) );
 				compressedImage = Files.readAllBytes( selectedImage.toPath() );
 				
 			} else {
 				
-				// compress the image
+//				compress the image
 				ByteArrayOutputStream baos = new ByteArrayOutputStream();
 				float quality = 0.5f; // initial compression quality
 				boolean done = false;
@@ -114,7 +149,7 @@ public class ImageCompressionThread extends Thread {
 						if ( quality < 0.05f ) {
 							
 							System.out.println( "Cant be compressed anymore..." );
-							// we cannot compress the image anymore, so we just exit the loop
+//							we cannot compress the image anymore, so we just exit the loop
 							notification.setType( NotificationType.WARNING );
 							notification.setLblTitle( "Fotografija prevelika" );
 							notification.setLbMessageText( "Odaberite fotografiju manju od 2MB..." );

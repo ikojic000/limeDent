@@ -20,6 +20,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingWorker;
 
 import controller.DetaljiController;
+import controller.ImageCompressionThread;
 import design.button.ButtonShadow;
 import design.messageDialog.Message;
 import design.notification.Notification;
@@ -31,17 +32,24 @@ import design.txtInput.TextArea;
 import design.txtInput.TextAreaScroll;
 import design.txtInput.TextField;
 import jnafilechooser.api.JnaFileChooser;
-import controller.ImageCompressionThread;
 import model.Patient;
 import raven.glasspanepopup.GlassPanePopup;
 import view.View;
 
 
+/**
+ * 
+ * @author ikojic000
+ * 
+ *         A UI panel for displaying and editing patient details. This panel
+ *         extends the RoundedShadowPanel class. It includes various text
+ *         fields, buttons, labels, and an image component. The user can view,
+ *         edit and delete patient details through this panel. This panel also
+ *         contains a DetaljiController object to handle user actions.
+ * 		
+ */
 public class DetaljiPanel extends RoundedShadowPanel {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4922166281676916917L;
 	private TextField txtAdresa;
 	private TextField txtJMBG;
@@ -67,6 +75,14 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	private Patient patient;
 	private DetaljiController detaljiController;
 	
+	/**
+	 * 
+	 * Constructs a new DetaljiPanel with the given CardPanel and View / JFrame
+	 * objects. Initializes all UI components and sets up the panel's layout.
+	 * 
+	 * @param cardParent the CardPanel parent for this panel
+	 * @param view       the View parent for this panel
+	 */
 	public DetaljiPanel( CardPanel cardParent , View view ) {
 		
 		super( 20 );
@@ -229,6 +245,13 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Activates the panel by setting up various listeners for its components. These
+	 * listeners are used to handle events like button clicks, textfield input,
+	 * table selection, etc. Once activated, this panel becomes fully functional and
+	 * can be interacted with by the user.
+	 */
 	private void activatePanel() {
 		
 		btnIzbrisi.addActionListener( new ActionListener() {
@@ -393,6 +416,212 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Checks if the provided OIB is valid. If the OIB is invalid, displays a helper
+	 * text under the OIB TextField indicating the invalid format.
+	 * 
+	 * @param oib The OIB to check.
+	 */
+	public void checkOIB( String oib ) {
+		
+		boolean isOIBValid = true;
+		
+		if ( oib.length() != 11 ) {
+			
+			isOIBValid = false;
+			
+		} else {
+			
+			char[] chars = oib.toCharArray();
+			
+			for ( char c : chars ) {
+				
+				if ( c < '0' || c > '9' ) {
+					
+					isOIBValid = false;
+					
+				}
+				
+			}
+			
+		}
+		
+		if ( !isOIBValid ) {
+			
+			txtOIB.setHelperText( "Neispravan format OIB-a .." );
+			
+		} else {
+			
+			txtOIB.setHelperText( "" );
+			
+		}
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Checks if the provided JMBG is valid. If the JMBG is invalid, displays a
+	 * helper text under the JMBG TextField indicating the invalid format.
+	 * 
+	 * @param jmbg The JMBG to check.
+	 */
+	public void checkJMBG( String jmbg ) {
+		
+		boolean isJMBGValid = true;
+		
+		if ( jmbg.length() != 13 ) {
+			
+			isJMBGValid = false;
+			
+		} else {
+			
+			char[] chars = jmbg.toCharArray();
+			
+			for ( char c : chars ) {
+				
+				if ( c < '0' || c > '9' ) {
+					
+					isJMBGValid = false;
+					
+				}
+				
+			}
+			
+		}
+		
+		if ( !isJMBGValid ) {
+			
+			txtJMBG.setHelperText( "Neispravan format JMBG-a .." );
+			
+		} else {
+			
+			txtJMBG.setHelperText( "" );
+			
+		}
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Checks if the provided phone number is valid. If the phone number is invalid,
+	 * displays a helper text under the phone number TextField indicating the
+	 * invalid format.
+	 * 
+	 * @param phone The phone number to check.
+	 */
+	public void checkPhone( String phone ) {
+		
+		boolean isPhoneValid = true;
+		String regex = "^\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}$";
+		Pattern pattern = Pattern.compile( regex );
+		Matcher matcher = pattern.matcher( phone );
+		
+		if ( !matcher.matches() ) {
+			
+			isPhoneValid = false;
+			
+		}
+		
+		if ( !isPhoneValid ) {
+			
+			txtBrojMobitela.setHelperText( "Neispravan format broja mobitela .." );
+			
+		} else {
+			
+			txtBrojMobitela.setHelperText( "" );
+			
+		}
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Checks if the provided email is valid. If the email is invalid, displays a
+	 * helper text under the email TextField indicating the invalid format.
+	 * 
+	 * @param mail The email to check.
+	 */
+	public void checkMail( String mail ) {
+		
+		boolean isMailValid = true;
+		String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}";
+		Pattern pattern = Pattern.compile( regex );
+		Matcher matcher = pattern.matcher( mail );
+		
+		if ( !matcher.matches() ) {
+			
+			isMailValid = false;
+			
+		}
+		
+		if ( !isMailValid ) {
+			
+			txtMail.setHelperText( "Neispravan format mail-a .. " );
+			
+		} else {
+			
+			txtMail.setHelperText( null );
+			
+		}
+		
+	}
+	
+	
+	/**
+	 * 
+	 * This method sets the data for the patient into the UI fields. It updates the
+	 * label for form title, patient name field, OIB field, JMBG field, address
+	 * field, city field, phone field, mail field, medical history field, allergies
+	 * field and profile photo field.
+	 * 
+	 * @param patient An object of Patient class representing the patient whose data
+	 *                is to be set in the UI fields.
+	 */
+	public void setData() {
+		
+		lblFormTitle.setText( "Pacijent: " + patient.getName() );
+		txtimePrezime.setText( patient.getName() );
+		txtOIB.setText( patient.getOib().toString() );
+		txtJMBG.setText( patient.getJmbg() == null ? "" : patient.getJmbg().toString() );
+		txtAdresa.setText( patient.getAddress() );
+		txtGrad.setText( patient.getCity() );
+		txtBrojMobitela.setText( patient.getPhone() );
+		txtMail.setText( patient.getMail() );
+		txtPovijestBolesti.setText( patient.getMedicalHistory() );
+		txtAlergije.setText( patient.getAlergies() );
+		imgPacijent.setIcon( patient.getProfilePhoto() != null ? patient.getProfilePhoto()
+				: new ImageIcon( getClass().getResource( "/MPDLogo_Transparent.png" ) ) );
+		
+	}
+	
+	
+	/**
+	 * 
+	 * This method clears all the UI fields that are related to the patient data.
+	 */
+	public void clearAll() {
+		
+		txtimePrezime.setText( "" );
+		txtOIB.setText( "" );
+		txtJMBG.setText( "" );
+		txtAdresa.setText( "" );
+		txtGrad.setText( "" );
+		txtBrojMobitela.setText( "" );
+		txtMail.setText( "" );
+		txtPovijestBolesti.setText( "" );
+		txtAlergije.setText( "" );
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Initiates the layout of the panel.
+	 */
 	private void initLayout() {
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -516,165 +745,14 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	}
 	
 	
-	public void checkOIB( String oib ) {
-		
-		boolean isOIBValid = true;
-		
-		if ( oib.length() != 11 ) {
-			
-			isOIBValid = false;
-			
-		} else {
-			
-			char[] chars = oib.toCharArray();
-			
-			for ( char c : chars ) {
-				
-				if ( c < '0' || c > '9' ) {
-					
-					isOIBValid = false;
-					
-				}
-				
-			}
-			
-		}
-		
-		if ( !isOIBValid ) {
-			
-			txtOIB.setHelperText( "Neispravan format OIB-a .." );
-			
-		} else {
-			
-			txtOIB.setHelperText( "" );
-			
-		}
-		
-	}
-	
-	
-	public void checkJMBG( String jmbg ) {
-		
-		boolean isJMBGValid = true;
-		
-		if ( jmbg.length() != 13 ) {
-			
-			isJMBGValid = false;
-			
-		} else {
-			
-			char[] chars = jmbg.toCharArray();
-			
-			for ( char c : chars ) {
-				
-				if ( c < '0' || c > '9' ) {
-					
-					isJMBGValid = false;
-					
-				}
-				
-			}
-			
-		}
-		
-		if ( !isJMBGValid ) {
-			
-			txtJMBG.setHelperText( "Neispravan format JMBG-a .." );
-			
-		} else {
-			
-			txtJMBG.setHelperText( "" );
-			
-		}
-		
-	}
-	
-	
-	public void checkPhone( String phone ) {
-		
-		boolean isPhoneValid = true;
-		String regex = "^\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}$";
-		Pattern pattern = Pattern.compile( regex );
-		Matcher matcher = pattern.matcher( phone );
-		
-		if ( !matcher.matches() ) {
-			
-			isPhoneValid = false;
-			
-		}
-		
-		if ( !isPhoneValid ) {
-			
-			txtBrojMobitela.setHelperText( "Neispravan format broja mobitela .." );
-			
-		} else {
-			
-			txtBrojMobitela.setHelperText( "" );
-			
-		}
-		
-	}
-	
-	
-	public void checkMail( String mail ) {
-		
-		boolean isMailValid = true;
-		String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}";
-		Pattern pattern = Pattern.compile( regex );
-		Matcher matcher = pattern.matcher( mail );
-		
-		if ( !matcher.matches() ) {
-			
-			isMailValid = false;
-			
-		}
-		
-		if ( !isMailValid ) {
-			
-			txtMail.setHelperText( "Neispravan format mail-a .. " );
-			
-		} else {
-			
-			txtMail.setHelperText( null );
-			
-		}
-		
-	}
-	
-	
-	public void setData() {
-		
-		lblFormTitle.setText( "Pacijent: " + patient.getName() );
-		txtimePrezime.setText( patient.getName() );
-		txtOIB.setText( patient.getOib().toString() );
-		txtJMBG.setText( patient.getJmbg() == null ? "" : patient.getJmbg().toString() );
-		txtAdresa.setText( patient.getAddress() );
-		txtGrad.setText( patient.getCity() );
-		txtBrojMobitela.setText( patient.getPhone() );
-		txtMail.setText( patient.getMail() );
-		txtPovijestBolesti.setText( patient.getMedicalHistory() );
-		txtAlergije.setText( patient.getAlergies() );
-		imgPacijent.setIcon( patient.getProfilePhoto() != null ? patient.getProfilePhoto()
-				: new ImageIcon( getClass().getResource( "/MPDLogo_Transparent.png" ) ) );
-		
-	}
-	
-	
-	public void clearAll() {
-		
-		txtimePrezime.setText( "" );
-		txtOIB.setText( "" );
-		txtJMBG.setText( "" );
-		txtAdresa.setText( "" );
-		txtGrad.setText( "" );
-		txtBrojMobitela.setText( "" );
-		txtMail.setText( "" );
-		txtPovijestBolesti.setText( "" );
-		txtAlergije.setText( "" );
-		
-	}
-	
-	
+	/**
+	 * 
+	 * Returns the JLabel object that represents the title of the patient details
+	 * form.
+	 * 
+	 * @return the JLabel object that represents the title of the patient details
+	 *         form
+	 */
 	public JLabel getLblFormTitle() {
 		
 		return lblFormTitle;
@@ -682,6 +760,14 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the TextField object that represents the text field for patient name
+	 * and surname.
+	 * 
+	 * @return the TextField object that represents the text field for patient name
+	 *         and surname
+	 */
 	public TextField getTxtimePrezime() {
 		
 		return txtimePrezime;
@@ -689,6 +775,14 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the TextField object that represents the text field for patient
+	 * address.
+	 * 
+	 * @return the TextField object that represents the text field for patient
+	 *         address
+	 */
 	public TextField getTxtAdresa() {
 		
 		return txtAdresa;
@@ -696,6 +790,12 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the TextField object that represents the text field for patient JMBG.
+	 * 
+	 * @return the TextField object that represents the text field for patient JMBG
+	 */
 	public TextField getTxtJMBG() {
 		
 		return txtJMBG;
@@ -703,6 +803,13 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the TextField object that represents the text field for patient
+	 * email.
+	 * 
+	 * @return the TextField object that represents the text field for patient email
+	 */
 	public TextField getTxtMail() {
 		
 		return txtMail;
@@ -710,6 +817,14 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the TextField object that represents the text field for patient phone
+	 * number.
+	 * 
+	 * @return the TextField object that represents the text field for patient phone
+	 *         number
+	 */
 	public TextField getTxtBrojMobitela() {
 		
 		return txtBrojMobitela;
@@ -717,6 +832,12 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the TextField object that represents the text field for patient OIB.
+	 * 
+	 * @return the TextField object that represents the text field for patient OIB
+	 */
 	public TextField getTxtOIB() {
 		
 		return txtOIB;
@@ -724,6 +845,12 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the TextField object that represents the text field for patient city.
+	 * 
+	 * @return the TextField object that represents the text field for patient city
+	 */
 	public TextField getTxtGrad() {
 		
 		return txtGrad;
@@ -731,6 +858,14 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the TextArea object that represents the text area for patient medical
+	 * history.
+	 * 
+	 * @return the TextArea object that represents the text area for patient medical
+	 *         history
+	 */
 	public TextArea getTxtPovijestBolesti() {
 		
 		return txtPovijestBolesti;
@@ -738,6 +873,14 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the TextArea object that represents the text area for patient
+	 * allergies.
+	 * 
+	 * @return the TextArea object that represents the text area for patient
+	 *         allergies
+	 */
 	public TextArea getTxtAlergije() {
 		
 		return txtAlergije;
@@ -745,6 +888,14 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the Patient object that represents the patient whose details are
+	 * displayed in the panel.
+	 * 
+	 * @return the Patient object that represents the patient whose details are
+	 *         displayed in the panel
+	 */
 	public Patient getPatient() {
 		
 		return patient;
@@ -752,6 +903,14 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Sets the Patient object that represents the patient whose details are to be
+	 * displayed in the panel.
+	 * 
+	 * @param patient the Patient object that represents the patient whose details
+	 *                are to be displayed in the panel
+	 */
 	public void setPatient( Patient patient ) {
 		
 		this.patient = patient;

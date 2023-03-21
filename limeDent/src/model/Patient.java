@@ -528,6 +528,17 @@ public class Patient {
 	}
 	
 	
+	/**
+	 * 
+	 * Indicates whether some other object is "equal to" this one. Two objects are
+	 * considered equal if they are both instances of the {@code Patient} class, and
+	 * all of their corresponding properties have equal values (including the
+	 * profile photo, which is compared byte by byte).
+	 * 
+	 * @param obj the reference object with which to compare
+	 * @return {@code true} if this object is equal to the obj argument or
+	 *         {@code false} otherwise
+	 */
 	@Override
 	public boolean equals( Object obj ) {
 		
@@ -547,6 +558,16 @@ public class Patient {
 	}
 	
 	
+	/**
+	 * 
+	 * Compares two image icons byte by byte to determine whether they have the same
+	 * content.
+	 * 
+	 * @param img  the first image icon to compare
+	 * @param img2 the second image icon to compare
+	 * @return {@code true} if the image icons have the same byte content;
+	 *         {@code false} otherwise
+	 */
 	private boolean compareImageByte( ImageIcon img , ImageIcon img2 ) {
 		
 		byte[] imageBytes1 = getPhotoBytes( img );

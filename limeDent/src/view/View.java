@@ -4,7 +4,6 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -32,8 +31,12 @@ import view.viewPanel.CardPanel;
 
 
 /**
+ * 
  * @author ikojic000
- *
+ * 
+ * 
+ *         The View class represents the GUI of the LimeDent application. It
+ *         extends the JFrame class.
  */
 @SuppressWarnings( "serial" )
 public class View extends JFrame {
@@ -47,14 +50,20 @@ public class View extends JFrame {
 	private Animator animator;
 	private boolean menuShow;
 	
+	/**
+	 * 
+	 * Constructs a View object with the given LoginController object.
+	 * LoginController object is also passed to the classes that will use it.
+	 * 
+	 * @param loginController - the LoginController object to be used
+	 */
 	public View( LoginController loginController ) {
 		
 		this.loginController = loginController;
 		
 //		TASKBAR APP ICON
 		setName( "LimeDent" );
-		Image appIcon = new ImageIcon( this.getClass().getResource( "/lime_icon_large.png" ) ).getImage();
-		this.setIconImage( appIcon );
+		this.setIconImage( new ImageIcon( this.getClass().getResource( "/lime_icon_large.png" ) ).getImage() );
 		
 		GlassPanePopup.install( this );
 		
@@ -249,10 +258,15 @@ public class View extends JFrame {
 	}
 	
 	
-/*
- * selectedMenu() and showCard() methods are used in MenuEvent. When MenuItem is
- * selected it show the card accordingly.
- */
+	/**
+	 * 
+	 * Private method that takes an index as input and is used to show the
+	 * appropriate card in the cardPanel based on the selected menu item. The method
+	 * checks the value of the index parameter and based on the value it calls the
+	 * showCard() method of the cardPanel with the appropriate card name.
+	 * 
+	 * @param index - index of selected menu item
+	 */
 	private void selectedMenu( int index ) {
 		
 		if ( index == 0 ) {
@@ -280,6 +294,12 @@ public class View extends JFrame {
 	}
 	
 	
+	/**
+	 * 
+	 * Used to get the reference of the cardPanel object from other classes.
+	 * 
+	 * @return cardPanel
+	 */
 	public CardPanel getCardPanel() {
 		
 		return cardPanel;
@@ -287,6 +307,11 @@ public class View extends JFrame {
 	}
 	
 	
+	/**
+	 * Used to get the reference of the loginController object from other classes.
+	 * 
+	 * @return loginController object
+	 */
 	public LoginController getLoginController() {
 		
 		return loginController;
@@ -294,6 +319,12 @@ public class View extends JFrame {
 	}
 	
 	
+	/**
+	 * 
+	 * Used to set the loginController object from other classes.
+	 * 
+	 * @param loginController loginController to be set
+	 */
 	public void setLoginController( LoginController loginController ) {
 		
 		this.loginController = loginController;

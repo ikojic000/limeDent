@@ -7,11 +7,23 @@ import dao.UserDAO;
 import model.User;
 
 
+/**
+ * 
+ * @author ikojic000
+ * 
+ *         The LoginController class is responsible for handling user login
+ *         functionality. It interacts with the UserDAO class to retrieve user
+ *         credentials and update user information.
+ * 		
+ */
 public class LoginController {
 	
 	private User loggedInUser;
 	private UserDAO userDAO;
 	
+	/**
+	 * Constructs a new LoginController object and initializes the UserDAO instance.
+	 */
 	public LoginController() {
 		
 		this.userDAO = new UserDAO();
@@ -19,6 +31,17 @@ public class LoginController {
 	}
 	
 	
+	/**
+	 * 
+	 * Verifies if the user's credentials are valid and returns the corresponding
+	 * user if they are. If the password is incorrect, returns a string with an
+	 * error message.
+	 * 
+	 * @param user the User object containing the username and password to be
+	 *             verified
+	 * @return the corresponding User object if the credentials are valid, or a
+	 *         string with an error message otherwise
+	 */
 	public Object checkCredentials( User user ) {
 		
 		String hashedDBPassword = userDAO.getHashedPasswordFromDatabase( user.getUsername() );
@@ -47,6 +70,13 @@ public class LoginController {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the User object corresponding to the given User object.
+	 * 
+	 * @param user the User object to retrieve from the database
+	 * @return the corresponding User object if found, or null otherwise
+	 */
 	public User getUser( User user ) {
 		
 		return userDAO.getUser( user );
@@ -54,6 +84,12 @@ public class LoginController {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the currently logged in User object.
+	 * 
+	 * @return the currently logged in User object
+	 */
 	public User getLoggedInUser() {
 		
 		return loggedInUser;
@@ -61,6 +97,12 @@ public class LoginController {
 	}
 	
 	
+	/**
+	 * 
+	 * Sets the currently logged in User object.
+	 * 
+	 * @param user the User object to set as the currently logged in user
+	 */
 	public void setLoggedInUser( User user ) {
 		
 		this.loggedInUser = user;
@@ -68,6 +110,10 @@ public class LoginController {
 	}
 	
 	
+	/**
+	 * 
+	 * Updates the information of the currently logged in user.
+	 */
 	public void updateUser() {
 		
 		userDAO.updateUser( loggedInUser );
@@ -75,6 +121,12 @@ public class LoginController {
 	}
 	
 	
+	/**
+	 * 
+	 * Updates the photo of the currently logged in user.
+	 * 
+	 * @param photo the File object representing the new user photo
+	 */
 	public void updateUserPhoto( File photo ) {
 		
 		userDAO.updateUserPhoto( loggedInUser , photo );

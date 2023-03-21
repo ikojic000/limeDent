@@ -15,6 +15,15 @@ import model.tableModels.OfferTableModel;
 import view.viewPanel.PonudePanel;
 
 
+/**
+ * 
+ * @author ikojic000
+ *
+ *         The PonudeController class manages the functionality of the
+ *         PonudePanel, including displaying, searching, deleting and viewing
+ *         PDF files of offers. It implements the OfferListObserver interface,
+ *         to get notified when the list of offers is updated.
+ */
 public class PonudeController implements OfferListObserver {
 	
 	private ArrayList<Offer> offerList = new ArrayList<Offer>();
@@ -23,7 +32,11 @@ public class PonudeController implements OfferListObserver {
 	private OfferTableModel tableModel;
 	
 	/**
-	 * @param ponudePanel
+	 * 
+	 * Constructs a new instance of the PonudeController class with the specified
+	 * PonudePanel.
+	 * 
+	 * @param ponudePanel the panel to be managed by this controller
 	 */
 	public PonudeController( PonudePanel ponudePanel ) {
 		
@@ -35,6 +48,14 @@ public class PonudeController implements OfferListObserver {
 	}
 	
 	
+	/**
+	 * 
+	 * Returns the Offer object at the specified row index of the current
+	 * tableModel.
+	 * 
+	 * @param row the row index of the selected offer
+	 * @return the Offer object at the specified row index
+	 */
 	public Offer getSelectedOffer( int row ) {
 		
 		return tableModel.getOfferList().get( row );
@@ -42,6 +63,12 @@ public class PonudeController implements OfferListObserver {
 	}
 	
 	
+	/**
+	 * 
+	 * Retrieves all the offers from the database and updates the offerList.
+	 * 
+	 * @return the updated offerList
+	 */
 	private ArrayList<Offer> getAllOffersList() {
 		
 		offerList = offerDAO.getAllOffers();
@@ -50,6 +77,10 @@ public class PonudeController implements OfferListObserver {
 	}
 	
 	
+	/**
+	 * 
+	 * Sets the table data to display the offerList using the OfferTableModel.
+	 */
 	public void setTableData() {
 		
 		tableModel = new OfferTableModel( offerList );
@@ -58,6 +89,13 @@ public class PonudeController implements OfferListObserver {
 	}
 	
 	
+	/**
+	 * 
+	 * Sets the table data to display only the offers matching the search query, or
+	 * all offers
+	 * 
+	 * if the search field is empty.
+	 */
 	public void setSearchData() {
 		
 		String search = ponudePanel.getTxtSearch().getText();
@@ -79,9 +117,17 @@ public class PonudeController implements OfferListObserver {
 	}
 	
 	
+	/**
+	 * 
+	 * Deletes the selected offer from the database and the file system, and updates
+	 * the tableModel and offerList accordingly.
+	 * 
+	 * @param row the row index of the selected offer to be deleted
+	 */
 	public void deleteOffer( int row ) {
 		
 		Offer offer = getSelectedOffer( row );
+		deleteFile( new File( offer.getUrl() ) );
 		offerDAO.deleteOffer( offer );
 		
 		tableModel.getOfferList().remove( offer );
@@ -95,6 +141,13 @@ public class PonudeController implements OfferListObserver {
 	}
 	
 	
+	/**
+	 * 
+	 * Opens the PDF file of the selected offer using the default application
+	 * registered to handle PDF files.
+	 * 
+	 * @param row the row index of the selected offer to be viewed
+	 */
 	public void viewPDF( int row ) {
 		
 		Offer offer = getSelectedOffer( row );
@@ -112,6 +165,33 @@ public class PonudeController implements OfferListObserver {
 	}
 	
 	
+	/**
+	 * 
+	 * Deletes the given file from the file system, if it exists.
+	 * 
+	 * @param file The file to be deleted.
+	 */
+	public void deleteFile( File file ) {
+		
+		if ( file.exists() ) {
+			
+			file.delete();
+			System.out.println( "File deleted successfully." );
+			
+		} else {
+			
+			System.out.println( "File not found." );
+			
+		}
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Updates the offer list by retrieving all offers from the DAO and notifying
+	 * the table model to update its data.
+	 */
 	@Override
 	public void updateOfferList() {
 		

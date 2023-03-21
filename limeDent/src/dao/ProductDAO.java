@@ -6,12 +6,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Random;
 
 import model.Database;
 import model.Product;
 
 
 /**
+ * 
  * @author ikojic000
  * 
  *         The ProductDAO class provides methods for accessing and manipulating
@@ -21,6 +23,7 @@ import model.Product;
 public class ProductDAO {
 	
 	/**
+	 * 
 	 * Constructs a new ProductDAO object.
 	 */
 	public ProductDAO() {
@@ -70,7 +73,6 @@ public class ProductDAO {
 	 * Returns a list of products that match the specified search string.
 	 * 
 	 * @param search the search string to match against product data
-	 * 
 	 * @return an ArrayList of Product objects that match the search string
 	 */
 	public ArrayList<Product> searchProduct( String search ) {
@@ -115,14 +117,21 @@ public class ProductDAO {
 	 */
 	public void addProduct( Product product ) {
 		
+		if ( product.getCode() == null ) {
+			
+			product.setCode( randomProductCodeGenerator() );
+			
+		}
+		
 		Connection connection = Database.getDatabase().getConnection();
 		
 		try {
 			
-			String sql = "insert into products(productTitle, productPrice) values (?, ?)";
+			String sql = "insert into products(productTitle, productPrice, productCode) values (?, ?, ?)";
 			PreparedStatement pst = connection.prepareStatement( sql );
 			pst.setString( 1 , product.getName() );
 			pst.setString( 2 , product.getPrice().toString() );
+			pst.setInt( 3 , product.getCode() );
 			pst.executeUpdate();
 			
 		} catch ( SQLException e ) {
@@ -186,6 +195,15 @@ public class ProductDAO {
 			
 		}
 		
-	};
+	}
+	
+	
+	private Integer randomProductCodeGenerator() {
+		
+		int randomInteger = new Random().nextInt( 899999 ) + 100000;
+		
+		return randomInteger;
+		
+	}
 	
 }

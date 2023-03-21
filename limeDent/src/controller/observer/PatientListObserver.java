@@ -2,6 +2,7 @@ package controller.observer;
 
 
 /**
+ * 
  * @author ikojic000
  * 
  *         PatientListObserver is an interface that represents an observer in
@@ -12,6 +13,7 @@ package controller.observer;
 public interface PatientListObserver {
 	
 	/**
+	 * 
 	 * Updates the observer with the latest changes to the patient list.
 	 */
 	void updatePatientList();

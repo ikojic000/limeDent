@@ -12,6 +12,15 @@ import model.tableModels.PatientTableModel;
 import view.viewPanel.HomePanel;
 
 
+/**
+ * 
+ * @author ikojic000
+ *
+ *         The HomeController class implements PatientListObserver and manages
+ *         the interaction between the patient data, the database, and the
+ *         HomePanel UI component. It handles adding, removing, and updating
+ *         patients, as well as filtering the list of patients by name search.
+ */
 public class HomeController implements PatientListObserver {
 	
 	private ArrayList<Patient> patientList = new ArrayList<Patient>();
@@ -20,6 +29,13 @@ public class HomeController implements PatientListObserver {
 	private PatientDAO patientDAO;
 	private PatientCheck patientCheck;
 	
+	/**
+	 * 
+	 * Constructs a new HomeController object with a HomePanel UI component and
+	 * initializes it with the patient data.
+	 * 
+	 * @param homePanel the HomePanel UI component
+	 */
 	public HomeController( HomePanel homePanel ) {
 		
 		this.homePanel = homePanel;
@@ -38,6 +54,13 @@ public class HomeController implements PatientListObserver {
 	}
 	
 	
+	/**
+	 * 
+	 * Gets the patient object at the specified row in the patient table.
+	 * 
+	 * @param row the row index of the patient object to retrieve
+	 * @return the patient object at the specified row
+	 */
 	public Patient getSelectedPatient( int row ) {
 		
 		return tableModel.getPatientList().get( row );
@@ -45,6 +68,12 @@ public class HomeController implements PatientListObserver {
 	}
 	
 	
+	/**
+	 * 
+	 * Retrieves all patients from the database and returns them as an ArrayList.
+	 * 
+	 * @return the ArrayList of all patients
+	 */
 	public ArrayList<Patient> getPatients() {
 		
 		patientList = patientDAO.getAllPatients();
@@ -53,6 +82,13 @@ public class HomeController implements PatientListObserver {
 	}
 	
 	
+	/**
+	 * 
+	 * Retrieves the patient object with the specified ID from the database.
+	 * 
+	 * @param id the ID of the patient to retrieve
+	 * @return the patient object with the specified ID
+	 */
 	public Patient getPatientByID( Integer id ) {
 		
 		Patient patient = patientDAO.getPatientByID( id );
@@ -61,6 +97,11 @@ public class HomeController implements PatientListObserver {
 	}
 	
 	
+	/**
+	 * 
+	 * Sets the data for the patient table UI component with the current patient
+	 * data.
+	 */
 	public void setTableData() {
 		
 		tableModel = new PatientTableModel( patientList );
@@ -69,6 +110,13 @@ public class HomeController implements PatientListObserver {
 	}
 	
 	
+	/**
+	 * 
+	 * Deletes the patient object at the specified row in the patient table from the
+	 * database and updates the UI component accordingly.
+	 * 
+	 * @param row the row index of the patient object to delete
+	 */
 	public void deletePatient( int row ) {
 		
 		Patient patient = getSelectedPatient( row );
@@ -84,6 +132,11 @@ public class HomeController implements PatientListObserver {
 	}
 	
 	
+	/**
+	 * 
+	 * Filters the list of patients by name search and updates the UI component
+	 * accordingly.
+	 */
 	public void setSearchData() {
 		
 		String search = homePanel.getTxtSearch().getText();
@@ -105,6 +158,9 @@ public class HomeController implements PatientListObserver {
 	}
 	
 	
+	/**
+	 * Updates the patient list data when changes are made to the database
+	 */
 	@Override
 	public void updatePatientList() {
 		

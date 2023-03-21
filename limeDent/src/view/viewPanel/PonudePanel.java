@@ -34,11 +34,16 @@ import raven.glasspanepopup.GlassPanePopup;
 import view.View;
 
 
+/**
+ * 
+ * @author ikojic000
+ *
+ *         The PonudePanel class represents a custom Swing panel used for
+ *         displaying and managing offers. It extends the RoundedShadowPanel
+ *         class and implements the necessary components and functionality.
+ */
 public class PonudePanel extends RoundedShadowPanel {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -2670464673455355768L;
 	private TextField txtSearch;
 	private JScrollPane tableScrollPane;
@@ -55,6 +60,13 @@ public class PonudePanel extends RoundedShadowPanel {
 	private CardPanel cardParent;
 	private PonudeController ponudeController;
 	
+	/**
+	 * 
+	 * Constructs a new PonudePanel with the specified cardParent and view / JFrame.
+	 * 
+	 * @param cardParent the parent CardPanel for this panel
+	 * @param view       the parent View for this panel
+	 */
 	public PonudePanel( CardPanel cardParent , View view ) {
 		
 		super( 20 );
@@ -82,7 +94,7 @@ public class PonudePanel extends RoundedShadowPanel {
 		txtSearch.setMinimumSize( new Dimension( 350 , 65 ) );
 		txtSearch.setPreferredSize( new Dimension( 350 , 65 ) );
 		txtSearch.setLineColor( new Color( 46 , 191 , 165 ) );
-		txtSearch.setLabelText( "Pretra\u017Ei.." );
+		txtSearch.setLabelText( "Pretraži.." );
 		txtSearch.setHintTextColor( new Color( 121 , 118 , 118 ) );
 		txtSearch.setForeground( new Color( 44 , 51 , 51 ) );
 		txtSearch.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
@@ -130,6 +142,13 @@ public class PonudePanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Activates the panel by setting up various listeners for its components. These
+	 * listeners are used to handle events like button clicks, textfield input,
+	 * table selection, etc. Once activated, this panel becomes fully functional and
+	 * can be interacted with by the user.
+	 */
 	private void activatePanel() {
 		
 //		TABLE LISTENERI
@@ -156,7 +175,7 @@ public class PonudePanel extends RoundedShadowPanel {
 				notification.setLbMessageText(
 						"Ponuda " + table.getValueAt( table.getSelectedRow() , 1 ) + " izbrisana ..." );
 				Message msg = new Message();
-				msg.setMessageTitle( "Brisanje pregleda" );
+				msg.setMessageTitle( "Brisanje ponude" );
 				msg.setMessageText( "Jeste li sigurni da želite izbrisati ponudu "
 						+ table.getValueAt( table.getSelectedRow() , 1 ) + " ?" );
 				
@@ -205,6 +224,33 @@ public class PonudePanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Inserts table data using the setTableData() method of ponudeController.
+	 */
+	public void insertTableData() {
+		
+		ponudeController.setTableData();
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Clears the search text field and deselects any selected rows in the table.
+	 */
+	public void clearAll() {
+		
+		txtSearch.setText( "" );
+		table.clearSelection();
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Initiates the layout of the panel.
+	 */
 	private void initLayout() {
 		
 		GridBagLayout gbl_mainPanel = new GridBagLayout();
@@ -242,23 +288,11 @@ public class PonudePanel extends RoundedShadowPanel {
 	}
 	
 	
-	public void insertTableData() {
-		
-		ponudeController.setTableData();
-		
-	}
-	
-	
-	public void clearAll() {
-		
-		txtSearch.setText( "" );
-		table.clearSelection();
-		
-	}
-	
-	
 	/**
-	 * @return the table
+	 * 
+	 * Returns the table used by this object.
+	 * 
+	 * @return The `CustomTable` object used by this object.
 	 */
 	public CustomTable getTable() {
 		
@@ -268,7 +302,10 @@ public class PonudePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * @return the txtSearch
+	 * 
+	 * Returns the search text field used by this object.
+	 * 
+	 * @return The `TextField` object used by this object.
 	 */
 	public TextField getTxtSearch() {
 		

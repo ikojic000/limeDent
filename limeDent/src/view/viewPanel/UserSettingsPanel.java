@@ -29,6 +29,16 @@ import raven.glasspanepopup.GlassPanePopup;
 import view.View;
 
 
+/**
+ * 
+ * @author ikojic000
+ * 
+ *         UserSettingsPanel is a custom JPanel used to display and edit user
+ *         information such as name, contact information and login credentials.
+ *         It implements the UserObserver interface to receive notifications
+ *         when the user's data is updated.
+ * 		
+ */
 public class UserSettingsPanel extends RoundedShadowPanel implements UserObserver {
 	
 	private static final long serialVersionUID = 240251659066632166L;
@@ -54,6 +64,14 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	private LoginController loginController;
 	private Notification notification;
 	
+	/**
+	 * 
+	 * Constructs a UserSettingsPanel and initializes its components with the
+	 * specified CardPanel and View / JFrame.
+	 * 
+	 * @param cardParent The CardPanel that the UserSettingsPanel belongs to.
+	 * @param view       The View instance that contains the UserSettingsPanel.
+	 */
 	public UserSettingsPanel( CardPanel cardParent , View view ) {
 		
 		super( 20 );
@@ -156,6 +174,13 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	}
 	
 	
+	/**
+	 * 
+	 * Activates the panel by setting up various listeners for its components. These
+	 * listeners are used to handle events like button clicks, textfield input,
+	 * table selection, etc. Once activated, this panel becomes fully functional and
+	 * can be interacted with by the user.
+	 */
 	private void activatePanel() {
 		
 		btnChooseImg.addActionListener( new ActionListener() {
@@ -270,6 +295,13 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	}
 	
 	
+	/**
+	 * 
+	 * Checks whether the entered password matches the current user's password.
+	 * 
+	 * @return true if the entered password matches the current user's password,
+	 *         false otherwise
+	 */
 	private boolean checkPassword() {
 		
 		String userPassword = loginController.getLoggedInUser().getPassword();
@@ -287,6 +319,10 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	}
 	
 	
+	/**
+	 * 
+	 * Clears all input fields and selections.
+	 */
 	private void clearAll() {
 		
 		txtPassword.setText( "" );
@@ -299,6 +335,47 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	}
 	
 	
+	/**
+	 * 
+	 * Sets the text and image data of the user settings panel with the data from
+	 * the logged in user.
+	 * 
+	 * @param loggedInUser the user data to display in the panel
+	 */
+	public void setUserData( User loggedInUser ) {
+		
+		txtImePrezime.setText( loggedInUser.getName() + " " + loggedInUser.getLastName() );
+		txtMobitel.setText( loggedInUser.getPhone() );
+		txtMail.setText( loggedInUser.getMail() );
+		imgUser.setIcon( loggedInUser.getProfilePhoto() );
+		imgUser.repaint();
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Separates the full name into first name and last name, and returns them as an
+	 * array of Strings.
+	 * 
+	 * @param fullName the full name to separate
+	 * @return an array of Strings containing the first name and last name,
+	 *         respectively
+	 */
+	private String[] separateName( String fullName ) {
+		
+		int spaceIndex = fullName.indexOf( " " );
+		String name = fullName.substring( 0 , spaceIndex );
+		String lastName = fullName.substring( spaceIndex + 1 );
+		return new String[] { name , lastName };
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Initiates the layout of the panel.
+	 */
 	public void initLayout() {
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -339,29 +416,11 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	}
 	
 	
-	public void setUserData( User loggedInUser ) {
-		
-		txtImePrezime.setText( loggedInUser.getName() + " " + loggedInUser.getLastName() );
-		txtMobitel.setText( loggedInUser.getPhone() );
-		txtMail.setText( loggedInUser.getMail() );
-		imgUser.setIcon( loggedInUser.getProfilePhoto() );
-		imgUser.repaint();
-		
-	}
-	
-	
-	private String[] separateName( String fullName ) {
-		
-		int spaceIndex = fullName.indexOf( " " );
-		String name = fullName.substring( 0 , spaceIndex );
-		String lastName = fullName.substring( spaceIndex + 1 );
-		return new String[] { name , lastName };
-		
-	}
-	
-	
 	/**
-	 * @return the loginController
+	 * 
+	 * Returns the LoginController object used by this user settings panel.
+	 * 
+	 * @return the LoginController object used by this user settings panel
 	 */
 	public LoginController getLoginController() {
 		
@@ -371,7 +430,12 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	
 	
 	/**
-	 * @param loginController the loginController to set
+	 * 
+	 * Sets the LoginController object used by this user settings panel, and adds
+	 * this panel as an observer of the logged in user data.
+	 * 
+	 * @param loginController the LoginController object to set for this user
+	 *                        settings panel
 	 */
 	public void setLoginController( LoginController loginController ) {
 		
@@ -382,6 +446,13 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	}
 	
 	
+	/**
+	 * 
+	 * Updates the user profile photo data in the user settings panel with the data
+	 * from the logged in user.
+	 * 
+	 * @param loggedInUser the user data containing the updated profile photo
+	 */
 	@Override
 	public void updateProfilePhoto( User loggedInUser ) {
 		
@@ -391,6 +462,13 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	}
 	
 	
+	/**
+	 * 
+	 * Updates the user information data in the user settings panel with the data
+	 * from the logged in user.
+	 * 
+	 * @param loggedInUser the user data containing the updated user information
+	 */
 	@Override
 	public void updateUserInfo( User loggedInUser ) {
 		

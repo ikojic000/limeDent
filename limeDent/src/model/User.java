@@ -13,6 +13,7 @@ import controller.observer.UserObserver;
 
 
 /**
+ * 
  * @author ikojic000
  * 
  *         The User class represents a user of the application. It contains
@@ -74,7 +75,6 @@ public class User {
 	 * @param mail     the user's email address
 	 * @param phone    the user's phone number
 	 */
-	
 	public User( String username , String password , String name , String lastName , String mail , String phone ) {
 		
 		this.username = username;

@@ -251,7 +251,7 @@ public class PDFGenerator {
 				
 			}
 			
-			zadnjiRedCell = new PdfPCell( new Phrase( offer.getTotal() + " HRK" , headerFont ) );
+			zadnjiRedCell = new PdfPCell( new Phrase( offer.getTotal() + " €" , headerFont ) );
 			prazniRedDesign( zadnjiRedCell );
 			artikliTable.addCell( zadnjiRedCell );
 			

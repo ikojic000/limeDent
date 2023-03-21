@@ -43,6 +43,16 @@ import raven.glasspanepopup.GlassPanePopup;
 import view.View;
 
 
+/**
+ * 
+ * @author ikojic000
+ * 
+ *         The NoviPregledPanel class extends RoundedShadowPanel and represents
+ *         a panel for managing patient's medical examinations. It contains
+ *         components for adding, updating, and deleting medical examinations,
+ *         and displaying medical examinations in a table.
+ * 		
+ */
 public class NoviPregledPanel extends RoundedShadowPanel {
 	
 	private static final long serialVersionUID = 4380414859779004657L;
@@ -70,6 +80,14 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 	private LoginController loginController;
 	private Patient patient;
 	
+	/**
+	 * 
+	 * Constructs a new NoviPregledPanel with the given CardPanel and View / JFrame
+	 * objects. Initializes all UI components and sets up the panel's layout.
+	 * 
+	 * @param cardParent the CardPanel parent for this panel
+	 * @param view       the View parent for this panel
+	 */
 	@SuppressWarnings( "serial" )
 	public NoviPregledPanel( CardPanel cardParent , View view ) {
 		
@@ -200,6 +218,13 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Activates the panel by setting up various listeners for its components. These
+	 * listeners are used to handle events like button clicks, textfield input,
+	 * table selection, etc. Once activated, this panel becomes fully functional and
+	 * can be interacted with by the user.
+	 */
 	private void activatePanel() {
 		
 //		PANEL LISTENER - CLEAR ALL
@@ -222,7 +247,7 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 			
 		} );
 		
-//		TABLE LISTENERI
+//		TABLE LISTENERS
 		TableActionEvent event = new TableActionEvent() {
 			
 			@Override
@@ -278,7 +303,7 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 				msgInfo.setMessageTitle( "Datum: " + noviPregledController.getSelectedExam( row ).getDateFormatted() );
 				msgInfo.setMessageText(
 						"Pregled napravio/la: " + noviPregledController.getSelectedExam( row ).getDoctorName()
-								+ "\nPregled: " + noviPregledController.getSelectedExam( row ).getInfo() );
+								+ "\nPregled:\n " + noviPregledController.getSelectedExam( row ).getInfo() );
 				System.out.println( "View row : " + noviPregledController.getSelectedExam( row ).getId() );
 				GlassPanePopup.showPopup( msgInfo );
 				
@@ -324,6 +349,10 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Initiates the layout of the panel.
+	 */
 	private void initLayout() {
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -380,6 +409,12 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Inserts data into the table with random values for testing purposes
+	 * 
+	 * @param table The table to insert data into
+	 */
 	private void insertTableDataDijagnoze( CustomTable table ) {
 		
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
@@ -395,6 +430,12 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Sets the form title and table data for a given patient
+	 * 
+	 * @param patient The patient to set data for
+	 */
 	public void setData( Patient patient ) {
 		
 		lblFormTitle.setText( "Dodaj novi pregled - " + patient.getName() );
@@ -403,6 +444,10 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Clears all the input fields and selections on the panel
+	 */
 	public void clearAll() {
 		
 		txtNoviPregled.setText( "" );
@@ -414,6 +459,10 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * @return The label that displays the form title
+	 */
 	public JLabel getLblFormTitle() {
 		
 		return lblFormTitle;
@@ -422,7 +471,8 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * @return the table
+	 * 
+	 * @return The table on the panel
 	 */
 	public CustomTable getTable() {
 		
@@ -432,7 +482,8 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * @return the patient
+	 * 
+	 * @return The patient associated with the panel
 	 */
 	public Patient getPatient() {
 		
@@ -442,22 +493,25 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * @param patient the patient to set
+	 * 
+	 * Sets the patient for the panel and updates the data displayed on it
+	 * 
+	 * @param patient The patient to set
 	 */
 	public void setPatient( Patient patient ) {
 		
 		this.patient = patient;
 		noviPregledController.setPatient( patient );
-		lblFormTitle.setText( "Dodaj novi pregled - " + patient.getName() );
-		noviPregledController.setTableData();
-		
-//		setData( patient );
+		setData( patient );
 		
 	}
 	
 	
 	/**
-	 * @param loginController the loginController to set
+	 * 
+	 * Sets the login controller for the panel
+	 * 
+	 * @param loginController The login controller to set
 	 */
 	public void setLoginController( LoginController loginController ) {
 		

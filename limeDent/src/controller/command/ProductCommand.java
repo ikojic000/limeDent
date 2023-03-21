@@ -11,7 +11,7 @@ import model.Product;
  *         manipulating Product objects. It contains methods for executing,
  *         undoing and redoing the command, as well as getting the product
  *         information and the product itself.
- *		
+ * 		
  */
 public interface ProductCommand {
 	
@@ -24,11 +24,6 @@ public interface ProductCommand {
 	 * Undoes the command.
 	 */
 	void undo();
-	
-	/**
-	 * Redoes the command.
-	 */
-	void redo();
 	
 	/**
 	 * 

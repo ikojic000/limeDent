@@ -157,6 +157,7 @@ public class MedicalExam {
 	
 	
 	/**
+	 * 
 	 * Returns the ID of the doctor associated with this appointment.
 	 * 
 	 * @return the ID of the doctor
@@ -169,6 +170,7 @@ public class MedicalExam {
 	
 	
 	/**
+	 * 
 	 * Sets the ID of the doctor associated with this appointment.
 	 * 
 	 * @param idDoctor the ID of the doctor
@@ -181,6 +183,7 @@ public class MedicalExam {
 	
 	
 	/**
+	 * 
 	 * Returns the name of the doctor associated with this appointment.
 	 * 
 	 * @return the name of the doctor
@@ -193,6 +196,7 @@ public class MedicalExam {
 	
 	
 	/**
+	 * 
 	 * Sets the name of the doctor associated with this appointment.
 	 * 
 	 * @param doctorName the name of the doctor
@@ -205,6 +209,7 @@ public class MedicalExam {
 	
 	
 	/**
+	 * 
 	 * Returns the ID of the patient associated with this appointment.
 	 * 
 	 * @return the ID of the patient
@@ -217,6 +222,7 @@ public class MedicalExam {
 	
 	
 	/**
+	 * 
 	 * Sets the ID of the patient associated with this appointment.
 	 * 
 	 * @param idPatient the ID of the patient
@@ -229,6 +235,7 @@ public class MedicalExam {
 	
 	
 	/**
+	 * 
 	 * Returns the name of the patient associated with this appointment.
 	 * 
 	 * @return the name of the patient
@@ -241,6 +248,7 @@ public class MedicalExam {
 	
 	
 	/**
+	 * 
 	 * Sets the name of the patient associated with this appointment.
 	 * 
 	 * @param patientName the name of the patient
@@ -253,6 +261,7 @@ public class MedicalExam {
 	
 	
 	/**
+	 * 
 	 * Returns the date and time of this appointment.
 	 * 
 	 * @return the date and time of this appointment
@@ -265,6 +274,7 @@ public class MedicalExam {
 	
 	
 	/**
+	 * 
 	 * Returns a formatted string representation of the date and time of this
 	 * appointment.
 	 * 
@@ -280,6 +290,7 @@ public class MedicalExam {
 	
 	
 	/**
+	 * 
 	 * Sets the date and time of this appointment.
 	 * 
 	 * @param date the date and time of this appointment

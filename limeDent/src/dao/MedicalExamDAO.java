@@ -13,6 +13,7 @@ import model.Patient;
 
 
 /**
+ * 
  * @author ikojic000
  * 
  *         The MedicalExamDAO class provides methods for accessing and
@@ -22,6 +23,7 @@ import model.Patient;
 public class MedicalExamDAO {
 	
 	/**
+	 * 
 	 * Constructs a new MedicalExamDAO object.
 	 */
 	public MedicalExamDAO() {
@@ -35,7 +37,6 @@ public class MedicalExamDAO {
 	 * database.
 	 * 
 	 * @param patient the patient whose medical exams to retrieve
-	 * 
 	 * @return an ArrayList of MedicalExam objects representing the patient's
 	 *         medical exams
 	 */
@@ -107,9 +108,7 @@ public class MedicalExamDAO {
 	 * Adds a new medical exam to the database.
 	 * 
 	 * @param exam    the MedicalExam object to add
-	 * 
 	 * @param patient the patient to whom the medical exam belongs
-	 * 
 	 * @return an ArrayList of MedicalExam objects representing the patient's
 	 *         updated medical exams
 	 */

@@ -9,6 +9,7 @@ import model.Offer;
 
 
 /**
+ * 
  * @author ikojic000
  * 
  *         The OfferTableModel class represents the table model for the Offer
@@ -71,7 +72,6 @@ public class OfferTableModel extends AbstractTableModel {
 	 * Returns the name of the specified column.
 	 * 
 	 * @param column the index of the column
-	 * 
 	 * @return the name of the specified column
 	 */
 	@Override
@@ -87,9 +87,7 @@ public class OfferTableModel extends AbstractTableModel {
 	 * Returns a boolean value indicating whether the specified cell is editable.
 	 * 
 	 * @param rowIndex    the row index of the cell
-	 * 
 	 * @param columnIndex the column index of the cell
-	 * 
 	 * @return true if the specified cell is editable, false otherwise
 	 */
 	@Override
@@ -105,9 +103,7 @@ public class OfferTableModel extends AbstractTableModel {
 	 * Returns the value at the specified cell.
 	 * 
 	 * @param rowIndex    the row index of the cell
-	 * 
 	 * @param columnIndex the column index of the cell
-	 * 
 	 * @return the value at the specified cell
 	 */
 	@Override

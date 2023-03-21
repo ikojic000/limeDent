@@ -9,6 +9,7 @@ import model.Patient;
 
 
 /**
+ * 
  * @author ikojic000
  * 
  *         This class extends the AbstractTableModel class to implement a table
@@ -25,9 +26,6 @@ import model.Patient;
  */
 public class PatientTableModel extends AbstractTableModel {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 6428592596661339727L;
 	ArrayList<Patient> patientList;
 	private String[] columnNames = { "ID" , "Ime i prezime" , "OIB" , "Mobitel" , "Mail" , "Zadnji pregled" };
@@ -80,7 +78,6 @@ public class PatientTableModel extends AbstractTableModel {
 	 * Returns the name of the specified column in the table.
 	 * 
 	 * @param column the index of the column
-	 * 
 	 * @return the name of the column
 	 */
 	@Override
@@ -96,9 +93,7 @@ public class PatientTableModel extends AbstractTableModel {
 	 * Returns a boolean value indicating whether a cell is editable or not.
 	 * 
 	 * @param rowIndex    the row index of the cell
-	 * 
 	 * @param columnIndex the column index of the cell
-	 * 
 	 * @return a boolean value indicating whether a cell is editable or not
 	 */
 	@Override
@@ -114,9 +109,7 @@ public class PatientTableModel extends AbstractTableModel {
 	 * Returns the value at the specified row and column in the table.
 	 * 
 	 * @param rowIndex    the row index of the cell
-	 * 
 	 * @param columnIndex the column index of the cell
-	 * 
 	 * @return the value at the specified row and column in the table
 	 */
 	@Override

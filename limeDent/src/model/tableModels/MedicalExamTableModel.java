@@ -9,6 +9,7 @@ import model.MedicalExam;
 
 
 /**
+ * 
  * @author ikojic000
  * 
  *         The MedicalExamTableModel class is a table model for displaying and
@@ -74,7 +75,6 @@ public class MedicalExamTableModel extends AbstractTableModel {
 	 * Returns the name of the column at the given index.
 	 * 
 	 * @param column the index of the column
-	 * 
 	 * @return the name of the column at the given index
 	 */
 	@Override
@@ -90,9 +90,7 @@ public class MedicalExamTableModel extends AbstractTableModel {
 	 * Returns whether or not the cell at the given row and column can be edited.
 	 * 
 	 * @param rowIndex    the index of the row
-	 * 
 	 * @param columnIndex the index of the column
-	 * 
 	 * @return true if the cell is editable, false otherwise
 	 */
 	@Override
@@ -108,9 +106,7 @@ public class MedicalExamTableModel extends AbstractTableModel {
 	 * Returns the value at the given row and column in the table.
 	 * 
 	 * @param rowIndex    - the index of the row
-	 * 
 	 * @param columnIndex - the index of the column
-	 * 
 	 * @return the value at the given row and column
 	 */
 	@Override

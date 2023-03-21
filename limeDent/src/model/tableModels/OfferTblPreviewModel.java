@@ -5,10 +5,13 @@ import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
+import controller.observer.OfferTblPreviewObserver;
+import controller.observer.PatientListObserver;
 import model.OfferTblPreviewData;
 
 
 /**
+ * 
  * @author ikojic000
  * 
  *         A model for the preview table of an offer that extends
@@ -26,6 +29,7 @@ public class OfferTblPreviewModel extends AbstractTableModel {
 	private ArrayList<OfferTblPreviewData> tblPreviewData;
 	private String[] columnNames = { "Naziv" , "Cijena" , "Količina" , "Ukupno" , "Popust" , "Ukupno s popustom" };
 	boolean[] canEdit = new boolean[] { false , false , true , false , true , false };
+	private ArrayList<OfferTblPreviewObserver> observers = new ArrayList<OfferTblPreviewObserver>();
 	
 	/**
 	 * 
@@ -174,11 +178,8 @@ public class OfferTblPreviewModel extends AbstractTableModel {
 	 * is thrown.
 	 * 
 	 * @param value       the value to set
-	 * 
 	 * @param rowIndex    the row index of the cell
-	 * 
 	 * @param columnIndex the column index of the cell
-	 * 
 	 * @throws IllegalArgumentException if the specified column index is invalid
 	 */
 	@Override
@@ -204,6 +205,49 @@ public class OfferTblPreviewModel extends AbstractTableModel {
 		}
 		
 		fireTableCellUpdated( rowIndex , columnIndex );
+		notifyObservers();
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Registers an observer.
+	 * 
+	 * @param observer the observer to be registered
+	 */
+	public void addObserver( OfferTblPreviewObserver observer ) {
+		
+		observers.add( observer );
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Unregisters an observer.
+	 * 
+	 * @param observer the observer to be unregistered
+	 */
+	public void removeObserver( OfferTblPreviewObserver observer ) {
+		
+		observers.remove( observer );
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Notifies all registered observers that there has been a change to the offer
+	 * tblPreview model.
+	 */
+	public void notifyObservers() {
+		
+		for ( OfferTblPreviewObserver observer : observers ) {
+			
+			observer.tableModelDataChanged();
+			
+		}
 		
 	}
 	

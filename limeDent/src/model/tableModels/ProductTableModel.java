@@ -9,6 +9,7 @@ import model.Product;
 
 
 /**
+ * 
  * @author ikojic000
  * 
  *         This class extends AbstractTableModel to provide a model for

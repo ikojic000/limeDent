@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 
 
 /**
+ * 
  * @author ikojic000
  * 
  *         Represents a product offered by a dental office, which can be an
@@ -25,6 +26,7 @@ public class Product {
 	private BigDecimal price;
 	
 	/**
+	 * 
 	 * Creates a new product with the specified ID.
 	 * 
 	 * @param id The ID of the product.
@@ -37,6 +39,7 @@ public class Product {
 	
 	
 	/**
+	 * 
 	 * Creates a new product with the specified ID and code.
 	 * 
 	 * @param id   The ID of the product.
@@ -51,6 +54,7 @@ public class Product {
 	
 	
 	/**
+	 * 
 	 * Creates a new product with the specified name and price.
 	 * 
 	 * @param name  The name of the product.
@@ -65,6 +69,7 @@ public class Product {
 	
 	
 	/**
+	 * 
 	 * Creates a new product with the specified ID, name, and price.
 	 * 
 	 * @param id    The ID of the product.
@@ -81,6 +86,7 @@ public class Product {
 	
 	
 	/**
+	 * 
 	 * Creates a new product with the specified ID, code, name, and price.
 	 * 
 	 * @param id    The ID of the product.
@@ -99,6 +105,7 @@ public class Product {
 	
 	
 	/**
+	 * 
 	 * Returns the ID of the product.
 	 * 
 	 * @return The ID of the product.
@@ -111,6 +118,7 @@ public class Product {
 	
 	
 	/**
+	 * 
 	 * Sets the ID of the product.
 	 * 
 	 * @param id The ID to set.
@@ -123,6 +131,7 @@ public class Product {
 	
 	
 	/**
+	 * 
 	 * Returns the code of the product.
 	 * 
 	 * @return The code of the product.
@@ -135,6 +144,7 @@ public class Product {
 	
 	
 	/**
+	 * 
 	 * Sets the code of the product.
 	 * 
 	 * @param code The code to set.
@@ -147,6 +157,7 @@ public class Product {
 	
 	
 	/**
+	 * 
 	 * Returns the name of the product.
 	 * 
 	 * @return The name of the product.
@@ -159,6 +170,7 @@ public class Product {
 	
 	
 	/**
+	 * 
 	 * Sets the name of the product.
 	 * 
 	 * @param name The name to set.
@@ -171,6 +183,7 @@ public class Product {
 	
 	
 	/**
+	 * 
 	 * Returns the price of the product.
 	 * 
 	 * @return The price of the product.
@@ -183,6 +196,7 @@ public class Product {
 	
 	
 	/**
+	 * 
 	 * Sets the price of the product.
 	 * 
 	 * @param price the price to set

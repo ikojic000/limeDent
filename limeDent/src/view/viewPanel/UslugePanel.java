@@ -49,11 +49,19 @@ import raven.glasspanepopup.GlassPanePopup;
 import view.View;
 
 
+/**
+ * 
+ * @author ikojic000
+ * 
+ *         The UslugePanel class extends RoundedShadowPanel and represents a
+ *         panel for managing services. It contains components for adding,
+ *         updating, and deleting services, searching for services, and
+ *         displaying services in a table. It also contains a notification
+ *         component and a button for undoing the last action.
+ * 		
+ */
 public class UslugePanel extends RoundedShadowPanel {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4380414859779004657L;
 	private TextField txtNazivArtikla;
 	private TextField txtCijenaArtikla;
@@ -80,6 +88,14 @@ public class UslugePanel extends RoundedShadowPanel {
 	private UslugeController uslugeController;
 	private ButtonTable btnUndo;
 	
+	/**
+	 * 
+	 * Constructs a new UslugePanel with the given CardPanel and View / JFrame
+	 * objects. Initializes all UI components and sets up the panel's layout.
+	 * 
+	 * @param cardParent the CardPanel parent for this panel
+	 * @param view       the View parent for this panel
+	 */
 	public UslugePanel( CardPanel cardParent , View view ) {
 		
 		super( 20 );
@@ -213,6 +229,13 @@ public class UslugePanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * Activates the panel by setting up various listeners for its components. These
+	 * listeners are used to handle events like button clicks, textfield input,
+	 * table selection, etc. Once activated, this panel becomes fully functional and
+	 * can be interacted with by the user.
+	 */
 	private void activatePanel() {
 		
 //		PANEL LISTENER - CLEAR ALL
@@ -235,7 +258,7 @@ public class UslugePanel extends RoundedShadowPanel {
 			
 		} );
 		
-//		TABLE LISTENERI
+//		TABLE LISTENERS
 		table.addMouseListener( new MouseAdapter() {
 			
 			@Override
@@ -494,6 +517,75 @@ public class UslugePanel extends RoundedShadowPanel {
 	}
 	
 	
+	/**
+	 * 
+	 * This method is used to insert data into the table. It calls the method
+	 * setTableData() from the UslugeController class to set the data.
+	 */
+	private void insertTableData() {
+		
+		uslugeController.setTableData();
+		
+	}
+	
+	
+	/**
+	 * 
+	 * This method is used to check if the entered price value is valid. It uses a
+	 * regular expression pattern to match the entered string with the given
+	 * pattern. If the pattern does not match, a helper text is set to the cijena
+	 * TextField, notifying the user to enter a valid price.
+	 * 
+	 * @param cijena A String representing the price value entered by the user.
+	 */
+	private void checkCijena( String cijena ) {
+		
+		boolean isCijenaValid = true;
+		
+		String regex = "^(\\d|-)?(\\d|,)*\\.?\\d*$";
+		Pattern pattern = Pattern.compile( regex );
+		Matcher matcher = pattern.matcher( cijena );
+		
+		if ( !matcher.matches() ) {
+			
+			isCijenaValid = false;
+			
+		}
+		
+		if ( !isCijenaValid ) {
+			
+			txtCijenaArtikla.setHelperText( "Unesite valjan oblik iznosa .." );
+			
+		} else {
+			
+			txtCijenaArtikla.setHelperText( "" );
+			
+		}
+		
+	}
+	
+	
+	/**
+	 * 
+	 * This method is used to clear all the data entered in the form. It sets the
+	 * text of the cijena and naziv TextField and txtSearch TextField to empty,
+	 * clears the selection from the table, and requests focus for this panel.
+	 */
+	public void clearAll() {
+		
+		txtCijenaArtikla.setText( "" );
+		txtNazivArtikla.setText( "" );
+		txtSearch.setText( "" );
+		table.clearSelection();
+		this.requestFocus();
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Initiates the layout of the panel.
+	 */
 	private void initLayout() {
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -591,51 +683,12 @@ public class UslugePanel extends RoundedShadowPanel {
 	}
 	
 	
-	private void insertTableData() {
-		
-		uslugeController.setTableData();
-		
-	}
-	
-	
-	private void checkCijena( String cijena ) {
-		
-		boolean isCijenaValid = true;
-		
-		String regex = "^(\\d|-)?(\\d|,)*\\.?\\d*$";
-		Pattern pattern = Pattern.compile( regex );
-		Matcher matcher = pattern.matcher( cijena );
-		
-		if ( !matcher.matches() ) {
-			
-			isCijenaValid = false;
-			
-		}
-		
-		if ( !isCijenaValid ) {
-			
-			txtCijenaArtikla.setHelperText( "Unesite valjan oblik iznosa .." );
-			
-		} else {
-			
-			txtCijenaArtikla.setHelperText( "" );
-			
-		}
-		
-	}
-	
-	
-	public void clearAll() {
-		
-		txtCijenaArtikla.setText( "" );
-		txtNazivArtikla.setText( "" );
-		txtSearch.setText( "" );
-		table.clearSelection();
-		this.requestFocus();
-		
-	}
-	
-	
+	/**
+	 * 
+	 * Returns the table used to display the data.
+	 * 
+	 * @return the table object
+	 */
 	public CustomTable getTable() {
 		
 		return table;
@@ -644,7 +697,10 @@ public class UslugePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * @return the txtNazivArtikla
+	 * 
+	 * Returns the text field used for entering the name of the item.
+	 * 
+	 * @return the text field for the name of the item
 	 */
 	public TextField getTxtNazivArtikla() {
 		
@@ -654,7 +710,10 @@ public class UslugePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * @return the txtCijenaArtikla
+	 * 
+	 * Returns the text field used for entering the price of the item.
+	 * 
+	 * @return the text field for the price of the item
 	 */
 	public TextField getTxtCijenaArtikla() {
 		
@@ -664,7 +723,10 @@ public class UslugePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * @return the txtSearch
+	 * 
+	 * Returns the text field used for searching items.
+	 * 
+	 * @return the text field for searching items
 	 */
 	public TextField getTxtSearch() {
 		

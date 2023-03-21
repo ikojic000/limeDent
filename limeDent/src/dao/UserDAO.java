@@ -20,6 +20,7 @@ import model.User;
 
 
 /**
+ * 
  * @author ikojic000
  * 
  *         The UserDAO class is responsible for accessing user data in the
@@ -41,6 +42,7 @@ public class UserDAO {
 	
 	
 	/**
+	 * 
 	 * Retrieves the hashed password for the given username from the database.
 	 * 
 	 * @param username - the username to search for
