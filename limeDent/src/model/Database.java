@@ -54,8 +54,6 @@ public class Database {
 			
 			connection = DriverManager.getConnection( getDatabaseURL() , getDatabaseUsername() ,
 					getDatabasePassword() );
-//			connection = DriverManager.getConnection( "jdbc:mysql://sql7.freesqldatabase.com:3306/sql7603179" , getDatabaseUsername() ,
-//					getDatabasePassword() );
 			System.out.println( "DB Connected" );
 			
 		} catch ( SQLException e ) {
