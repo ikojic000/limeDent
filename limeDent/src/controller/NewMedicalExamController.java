@@ -7,7 +7,7 @@ import dao.MedicalExamDAO;
 import model.MedicalExam;
 import model.Patient;
 import model.tableModels.MedicalExamTableModel;
-import view.viewPanel.NoviPregledPanel;
+import view.viewPanel.NewMedicalExamPanel;
 
 
 /**
@@ -20,10 +20,10 @@ import view.viewPanel.NoviPregledPanel;
  *         panel and for retrieving and modifying medical exams related to a
  *         specific patient.
  */
-public class NoviPregledController {
+public class NewMedicalExamController {
 	
 	private ArrayList<MedicalExam> medicalExamList = new ArrayList<MedicalExam>();
-	private NoviPregledPanel noviPregledPanel;
+	private NewMedicalExamPanel noviPregledPanel;
 	private MedicalExamDAO medicalExamDAO;
 	private Patient patient;
 	
@@ -35,7 +35,7 @@ public class NoviPregledController {
 	 * 
 	 * @param noviPregledPanel The NoviPregledPanel associated with this controller.
 	 */
-	public NoviPregledController( NoviPregledPanel noviPregledPanel ) {
+	public NewMedicalExamController( NewMedicalExamPanel noviPregledPanel ) {
 		
 		this.medicalExamDAO = new MedicalExamDAO();
 		this.noviPregledPanel = noviPregledPanel;

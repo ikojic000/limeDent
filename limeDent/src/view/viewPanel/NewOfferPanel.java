@@ -25,7 +25,7 @@ import javax.swing.border.MatteBorder;
 import javax.swing.table.DefaultTableModel;
 
 import controller.LoginController;
-import controller.NovaPonudaController;
+import controller.NewOfferController;
 import design.button.ButtonShadow;
 import design.button.RadioButton;
 import design.comboBox.ComboBox;
@@ -52,7 +52,7 @@ import view.View;
  *         object to handle user actions.
  * 		
  */
-public class NovaPonudaPanel extends RoundedShadowPanel {
+public class NewOfferPanel extends RoundedShadowPanel {
 	
 	private static final long serialVersionUID = 4647942436198867355L;
 	private TextField txtNazivPonude;
@@ -83,7 +83,7 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 	private View view;
 	@SuppressWarnings( "unused" )
 	private CardPanel cardParent;
-	private NovaPonudaController novaPonudaController;
+	private NewOfferController novaPonudaController;
 	private LoginController loginController;
 	
 	/**
@@ -94,12 +94,12 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 	 * @param cardParent the parent CardPanel object of the panel
 	 * @param view       the View object representing the UI view
 	 */
-	public NovaPonudaPanel( CardPanel cardParent , View view ) {
+	public NewOfferPanel( CardPanel cardParent , View view ) {
 		
 		super( 20 );
 		this.view = view;
 		this.cardParent = cardParent;
-		this.novaPonudaController = new NovaPonudaController( this );
+		this.novaPonudaController = new NewOfferController( this );
 		
 		setOpaque( false );
 		setFont( new Font( "Century Gothic" , Font.BOLD , 16 ) );

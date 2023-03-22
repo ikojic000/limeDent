@@ -30,13 +30,13 @@ public class CardPanel extends RoundedPanel {
 	private View view;
 	private CardLayout cl;
 	private HomePanel homePanel;
-	private UslugePanel uslugePanel;
-	private PonudePanel ponudePanel;
-	private NovaPonudaPanel novaPonudaPanel;
+	private ProductsPanel uslugePanel;
+	private OffersPanel ponudePanel;
+	private NewOfferPanel novaPonudaPanel;
 	private UserSettingsPanel userSettingsPanel;
-	private NoviPregledPanel noviPregledPanel;
-	private DetaljiPanel detaljiPanel;
-	private NoviPacijentPanel noviPacijentPanel;
+	private NewMedicalExamPanel noviPregledPanel;
+	private PatientDetailsPanel detaljiPanel;
+	private NewPatientPanel noviPacijentPanel;
 	@SuppressWarnings( "unused" )
 	private LoginController loginController;
 	
@@ -75,17 +75,17 @@ public class CardPanel extends RoundedPanel {
 	private void initComponents() {
 		
 		homePanel = new HomePanel( this , view );
-		uslugePanel = new UslugePanel( this , view );
-		ponudePanel = new PonudePanel( this , view );
-		novaPonudaPanel = new NovaPonudaPanel( this , view );
+		uslugePanel = new ProductsPanel( this , view );
+		ponudePanel = new OffersPanel( this , view );
+		novaPonudaPanel = new NewOfferPanel( this , view );
 		userSettingsPanel = new UserSettingsPanel( this , view );
 		userSettingsPanel.setBackground( new Color( 255 , 255 , 255 ) );
 		userSettingsPanel.setShadowColor( new Color( 255 , 255 , 255 ) );
-		noviPregledPanel = new NoviPregledPanel( this , view );
+		noviPregledPanel = new NewMedicalExamPanel( this , view );
 		homePanel.setNoviPregledPanel( noviPregledPanel );
-		detaljiPanel = new DetaljiPanel( this , view );
+		detaljiPanel = new PatientDetailsPanel( this , view );
 		homePanel.setDetaljiPanel( detaljiPanel );
-		noviPacijentPanel = new NoviPacijentPanel( this , view );
+		noviPacijentPanel = new NewPatientPanel( this , view );
 		
 	}
 	

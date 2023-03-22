@@ -31,7 +31,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
-import controller.UslugeController;
+import controller.ProductsController;
 import design.button.ButtonShadow;
 import design.button.ButtonTable;
 import design.messageDialog.Message;
@@ -60,7 +60,7 @@ import view.View;
  *         component and a button for undoing the last action.
  * 		
  */
-public class UslugePanel extends RoundedShadowPanel {
+public class ProductsPanel extends RoundedShadowPanel {
 	
 	private static final long serialVersionUID = 4380414859779004657L;
 	private TextField txtNazivArtikla;
@@ -85,7 +85,7 @@ public class UslugePanel extends RoundedShadowPanel {
 	private View view;
 	@SuppressWarnings( "unused" )
 	private CardPanel cardParent;
-	private UslugeController uslugeController;
+	private ProductsController uslugeController;
 	private ButtonTable btnUndo;
 	
 	/**
@@ -96,13 +96,13 @@ public class UslugePanel extends RoundedShadowPanel {
 	 * @param cardParent the CardPanel parent for this panel
 	 * @param view       the View parent for this panel
 	 */
-	public UslugePanel( CardPanel cardParent , View view ) {
+	public ProductsPanel( CardPanel cardParent , View view ) {
 		
 		super( 20 );
 		
 		this.view = view;
 		this.cardParent = cardParent;
-		this.uslugeController = new UslugeController( this );
+		this.uslugeController = new ProductsController( this );
 		
 		setOpaque( false );
 		setFont( new Font( "Century Gothic" , Font.BOLD , 16 ) );
@@ -171,7 +171,7 @@ public class UslugePanel extends RoundedShadowPanel {
 		btnUndo.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
 		btnUndo.setText( "Poni\u0161ti brisanje" );
 		btnUndo.setFocusPainted( false );
-		btnUndo.setIcon( new ImageIcon( UslugePanel.class.getResource( "/undo.png" ) ) );
+		btnUndo.setIcon( new ImageIcon( ProductsPanel.class.getResource( "/undo.png" ) ) );
 		
 		btnDelete = new ButtonShadow();
 		btnDelete.setIconTextGap( 2 );

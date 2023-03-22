@@ -12,7 +12,7 @@ import controller.observer.OfferListObserver;
 import dao.OfferDAO;
 import model.Offer;
 import model.tableModels.OfferTableModel;
-import view.viewPanel.PonudePanel;
+import view.viewPanel.OffersPanel;
 
 
 /**
@@ -24,10 +24,10 @@ import view.viewPanel.PonudePanel;
  *         PDF files of offers. It implements the OfferListObserver interface,
  *         to get notified when the list of offers is updated.
  */
-public class PonudeController implements OfferListObserver {
+public class OffersController implements OfferListObserver {
 	
 	private ArrayList<Offer> offerList = new ArrayList<Offer>();
-	private PonudePanel ponudePanel;
+	private OffersPanel ponudePanel;
 	private OfferDAO offerDAO;
 	private OfferTableModel tableModel;
 	
@@ -38,7 +38,7 @@ public class PonudeController implements OfferListObserver {
 	 * 
 	 * @param ponudePanel the panel to be managed by this controller
 	 */
-	public PonudeController( PonudePanel ponudePanel ) {
+	public OffersController( OffersPanel ponudePanel ) {
 		
 		this.ponudePanel = ponudePanel;
 		this.offerDAO = new OfferDAO();

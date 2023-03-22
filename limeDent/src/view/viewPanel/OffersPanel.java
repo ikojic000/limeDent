@@ -18,7 +18,7 @@ import javax.swing.JScrollPane;
 import javax.swing.border.MatteBorder;
 import javax.swing.table.DefaultTableModel;
 
-import controller.PonudeController;
+import controller.OffersController;
 import design.messageDialog.Message;
 import design.notification.Notification;
 import design.notification.Notification.Location;
@@ -42,7 +42,7 @@ import view.View;
  *         displaying and managing offers. It extends the RoundedShadowPanel
  *         class and implements the necessary components and functionality.
  */
-public class PonudePanel extends RoundedShadowPanel {
+public class OffersPanel extends RoundedShadowPanel {
 	
 	private static final long serialVersionUID = -2670464673455355768L;
 	private TextField txtSearch;
@@ -58,7 +58,7 @@ public class PonudePanel extends RoundedShadowPanel {
 	private View view;
 	@SuppressWarnings( "unused" )
 	private CardPanel cardParent;
-	private PonudeController ponudeController;
+	private OffersController ponudeController;
 	
 	/**
 	 * 
@@ -67,12 +67,12 @@ public class PonudePanel extends RoundedShadowPanel {
 	 * @param cardParent the parent CardPanel for this panel
 	 * @param view       the parent View for this panel
 	 */
-	public PonudePanel( CardPanel cardParent , View view ) {
+	public OffersPanel( CardPanel cardParent , View view ) {
 		
 		super( 20 );
 		this.view = view;
 		this.cardParent = cardParent;
-		this.ponudeController = new PonudeController( this );
+		this.ponudeController = new OffersController( this );
 		
 		setOpaque( false );
 		setFont( new Font( "Century Gothic" , Font.BOLD , 16 ) );

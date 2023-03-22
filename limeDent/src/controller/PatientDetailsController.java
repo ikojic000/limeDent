@@ -3,7 +3,7 @@ package controller;
 
 import dao.PatientDAO;
 import model.Patient;
-import view.viewPanel.DetaljiPanel;
+import view.viewPanel.PatientDetailsPanel;
 
 
 /**
@@ -15,16 +15,16 @@ import view.viewPanel.DetaljiPanel;
  *         the database.
  * 
  */
-public class DetaljiController {
+public class PatientDetailsController {
 	
-	private DetaljiPanel detaljiPanel;
+	private PatientDetailsPanel detaljiPanel;
 	private PatientDAO patientDAO;
 	
 	/**
 	 * 
 	 * Constructs a new DetaljiController object and initializes the DAO object.
 	 */
-	public DetaljiController() {
+	public PatientDetailsController() {
 		
 		this.patientDAO = new PatientDAO();
 		
@@ -97,7 +97,7 @@ public class DetaljiController {
 	 * 
 	 * @return the DetaljiPanel object
 	 */
-	public DetaljiPanel getDetaljiPanel() {
+	public PatientDetailsPanel getDetaljiPanel() {
 		
 		return detaljiPanel;
 		
@@ -110,7 +110,7 @@ public class DetaljiController {
 	 * 
 	 * @param detaljiPanel the DetaljiPanel object to set
 	 */
-	public void setDetaljiPanel( DetaljiPanel detaljiPanel ) {
+	public void setDetaljiPanel( PatientDetailsPanel detaljiPanel ) {
 		
 		this.detaljiPanel = detaljiPanel;
 		

@@ -65,8 +65,8 @@ public class HomePanel extends RoundedShadowPanel {
 	@SuppressWarnings( "unused" )
 	private View view;
 	private CardPanel cardParent;
-	private NoviPregledPanel noviPregledPanel;
-	private DetaljiPanel detaljiPanel;
+	private NewMedicalExamPanel noviPregledPanel;
+	private PatientDetailsPanel detaljiPanel;
 	private HomeController homeController;
 	
 	/**
@@ -521,7 +521,7 @@ public class HomePanel extends RoundedShadowPanel {
 	 *
 	 * @param noviPregledPanel the NoviPregledPanel to set
 	 */
-	public void setNoviPregledPanel( NoviPregledPanel noviPregledPanel ) {
+	public void setNoviPregledPanel( NewMedicalExamPanel noviPregledPanel ) {
 		
 		this.noviPregledPanel = noviPregledPanel;
 		
@@ -534,7 +534,7 @@ public class HomePanel extends RoundedShadowPanel {
 	 *
 	 * @param detaljiPanel the DetaljiPanel to set
 	 */
-	public void setDetaljiPanel( DetaljiPanel detaljiPanel ) {
+	public void setDetaljiPanel( PatientDetailsPanel detaljiPanel ) {
 		
 		this.detaljiPanel = detaljiPanel;
 		

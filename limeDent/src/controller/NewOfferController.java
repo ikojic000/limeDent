@@ -22,7 +22,7 @@ import model.OfferTblPreviewData;
 import model.Patient;
 import model.Product;
 import model.tableModels.OfferTblPreviewModel;
-import view.viewPanel.NovaPonudaPanel;
+import view.viewPanel.NewOfferPanel;
 
 
 /**
@@ -36,9 +36,9 @@ import view.viewPanel.NovaPonudaPanel;
  *         more.
  * 
  */
-public class NovaPonudaController implements OfferTblPreviewObserver , ProductListObserver {
+public class NewOfferController implements OfferTblPreviewObserver , ProductListObserver {
 	
-	private NovaPonudaPanel novaPonudaPanel;
+	private NewOfferPanel novaPonudaPanel;
 	private OfferDAO offerDAO;
 	private ProductDAO productDAO;
 	private ArrayList<OfferTblPreviewData> tblPreviewData = new ArrayList<OfferTblPreviewData>();
@@ -53,7 +53,7 @@ public class NovaPonudaController implements OfferTblPreviewObserver , ProductLi
 	 * @param novaPonudaPanel the NovaPonudaPanel object that represents the GUI
 	 *                        panel for creating new offers
 	 */
-	public NovaPonudaController( NovaPonudaPanel novaPonudaPanel ) {
+	public NewOfferController( NewOfferPanel novaPonudaPanel ) {
 		
 		this.novaPonudaPanel = novaPonudaPanel;
 		this.offerDAO = new OfferDAO();

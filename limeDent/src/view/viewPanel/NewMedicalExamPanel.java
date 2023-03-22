@@ -24,7 +24,7 @@ import javax.swing.border.MatteBorder;
 import javax.swing.table.DefaultTableModel;
 
 import controller.LoginController;
-import controller.NoviPregledController;
+import controller.NewMedicalExamController;
 import design.button.ButtonShadow;
 import design.messageDialog.Message;
 import design.messageDialog.MessageInfo;
@@ -53,7 +53,7 @@ import view.View;
  *         and displaying medical examinations in a table.
  * 		
  */
-public class NoviPregledPanel extends RoundedShadowPanel {
+public class NewMedicalExamPanel extends RoundedShadowPanel {
 	
 	private static final long serialVersionUID = 4380414859779004657L;
 	protected static final DecimalFormat dfKoristenje = new DecimalFormat( "0.00" ,
@@ -73,7 +73,7 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 	private View view;
 	@SuppressWarnings( "unused" )
 	private CardPanel cardParent;
-	private NoviPregledController noviPregledController;
+	private NewMedicalExamController noviPregledController;
 	private LoginController loginController;
 	private Patient patient;
 	
@@ -86,12 +86,12 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 	 * @param view       the View parent for this panel
 	 */
 	@SuppressWarnings( "serial" )
-	public NoviPregledPanel( CardPanel cardParent , View view ) {
+	public NewMedicalExamPanel( CardPanel cardParent , View view ) {
 		
 		super( 20 );
 		this.view = view;
 		this.cardParent = cardParent;
-		this.noviPregledController = new NoviPregledController( this );
+		this.noviPregledController = new NewMedicalExamController( this );
 		
 		setOpaque( false );
 		setFont( new Font( "Century Gothic" , Font.BOLD , 16 ) );

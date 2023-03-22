@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 import controller.observer.PatientListObservable;
 import dao.PatientDAO;
 import model.Patient;
-import view.viewPanel.NoviPacijentPanel;
+import view.viewPanel.NewPatientPanel;
 
 
 /**
@@ -20,10 +20,10 @@ import view.viewPanel.NoviPacijentPanel;
  *         of type NoviPacijentPanel, which is used to access and manipulate the
  *         graphical user interface elements related to adding a new patient.
  */
-public class NoviPacijentController {
+public class NewPatientController {
 	
 	private PatientDAO patientDAO;
-	private NoviPacijentPanel noviPacijentPanel;
+	private NewPatientPanel noviPacijentPanel;
 	
 	/**
 	 * 
@@ -32,7 +32,7 @@ public class NoviPacijentController {
 	 * 
 	 * @param noviPacijentPanel - the panel used to add a new patient
 	 */
-	public NoviPacijentController( NoviPacijentPanel noviPacijentPanel ) {
+	public NewPatientController( NewPatientPanel noviPacijentPanel ) {
 		
 		this.noviPacijentPanel = noviPacijentPanel;
 		this.patientDAO = new PatientDAO();

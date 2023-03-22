@@ -12,7 +12,7 @@ import controller.observer.ProductListObservable;
 import dao.ProductDAO;
 import model.Product;
 import model.tableModels.ProductTableModel;
-import view.viewPanel.UslugePanel;
+import view.viewPanel.ProductsPanel;
 
 
 /**
@@ -24,11 +24,11 @@ import view.viewPanel.UslugePanel;
  *         ProductTableModel for the JTable, the ProductDAO for database
  *         operations and the undoStack for undo functionality.
  */
-public class UslugeController {
+public class ProductsController {
 	
 	private ArrayList<Product> productList = new ArrayList<Product>();
 	private ProductTableModel tableModel;
-	private UslugePanel uslugePanel;
+	private ProductsPanel uslugePanel;
 	private ProductDAO productDAO;
 	private Stack<ProductCommand> undoStack = new Stack<ProductCommand>();
 	
@@ -40,7 +40,7 @@ public class UslugeController {
 	 * 
 	 * @param uslugePanel the UslugePanel GUI
 	 */
-	public UslugeController( UslugePanel uslugePanel ) {
+	public ProductsController( ProductsPanel uslugePanel ) {
 		
 		this.uslugePanel = uslugePanel;
 		this.productDAO = new ProductDAO();

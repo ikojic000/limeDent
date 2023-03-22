@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 import javax.swing.JLabel;
 
-import controller.NoviPacijentController;
+import controller.NewPatientController;
 import design.button.ButtonShadow;
 import design.messageDialog.Message;
 import design.notification.Notification;
@@ -38,7 +38,7 @@ import view.View;
  *         patients data
  * 
  */
-public class NoviPacijentPanel extends RoundedShadowPanel {
+public class NewPatientPanel extends RoundedShadowPanel {
 	
 	private static final long serialVersionUID = 4464610519421738643L;
 	private TextField txtAdresa;
@@ -59,7 +59,7 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	@SuppressWarnings( "unused" )
 	private View view;
 	private CardPanel cardParent;
-	private NoviPacijentController noviPacijentController;
+	private NewPatientController noviPacijentController;
 	
 //	checkers
 	private boolean isOIBValid = true;
@@ -76,12 +76,12 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 	 * @param cardParent the CardPanel parent for this panel
 	 * @param view       the View parent for this panel
 	 */
-	public NoviPacijentPanel( CardPanel cardParent , View view ) {
+	public NewPatientPanel( CardPanel cardParent , View view ) {
 		
 		super( 20 );
 		this.view = view;
 		this.cardParent = cardParent;
-		this.noviPacijentController = new NoviPacijentController( this );
+		this.noviPacijentController = new NewPatientController( this );
 		
 		setOpaque( false );
 		setFont( new Font( "Century Gothic" , Font.BOLD , 16 ) );

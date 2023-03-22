@@ -19,7 +19,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.SwingWorker;
 
-import controller.DetaljiController;
+import controller.PatientDetailsController;
 import controller.ImageCompressionThread;
 import design.button.ButtonShadow;
 import design.messageDialog.Message;
@@ -48,7 +48,7 @@ import view.View;
  *         contains a DetaljiController object to handle user actions.
  * 		
  */
-public class DetaljiPanel extends RoundedShadowPanel {
+public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	private static final long serialVersionUID = 4922166281676916917L;
 	private TextField txtAdresa;
@@ -73,7 +73,7 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	private View view;
 	private CardPanel cardParent;
 	private Patient patient;
-	private DetaljiController detaljiController;
+	private PatientDetailsController detaljiController;
 	
 	/**
 	 * 
@@ -83,13 +83,13 @@ public class DetaljiPanel extends RoundedShadowPanel {
 	 * @param cardParent the CardPanel parent for this panel
 	 * @param view       the View parent for this panel
 	 */
-	public DetaljiPanel( CardPanel cardParent , View view ) {
+	public PatientDetailsPanel( CardPanel cardParent , View view ) {
 		
 		super( 20 );
 		this.view = view;
 		this.cardParent = cardParent;
 		this.patient = new Patient( null );
-		this.detaljiController = new DetaljiController();
+		this.detaljiController = new PatientDetailsController();
 		
 		setOpaque( false );
 		setFont( new Font( "Century Gothic" , Font.BOLD , 16 ) );
