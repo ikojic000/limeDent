@@ -7,16 +7,16 @@ import java.time.format.DateTimeFormatter;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         This class represents an Offer object that contains the details of an
  *         offer made by an author for a patient. The Offer class has the
  *         following properties: id, title, authorID, authorName, patientName,
  *         date, notes, total, and url. The Offer class provides various getters
  *         and setters for accessing and modifying the properties of an Offer
  *         object.
- * 
+ *
  */
 public class Offer {
 	
@@ -31,9 +31,9 @@ public class Offer {
 	private String url;
 	
 	/**
-	 * 
+	 *
 	 * This constructor creates an Offer object with the specified id.
-	 * 
+	 *
 	 * @param id The id of the Offer.
 	 */
 	public Offer( Integer id ) {
@@ -44,9 +44,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * This constructor creates an Offer object with the specified properties.
-	 * 
+	 *
 	 * @param title       The title of the Offer.
 	 * @param authorID    The id of the author who made the Offer.
 	 * @param patientName The name of the patient for whom the Offer is made.
@@ -68,9 +68,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * This constructor creates an Offer object with the specified properties.
-	 * 
+	 *
 	 * @param title       The title of the Offer.
 	 * @param author      User object representing the user who made the Offer.
 	 * @param patientName The name of the patient for whom the Offer is made.
@@ -93,9 +93,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * This constructor creates an Offer object with the specified properties.
-	 * 
+	 *
 	 * @param id          The id of the Offer.
 	 * @param title       The title of the Offer.
 	 * @param authorID    The id of the author who made the Offer.
@@ -119,9 +119,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the unique identifier for this offer.
-	 * 
+	 *
 	 * @return the unique identifier for this offer
 	 */
 	public Integer getId() {
@@ -132,9 +132,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the unique identifier for this offer.
-	 * 
+	 *
 	 * @param id the unique identifier for this offer
 	 */
 	public void setId( Integer id ) {
@@ -145,9 +145,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the title of this offer.
-	 * 
+	 *
 	 * @return the title of this offer
 	 */
 	public String getTitle() {
@@ -158,9 +158,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the title of this offer.
-	 * 
+	 *
 	 * @param title the title of this offer
 	 */
 	public void setTitle( String title ) {
@@ -171,9 +171,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the ID of the author who created this offer.
-	 * 
+	 *
 	 * @return the ID of the author who created this offer
 	 */
 	public Integer getAuthorID() {
@@ -184,9 +184,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the ID of the author who created this offer.
-	 * 
+	 *
 	 * @param authorID the ID of the author who created this offer
 	 */
 	public void setAuthorID( Integer authorID ) {
@@ -197,9 +197,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the name of the author who created this offer.
-	 * 
+	 *
 	 * @return the name of the author who created this offer
 	 */
 	public String getAuthorName() {
@@ -210,9 +210,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the name of the author who created this offer.
-	 * 
+	 *
 	 * @param authorName the name of the author who created this offer
 	 */
 	public void setAuthorName( String authorName ) {
@@ -223,9 +223,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the name of the patient associated with this offer.
-	 * 
+	 *
 	 * @return the name of the patient associated with this offer
 	 */
 	public String getPatientName() {
@@ -236,9 +236,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the name of the patient associated with this offer.
-	 * 
+	 *
 	 * @param patientName the patient name to set
 	 */
 	public void setPatientName( String patientName ) {
@@ -249,9 +249,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the date of this offer.
-	 * 
+	 *
 	 * @return the date of this offer
 	 */
 	public LocalDateTime getDate() {
@@ -262,10 +262,10 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the formatted date string of this offer using the pattern "dd-MM-yyyy
 	 * HH:mm".
-	 * 
+	 *
 	 * @return the formatted date string of this offer
 	 */
 	public String getDateFormatted() {
@@ -277,9 +277,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the date of this offer.
-	 * 
+	 *
 	 * @param date the date to set
 	 */
 	public void setDate( LocalDateTime date ) {
@@ -290,9 +290,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the notes for this offer.
-	 * 
+	 *
 	 * @return the notes for this offer
 	 */
 	public String getNotes() {
@@ -303,9 +303,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the notes for this offer.
-	 * 
+	 *
 	 * @param notes the notes to set
 	 */
 	public void setNotes( String notes ) {
@@ -316,9 +316,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the total amount of this offer.
-	 * 
+	 *
 	 * @return the total amount of this offer
 	 */
 	public BigDecimal getTotal() {
@@ -329,9 +329,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the total amount for this offer.
-	 * 
+	 *
 	 * @param total the total amount to set
 	 */
 	public void setTotal( BigDecimal total ) {
@@ -342,9 +342,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the URL of this offer.
-	 * 
+	 *
 	 * @return the URL of this offer
 	 */
 	public String getUrl() {
@@ -355,9 +355,9 @@ public class Offer {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the URL for this offer.
-	 * 
+	 *
 	 * @param url the URL to set
 	 */
 	public void setUrl( String url ) {

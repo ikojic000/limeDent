@@ -24,7 +24,7 @@ import net.miginfocom.swing.MigLayout;
 public class Bottom extends HalfRoundShadowPanel {
 	
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -8491093143484311389L;
 	private float alpha;
@@ -102,7 +102,7 @@ public class Bottom extends HalfRoundShadowPanel {
 		add( btnUserSettings , "cell 0 0,grow" );
 		add( btnLogout , "cell 0 1,grow" );
 		
-	};
+	}
 	
 	
 	@Override

@@ -13,17 +13,17 @@ import model.Patient;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The MedicalExamDAO class provides methods for accessing and
  *         manipulating medical exams stored in the database.
- * 		
+ *		
  */
 public class MedicalExamDAO {
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new MedicalExamDAO object.
 	 */
 	public MedicalExamDAO() {
@@ -32,17 +32,17 @@ public class MedicalExamDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Retrieves all medical exams belonging to a specific patient from the
 	 * database.
-	 * 
+	 *
 	 * @param patient the patient whose medical exams to retrieve
 	 * @return an ArrayList of MedicalExam objects representing the patient's
 	 *         medical exams
 	 */
 	public ArrayList<MedicalExam> getAllExamsByPatientID( Patient patient ) {
 		
-		ArrayList<MedicalExam> allExams = new ArrayList<MedicalExam>();
+		ArrayList<MedicalExam> allExams = new ArrayList<>();
 		
 		String sql = "select me.id, me.info, me.idPatient, me.idDoctor, CONCAT(u.ime, ' ', u.prezime) as doctorName, p.imePrezime as patientName, me.date "
 				+ "from medicalexam me " + "inner join patients p on p.id = me.idPatient "
@@ -76,9 +76,9 @@ public class MedicalExamDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Deletes a medical exam from the database.
-	 * 
+	 *
 	 * @param exam the MedicalExam object to delete
 	 */
 	public void deleteExam( MedicalExam exam ) {
@@ -104,9 +104,9 @@ public class MedicalExamDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Adds a new medical exam to the database.
-	 * 
+	 *
 	 * @param exam    the MedicalExam object to add
 	 * @param patient the patient to whom the medical exam belongs
 	 * @return an ArrayList of MedicalExam objects representing the patient's

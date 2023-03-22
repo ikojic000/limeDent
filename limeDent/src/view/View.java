@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
 import org.jdesktop.animation.timing.Animator;
@@ -31,10 +32,10 @@ import view.viewPanel.CardPanel;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
- * 
+ *
+ *
  *         The View class represents the GUI of the LimeDent application. It
  *         extends the JFrame class.
  */
@@ -51,10 +52,10 @@ public class View extends JFrame {
 	private boolean menuShow;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a View object with the given LoginController object.
 	 * LoginController object is also passed to the classes that will use it.
-	 * 
+	 *
 	 * @param loginController - the LoginController object to be used
 	 */
 	public View( LoginController loginController ) {
@@ -251,7 +252,7 @@ public class View extends JFrame {
 		animator.setDeceleration( 0.5f );
 		
 		setUndecorated( true );
-		setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+		setDefaultCloseOperation( WindowConstants.EXIT_ON_CLOSE );
 		setMinimumSize( new Dimension( 1500 , 1020 ) );
 		setLocationRelativeTo( null );
 		
@@ -259,12 +260,12 @@ public class View extends JFrame {
 	
 	
 	/**
-	 * 
+	 *
 	 * Private method that takes an index as input and is used to show the
 	 * appropriate card in the cardPanel based on the selected menu item. The method
 	 * checks the value of the index parameter and based on the value it calls the
 	 * showCard() method of the cardPanel with the appropriate card name.
-	 * 
+	 *
 	 * @param index - index of selected menu item
 	 */
 	private void selectedMenu( int index ) {
@@ -295,9 +296,9 @@ public class View extends JFrame {
 	
 	
 	/**
-	 * 
+	 *
 	 * Used to get the reference of the cardPanel object from other classes.
-	 * 
+	 *
 	 * @return cardPanel
 	 */
 	public CardPanel getCardPanel() {
@@ -309,7 +310,7 @@ public class View extends JFrame {
 	
 	/**
 	 * Used to get the reference of the loginController object from other classes.
-	 * 
+	 *
 	 * @return loginController object
 	 */
 	public LoginController getLoginController() {
@@ -320,9 +321,9 @@ public class View extends JFrame {
 	
 	
 	/**
-	 * 
+	 *
 	 * Used to set the loginController object from other classes.
-	 * 
+	 *
 	 * @param loginController loginController to be set
 	 */
 	public void setLoginController( LoginController loginController ) {

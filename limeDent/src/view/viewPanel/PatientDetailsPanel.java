@@ -19,8 +19,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.SwingWorker;
 
-import controller.PatientDetailsController;
 import controller.ImageCompressionThread;
+import controller.PatientDetailsController;
 import design.button.ButtonShadow;
 import design.messageDialog.Message;
 import design.notification.Notification;
@@ -38,15 +38,15 @@ import view.View;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         A UI panel for displaying and editing patient details. This panel
  *         extends the RoundedShadowPanel class. It includes various text
  *         fields, buttons, labels, and an image component. The user can view,
  *         edit and delete patient details through this panel. This panel also
  *         contains a DetaljiController object to handle user actions.
- * 		
+ *		
  */
 public class PatientDetailsPanel extends RoundedShadowPanel {
 	
@@ -76,10 +76,10 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	private PatientDetailsController detaljiController;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new DetaljiPanel with the given CardPanel and View / JFrame
 	 * objects. Initializes all UI components and sets up the panel's layout.
-	 * 
+	 *
 	 * @param cardParent the CardPanel parent for this panel
 	 * @param view       the View parent for this panel
 	 */
@@ -246,7 +246,7 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Activates the panel by setting up various listeners for its components. These
 	 * listeners are used to handle events like button clicks, textfield input,
 	 * table selection, etc. Once activated, this panel becomes fully functional and
@@ -365,6 +365,7 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 		
 		btnChooseImg.addActionListener( new ActionListener() {
 			
+			@Override
 			public void actionPerformed( ActionEvent e ) {
 				
 				JnaFileChooser imgChooser = new JnaFileChooser();
@@ -377,7 +378,7 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 					imgPacijent.setIcon( new ImageIcon( selectedFile.getAbsolutePath() ) );
 					imgPacijent.repaint();
 					
-					SwingWorker<Void , Void> worker = new SwingWorker<Void , Void>() {
+					SwingWorker<Void , Void> worker = new SwingWorker<>() {
 						
 						@Override
 						protected Void doInBackground() throws Exception {
@@ -417,10 +418,10 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Checks if the provided OIB is valid. If the OIB is invalid, displays a helper
 	 * text under the OIB TextField indicating the invalid format.
-	 * 
+	 *
 	 * @param oib The OIB to check.
 	 */
 	public void checkOIB( String oib ) {
@@ -461,10 +462,10 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Checks if the provided JMBG is valid. If the JMBG is invalid, displays a
 	 * helper text under the JMBG TextField indicating the invalid format.
-	 * 
+	 *
 	 * @param jmbg The JMBG to check.
 	 */
 	public void checkJMBG( String jmbg ) {
@@ -505,11 +506,11 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Checks if the provided phone number is valid. If the phone number is invalid,
 	 * displays a helper text under the phone number TextField indicating the
 	 * invalid format.
-	 * 
+	 *
 	 * @param phone The phone number to check.
 	 */
 	public void checkPhone( String phone ) {
@@ -539,10 +540,10 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Checks if the provided email is valid. If the email is invalid, displays a
 	 * helper text under the email TextField indicating the invalid format.
-	 * 
+	 *
 	 * @param mail The email to check.
 	 */
 	public void checkMail( String mail ) {
@@ -572,12 +573,12 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method sets the data for the patient into the UI fields. It updates the
 	 * label for form title, patient name field, OIB field, JMBG field, address
 	 * field, city field, phone field, mail field, medical history field, allergies
 	 * field and profile photo field.
-	 * 
+	 *
 	 */
 	public void setData() {
 		
@@ -598,7 +599,7 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method clears all the UI fields that are related to the patient data.
 	 */
 	public void clearAll() {
@@ -617,7 +618,7 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Initiates the layout of the panel.
 	 */
 	private void initLayout() {
@@ -744,10 +745,10 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the JLabel object that represents the title of the patient details
 	 * form.
-	 * 
+	 *
 	 * @return the JLabel object that represents the title of the patient details
 	 *         form
 	 */
@@ -759,10 +760,10 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the TextField object that represents the text field for patient name
 	 * and surname.
-	 * 
+	 *
 	 * @return the TextField object that represents the text field for patient name
 	 *         and surname
 	 */
@@ -774,10 +775,10 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the TextField object that represents the text field for patient
 	 * address.
-	 * 
+	 *
 	 * @return the TextField object that represents the text field for patient
 	 *         address
 	 */
@@ -789,9 +790,9 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the TextField object that represents the text field for patient JMBG.
-	 * 
+	 *
 	 * @return the TextField object that represents the text field for patient JMBG
 	 */
 	public TextField getTxtJMBG() {
@@ -802,10 +803,10 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the TextField object that represents the text field for patient
 	 * email.
-	 * 
+	 *
 	 * @return the TextField object that represents the text field for patient email
 	 */
 	public TextField getTxtMail() {
@@ -816,10 +817,10 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the TextField object that represents the text field for patient phone
 	 * number.
-	 * 
+	 *
 	 * @return the TextField object that represents the text field for patient phone
 	 *         number
 	 */
@@ -831,9 +832,9 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the TextField object that represents the text field for patient OIB.
-	 * 
+	 *
 	 * @return the TextField object that represents the text field for patient OIB
 	 */
 	public TextField getTxtOIB() {
@@ -844,9 +845,9 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the TextField object that represents the text field for patient city.
-	 * 
+	 *
 	 * @return the TextField object that represents the text field for patient city
 	 */
 	public TextField getTxtGrad() {
@@ -857,10 +858,10 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the TextArea object that represents the text area for patient medical
 	 * history.
-	 * 
+	 *
 	 * @return the TextArea object that represents the text area for patient medical
 	 *         history
 	 */
@@ -872,10 +873,10 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the TextArea object that represents the text area for patient
 	 * allergies.
-	 * 
+	 *
 	 * @return the TextArea object that represents the text area for patient
 	 *         allergies
 	 */
@@ -887,10 +888,10 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the Patient object that represents the patient whose details are
 	 * displayed in the panel.
-	 * 
+	 *
 	 * @return the Patient object that represents the patient whose details are
 	 *         displayed in the panel
 	 */
@@ -902,10 +903,10 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the Patient object that represents the patient whose details are to be
 	 * displayed in the panel.
-	 * 
+	 *
 	 * @param patient the Patient object that represents the patient whose details
 	 *                are to be displayed in the panel
 	 */

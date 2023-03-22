@@ -2,6 +2,7 @@ package view.panel.titleBar;
 
 
 import java.awt.Color;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -39,11 +40,11 @@ public class SimpleButtonBar extends JPanel {
 			@Override
 			public void windowStateChanged( WindowEvent we ) {
 				
-				if ( we.getNewState() == JFrame.MAXIMIZED_BOTH ) {
+				if ( we.getNewState() == Frame.MAXIMIZED_BOTH ) {
 					
 					cmdResize.setIcon( iconMax.toIcon() );
 					
-				} else if ( we.getNewState() == JFrame.NORMAL ) {
+				} else if ( we.getNewState() == Frame.NORMAL ) {
 					
 					cmdResize.setIcon( iconRestore.toIcon() );
 					
@@ -67,7 +68,7 @@ public class SimpleButtonBar extends JPanel {
 			@Override
 			public void actionPerformed( ActionEvent ae ) {
 				
-				fram.setState( JFrame.ICONIFIED );
+				fram.setState( Frame.ICONIFIED );
 				
 			}
 			
@@ -77,13 +78,13 @@ public class SimpleButtonBar extends JPanel {
 			@Override
 			public void actionPerformed( ActionEvent ae ) {
 				
-				if ( fram.getExtendedState() == JFrame.MAXIMIZED_BOTH ) {
+				if ( fram.getExtendedState() == Frame.MAXIMIZED_BOTH ) {
 					
-					fram.setExtendedState( JFrame.NORMAL );
+					fram.setExtendedState( Frame.NORMAL );
 					
 				} else {
 					
-					fram.setExtendedState( JFrame.MAXIMIZED_BOTH );
+					fram.setExtendedState( Frame.MAXIMIZED_BOTH );
 					
 				}
 				

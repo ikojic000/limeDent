@@ -50,15 +50,15 @@ import view.View;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The UslugePanel class extends RoundedShadowPanel and represents a
  *         panel for managing services. It contains components for adding,
  *         updating, and deleting services, searching for services, and
  *         displaying services in a table. It also contains a notification
  *         component and a button for undoing the last action.
- * 		
+ *		
  */
 public class ProductsPanel extends RoundedShadowPanel {
 	
@@ -89,10 +89,10 @@ public class ProductsPanel extends RoundedShadowPanel {
 	private ButtonTable btnUndo;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new UslugePanel with the given CardPanel and View / JFrame
 	 * objects. Initializes all UI components and sets up the panel's layout.
-	 * 
+	 *
 	 * @param cardParent the CardPanel parent for this panel
 	 * @param view       the View parent for this panel
 	 */
@@ -187,7 +187,7 @@ public class ProductsPanel extends RoundedShadowPanel {
 		
 		tableScrollPane = new JScrollPane();
 		tableScrollPane.setForeground( Color.BLACK );
-		tableScrollPane.setBorder( new MatteBorder( 1 , 1 , 1 , 1 , (Color) getBackground() ) );
+		tableScrollPane.setBorder( new MatteBorder( 1 , 1 , 1 , 1 , getBackground() ) );
 		tableScrollPane.setBackground( new Color( 244 , 244 , 249 ) );
 		tableScrollPane.getViewport().setBackground( new Color( 244 , 244 , 249 ) );
 		
@@ -208,8 +208,8 @@ public class ProductsPanel extends RoundedShadowPanel {
 		table.setShowHorizontalLines( false );
 		table.setShowGrid( false );
 		
-		table.setModel(
-				new DefaultTableModel( new Object[][] {} , new String[] { "ID" , "\u0160ifra" , "Naziv" , "Cijena" , } ) );
+		table.setModel( new DefaultTableModel( new Object[][] {} ,
+				new String[] { "ID" , "\u0160ifra" , "Naziv" , "Cijena" , } ) );
 		
 		table.getTableHeader().setPreferredSize( new Dimension( 785 , 40 ) );
 		table.getTableHeader().setFont( new Font( "Century Gothic" , Font.BOLD , 15 ) );
@@ -230,7 +230,7 @@ public class ProductsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Activates the panel by setting up various listeners for its components. These
 	 * listeners are used to handle events like button clicks, textfield input,
 	 * table selection, etc. Once activated, this panel becomes fully functional and
@@ -318,6 +318,7 @@ public class ProductsPanel extends RoundedShadowPanel {
 		
 		btnDodaj.addActionListener( new ActionListener() {
 			
+			@Override
 			public void actionPerformed( ActionEvent e ) {
 				
 				System.out.println( "CIJENA: " + txtCijenaArtikla.getText() );
@@ -357,12 +358,13 @@ public class ProductsPanel extends RoundedShadowPanel {
 		
 		btnUpdate.addActionListener( new ActionListener() {
 			
+			@Override
 			public void actionPerformed( ActionEvent e ) {
 				
 				notification.setType( NotificationType.SUCCESS );
 				notification.setLblTitle( "A\u017eurirana usluga" );
-				notification
-						.setLbMessageText( "A\u017eurirali ste " + table.getValueAt( table.getSelectedRow() , 2 ) + " ..." );
+				notification.setLbMessageText(
+						"A\u017eurirali ste " + table.getValueAt( table.getSelectedRow() , 2 ) + " ..." );
 				
 				Message msg = new Message();
 				msg.setMessageTitle( "Jeste li sigurni da želite a\u017eurirati uslugu: "
@@ -453,6 +455,7 @@ public class ProductsPanel extends RoundedShadowPanel {
 		
 		btnUndo.addActionListener( new ActionListener() {
 			
+			@Override
 			public void actionPerformed( ActionEvent e ) {
 				
 				String msg = uslugeController.undoCommandAction();
@@ -518,7 +521,7 @@ public class ProductsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method is used to insert data into the table. It calls the method
 	 * setTableData() from the UslugeController class to set the data.
 	 */
@@ -530,12 +533,12 @@ public class ProductsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method is used to check if the entered price value is valid. It uses a
 	 * regular expression pattern to match the entered string with the given
 	 * pattern. If the pattern does not match, a helper text is set to the cijena
 	 * TextField, notifying the user to enter a valid price.
-	 * 
+	 *
 	 * @param cijena A String representing the price value entered by the user.
 	 */
 	private void checkCijena( String cijena ) {
@@ -566,7 +569,7 @@ public class ProductsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method is used to clear all the data entered in the form. It sets the
 	 * text of the cijena and naziv TextField and txtSearch TextField to empty,
 	 * clears the selection from the table, and requests focus for this panel.
@@ -583,7 +586,7 @@ public class ProductsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Initiates the layout of the panel.
 	 */
 	private void initLayout() {
@@ -684,9 +687,9 @@ public class ProductsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the table used to display the data.
-	 * 
+	 *
 	 * @return the table object
 	 */
 	public CustomTable getTable() {
@@ -697,9 +700,9 @@ public class ProductsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the text field used for entering the name of the item.
-	 * 
+	 *
 	 * @return the text field for the name of the item
 	 */
 	public TextField getTxtNazivArtikla() {
@@ -710,9 +713,9 @@ public class ProductsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the text field used for entering the price of the item.
-	 * 
+	 *
 	 * @return the text field for the price of the item
 	 */
 	public TextField getTxtCijenaArtikla() {
@@ -723,9 +726,9 @@ public class ProductsPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the text field used for searching items.
-	 * 
+	 *
 	 * @return the text field for searching items
 	 */
 	public TextField getTxtSearch() {

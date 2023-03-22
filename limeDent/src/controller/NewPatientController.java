@@ -10,7 +10,7 @@ import view.viewPanel.NewPatientPanel;
 
 
 /**
- * 
+ *
  * @author ikojic000
  *
  *         The NoviPacijentController class is responsible for managing and
@@ -26,10 +26,10 @@ public class NewPatientController {
 	private NewPatientPanel noviPacijentPanel;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new NoviPacijentController object, initializing the patientDAO
 	 * and noviPacijentPanel instance variables.
-	 * 
+	 *
 	 * @param noviPacijentPanel - the panel used to add a new patient
 	 */
 	public NewPatientController( NewPatientPanel noviPacijentPanel ) {
@@ -41,7 +41,7 @@ public class NewPatientController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Adds a new patient to the system by creating a new Patient object and adding
 	 * it to the database using the PatientDAO class. Notifies observers of the
 	 * PatientListObservable singleton object of the change. Also switches the

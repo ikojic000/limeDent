@@ -26,7 +26,7 @@ import javax.swing.SwingUtilities;
 public class MenuItem extends JPanel {
 	
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 5935144180086751839L;
 	

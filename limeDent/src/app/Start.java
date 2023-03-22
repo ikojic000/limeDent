@@ -8,20 +8,20 @@ import view.ViewLogin;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
- * 
+ *
+ *
  *         The Start class is the entry point of the application. It initializes
  *         and starts the database connection thread and opens the login view.
  */
 public class Start {
 	
 	/**
-	 * 
+	 *
 	 * The main method of the Start class is the entry point of the application. It
 	 * initializes the login view and starts the database connection thread.
-	 * 
+	 *
 	 * @param args command line arguments
 	 */
 	public static void main( String[] args ) {

@@ -7,13 +7,13 @@ import view.viewPanel.PatientDetailsPanel;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         DetaljiController is a class that represents a controller for
  *         DetaljiPanel. It handles patient data and updates the information in
  *         the database.
- * 
+ *
  */
 public class PatientDetailsController {
 	
@@ -21,7 +21,7 @@ public class PatientDetailsController {
 	private PatientDAO patientDAO;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new DetaljiController object and initializes the DAO object.
 	 */
 	public PatientDetailsController() {
@@ -32,7 +32,7 @@ public class PatientDetailsController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the patient data.
 	 */
 	public void setPatientData() {
@@ -42,9 +42,9 @@ public class PatientDetailsController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Deletes the specified patient from the database.
-	 * 
+	 *
 	 * @param patient the patient to be deleted
 	 */
 	public void deletePatient( Patient patient ) {
@@ -55,9 +55,9 @@ public class PatientDetailsController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Updates the specified patient's information in the database.
-	 * 
+	 *
 	 * @param patient the patient to be updated
 	 */
 	public void updatePatient( Patient patient ) {
@@ -79,9 +79,9 @@ public class PatientDetailsController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Updates the specified patient's photo in the database.
-	 * 
+	 *
 	 * @param patient the patient whose photo is to be updated
 	 */
 	public void updatePatientPhoto( Patient patient ) {
@@ -92,9 +92,9 @@ public class PatientDetailsController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the DetaljiPanel object associated with this controller.
-	 * 
+	 *
 	 * @return the DetaljiPanel object
 	 */
 	public PatientDetailsPanel getDetaljiPanel() {
@@ -105,9 +105,9 @@ public class PatientDetailsController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the DetaljiPanel object associated with this controller.
-	 * 
+	 *
 	 * @param detaljiPanel the DetaljiPanel object to set
 	 */
 	public void setDetaljiPanel( PatientDetailsPanel detaljiPanel ) {

@@ -26,30 +26,30 @@ import view.viewPanel.NewOfferPanel;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The NovaPonudaController class represents a controller that manages
  *         the creation of new offers. It handles the functionality of
  *         populating combo boxes and tables, adding and removing products from
  *         the table, calculating the total price, generating PDF files, and
  *         more.
- * 
+ *
  */
 public class NewOfferController implements OfferTblPreviewObserver , ProductListObserver {
 	
 	private NewOfferPanel novaPonudaPanel;
 	private OfferDAO offerDAO;
 	private ProductDAO productDAO;
-	private ArrayList<OfferTblPreviewData> tblPreviewData = new ArrayList<OfferTblPreviewData>();
+	private ArrayList<OfferTblPreviewData> tblPreviewData = new ArrayList<>();
 	private OfferTblPreviewModel tblPreviewModel;
 	private ArrayList<Patient> patientList;
 	private PatientDAO patientDAO;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new NovaPonudaController object and initializes its fields.
-	 * 
+	 *
 	 * @param novaPonudaPanel the NovaPonudaPanel object that represents the GUI
 	 *                        panel for creating new offers
 	 */
@@ -66,7 +66,7 @@ public class NewOfferController implements OfferTblPreviewObserver , ProductList
 	
 	
 	/**
-	 * 
+	 *
 	 * Populates the combo box in the NovaPonudaPanel object with data from the
 	 * ProductDAO object.
 	 */
@@ -84,7 +84,7 @@ public class NewOfferController implements OfferTblPreviewObserver , ProductList
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the OfferTblPreviewModel as Table Model to the table on the panel panel.
 	 * OfferTblPreviewModel accepts list of OfferTblPreviewData objects. Adds
 	 * NovaPonudaController as a OfferTblPreviewObserver observer.
@@ -99,10 +99,10 @@ public class NewOfferController implements OfferTblPreviewObserver , ProductList
 	
 	
 	/**
-	 * 
+	 *
 	 * Adds a new product to the tblPreviewData field and updates the table and
 	 * total price accordingly.
-	 * 
+	 *
 	 * @param objProd  the product to be added
 	 * @param pieces   the number of pieces of the product to be added
 	 * @param discount the discount to be applied to the product
@@ -121,7 +121,7 @@ public class NewOfferController implements OfferTblPreviewObserver , ProductList
 	
 	
 	/**
-	 * 
+	 *
 	 * Removes the selected product from the tblPreviewData field and updates the
 	 * table and total price accordingly.
 	 */
@@ -135,7 +135,7 @@ public class NewOfferController implements OfferTblPreviewObserver , ProductList
 	
 	
 	/**
-	 * 
+	 *
 	 * Removes all products from the tblPreviewData field and updates the table and
 	 * total price accordingly.
 	 */
@@ -149,7 +149,7 @@ public class NewOfferController implements OfferTblPreviewObserver , ProductList
 	
 	
 	/**
-	 * 
+	 *
 	 * Calculates the total price of all items in the offer and displays it in the
 	 * appropriate UI component. Also calculates the total price with discounts
 	 * included.
@@ -172,12 +172,12 @@ public class NewOfferController implements OfferTblPreviewObserver , ProductList
 	
 	
 	/**
-	 * 
+	 *
 	 * Autocompletes the patient name field based on existing patient names.
 	 */
 	public void autocopletePatient() {
 		
-		ArrayList<String> patientNames = new ArrayList<String>();
+		ArrayList<String> patientNames = new ArrayList<>();
 		
 		for ( Patient patient : patientList ) {
 			
@@ -191,7 +191,7 @@ public class NewOfferController implements OfferTblPreviewObserver , ProductList
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the price text of the currently selected product in the appropriate UI
 	 * component.
 	 */
@@ -212,7 +212,7 @@ public class NewOfferController implements OfferTblPreviewObserver , ProductList
 	
 	
 	/**
-	 * 
+	 *
 	 * Generates a PDF file for the specified offer, saves it to disk, and updates
 	 * the offer's URL. Also updates the offer in the database and notifies
 	 * observers of the offer list.
@@ -232,7 +232,7 @@ public class NewOfferController implements OfferTblPreviewObserver , ProductList
 	
 	
 	/**
-	 * 
+	 *
 	 * Creates a folder for storing generated PDF files, if it does not already
 	 * exist.
 	 *

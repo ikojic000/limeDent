@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Frame;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
@@ -58,7 +59,7 @@ public class SimpleTitleBar extends JPanel {
 			@Override
 			public void mousePressed( MouseEvent me ) {
 				
-				if ( fram.getExtendedState() != JFrame.MAXIMIZED_BOTH && SwingUtilities.isLeftMouseButton( me ) ) {
+				if ( fram.getExtendedState() != Frame.MAXIMIZED_BOTH && SwingUtilities.isLeftMouseButton( me ) ) {
 					
 					x = me.getX();
 					y = me.getY();
@@ -75,13 +76,13 @@ public class SimpleTitleBar extends JPanel {
 				
 				if ( SwingUtilities.isLeftMouseButton( me ) && me.getClickCount() == 2 ) {
 					
-					if ( fram.getExtendedState() == JFrame.MAXIMIZED_BOTH ) {
+					if ( fram.getExtendedState() == Frame.MAXIMIZED_BOTH ) {
 						
-						fram.setExtendedState( JFrame.NORMAL );
+						fram.setExtendedState( Frame.NORMAL );
 						
 					} else {
 						
-						fram.setExtendedState( JFrame.MAXIMIZED_BOTH );
+						fram.setExtendedState( Frame.MAXIMIZED_BOTH );
 						
 					}
 					
@@ -97,9 +98,9 @@ public class SimpleTitleBar extends JPanel {
 				
 				if ( SwingUtilities.isLeftMouseButton( me ) ) {
 					
-					if ( fram.getExtendedState() == JFrame.MAXIMIZED_BOTH ) {
+					if ( fram.getExtendedState() == Frame.MAXIMIZED_BOTH ) {
 						
-						fram.setExtendedState( JFrame.NORMAL );
+						fram.setExtendedState( Frame.NORMAL );
 						
 					}
 					

@@ -16,7 +16,7 @@ import view.viewPanel.OffersPanel;
 
 
 /**
- * 
+ *
  * @author ikojic000
  *
  *         The PonudeController class manages the functionality of the
@@ -26,16 +26,16 @@ import view.viewPanel.OffersPanel;
  */
 public class OffersController implements OfferListObserver {
 	
-	private ArrayList<Offer> offerList = new ArrayList<Offer>();
+	private ArrayList<Offer> offerList = new ArrayList<>();
 	private OffersPanel ponudePanel;
 	private OfferDAO offerDAO;
 	private OfferTableModel tableModel;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new instance of the PonudeController class with the specified
 	 * PonudePanel.
-	 * 
+	 *
 	 * @param ponudePanel the panel to be managed by this controller
 	 */
 	public OffersController( OffersPanel ponudePanel ) {
@@ -49,10 +49,10 @@ public class OffersController implements OfferListObserver {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the Offer object at the specified row index of the current
 	 * tableModel.
-	 * 
+	 *
 	 * @param row the row index of the selected offer
 	 * @return the Offer object at the specified row index
 	 */
@@ -64,9 +64,9 @@ public class OffersController implements OfferListObserver {
 	
 	
 	/**
-	 * 
+	 *
 	 * Retrieves all the offers from the database and updates the offerList.
-	 * 
+	 *
 	 * @return the updated offerList
 	 */
 	private ArrayList<Offer> getAllOffersList() {
@@ -78,7 +78,7 @@ public class OffersController implements OfferListObserver {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the table data to display the offerList using the OfferTableModel.
 	 */
 	public void setTableData() {
@@ -90,10 +90,10 @@ public class OffersController implements OfferListObserver {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the table data to display only the offers matching the search query, or
 	 * all offers
-	 * 
+	 *
 	 * if the search field is empty.
 	 */
 	public void setSearchData() {
@@ -118,10 +118,10 @@ public class OffersController implements OfferListObserver {
 	
 	
 	/**
-	 * 
+	 *
 	 * Deletes the selected offer from the database and the file system, and updates
 	 * the tableModel and offerList accordingly.
-	 * 
+	 *
 	 * @param row the row index of the selected offer to be deleted
 	 */
 	public void deleteOffer( int row ) {
@@ -142,10 +142,10 @@ public class OffersController implements OfferListObserver {
 	
 	
 	/**
-	 * 
+	 *
 	 * Opens the PDF file of the selected offer using the default application
 	 * registered to handle PDF files.
-	 * 
+	 *
 	 * @param row the row index of the selected offer to be viewed
 	 */
 	public void viewPDF( int row ) {
@@ -166,9 +166,9 @@ public class OffersController implements OfferListObserver {
 	
 	
 	/**
-	 * 
+	 *
 	 * Deletes the given file from the file system, if it exists.
-	 * 
+	 *
 	 * @param file The file to be deleted.
 	 */
 	public void deleteFile( File file ) {
@@ -188,7 +188,7 @@ public class OffersController implements OfferListObserver {
 	
 	
 	/**
-	 * 
+	 *
 	 * Updates the offer list by retrieving all offers from the DAO and notifying
 	 * the table model to update its data.
 	 */

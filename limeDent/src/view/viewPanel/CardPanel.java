@@ -12,9 +12,9 @@ import view.View;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         This class represents a custom JPanel that extends the RoundedPanel
  *         class. It contains several other JPanels, each corresponding to a
  *         specific "card" or view in the CardLayout of the panel. The class
@@ -22,7 +22,7 @@ import view.View;
  *         from a specific card, and getting the CardLayout object of the panel.
  *         Additionally, it allows setting a LoginController object for the user
  *         settings, new examination, and new offer panels.
- * 		
+ *		
  */
 public class CardPanel extends RoundedPanel {
 	
@@ -41,11 +41,11 @@ public class CardPanel extends RoundedPanel {
 	private LoginController loginController;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new CardPanel object with the specified View / JFrame object.
 	 * Initializes the CardLayout object and sets the background, foreground,
 	 * opacity, and border of the panel.
-	 * 
+	 *
 	 * @param view the View object to use
 	 */
 	public CardPanel( View view ) {
@@ -67,7 +67,7 @@ public class CardPanel extends RoundedPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Initializes the HomePanel, UslugePanel, PonudePanel, NovaPonudaPanel,
 	 * UserSettingsPanel, NoviPregledPanel, DetaljiPanel, and NoviPacijentPanel
 	 * objects and sets them to their corresponding variables.
@@ -91,7 +91,7 @@ public class CardPanel extends RoundedPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Adds the HomePanel, UslugePanel, PonudePanel, NovaPonudaPanel,
 	 * UserSettingsPanel, NoviPregledPanel, DetaljiPanel, and NoviPacijentPanel
 	 * objects to the CardLayout object with their corresponding names.
@@ -111,9 +111,9 @@ public class CardPanel extends RoundedPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Show the specified card by using CardLayout.
-	 * 
+	 *
 	 * @param card the card to be shown
 	 */
 	public void showCard( String card ) {
@@ -125,10 +125,10 @@ public class CardPanel extends RoundedPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Clear all input fields and reset the state of the specified panel to its
 	 * initial state.
-	 * 
+	 *
 	 * @param card the card whose panel is to be cleared
 	 */
 	public void clearCard( String card ) {
@@ -161,7 +161,7 @@ public class CardPanel extends RoundedPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Clear all input fields and reset the state of the homePanel to its initial
 	 * state.
 	 */
@@ -173,7 +173,7 @@ public class CardPanel extends RoundedPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Clear all input fields and reset the state of the uslugePanel to its initial
 	 * state.
 	 */
@@ -185,7 +185,7 @@ public class CardPanel extends RoundedPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Clear all input fields and reset the state of the ponudePanel to its initial
 	 * state.
 	 */
@@ -197,7 +197,7 @@ public class CardPanel extends RoundedPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Clear all input fields and reset the state of the novaPonudaPanel to its
 	 * initial state.
 	 */
@@ -209,9 +209,9 @@ public class CardPanel extends RoundedPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Get the CardLayout object used by this panel.
-	 * 
+	 *
 	 * @return the CardLayout object used by this panel
 	 */
 	public CardLayout getCardLayout() {
@@ -222,10 +222,10 @@ public class CardPanel extends RoundedPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Set the LoginController object to be used by this panel and its child
 	 * components.
-	 * 
+	 *
 	 * @param loginController the LoginController object to be set
 	 */
 	public void setLoginController( LoginController loginController ) {
@@ -239,9 +239,9 @@ public class CardPanel extends RoundedPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Get the UserSettingsPanel object used by this panel.
-	 * 
+	 *
 	 * @return the UserSettingsPanel object used by this panel
 	 */
 	public UserSettingsPanel getUserSettingsPanel() {

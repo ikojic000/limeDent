@@ -6,15 +6,15 @@ import model.Product;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         DeleteProductCommand is a class that implements the ProductCommand
  *         interface and represents a command for deleting a Product object from
  *         the database. It contains methods for executing, undoing and redoing
  *         the deletion, as well as a method for getting the product information
  *         and the product itself.
- * 		
+ *		
  */
 public class DeleteProductCommand implements ProductCommand {
 	
@@ -22,10 +22,10 @@ public class DeleteProductCommand implements ProductCommand {
 	private ProductDAO productDAO;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new DeleteProductCommand object with the given Product and
 	 * initializes the ProductDAO.
-	 * 
+	 *
 	 * @param product the Product object to be deleted
 	 */
 	public DeleteProductCommand( Product product ) {
@@ -37,9 +37,9 @@ public class DeleteProductCommand implements ProductCommand {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns a String containing the name of the Product object to be deleted.
-	 * 
+	 *
 	 * @return the name of the Product object
 	 */
 	@Override
@@ -51,7 +51,7 @@ public class DeleteProductCommand implements ProductCommand {
 	
 	
 	/**
-	 * 
+	 *
 	 * Deletes the Product object from the database and prints its information to
 	 * the console.
 	 */
@@ -66,7 +66,7 @@ public class DeleteProductCommand implements ProductCommand {
 	
 	
 	/**
-	 * 
+	 *
 	 * Adds the previously deleted Product object back to the database and prints
 	 * its information to the console.
 	 */
@@ -81,9 +81,9 @@ public class DeleteProductCommand implements ProductCommand {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the Product object associated with this DeleteProductCommand.
-	 * 
+	 *
 	 * @return the Product object to be deleted
 	 */
 	@Override

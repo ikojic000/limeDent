@@ -20,16 +20,16 @@ import model.User;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The UserDAO class is responsible for accessing user data in the
  *         database. It contains methods for retrieving hashed passwords from
  *         the database, retrieving user data from the database and updating
  *         user information such as their password, personal information, and
  *         profile photo. The class maintains a connection to the database and
  *         uses prepared statements to execute SQL queries.
- * 		
+ *		
  */
 public class UserDAO {
 	
@@ -42,9 +42,9 @@ public class UserDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Retrieves the hashed password for the given username from the database.
-	 * 
+	 *
 	 * @param username - the username to search for
 	 * @return the hashed password for the given username, or null if no matching
 	 *         user is found
@@ -83,9 +83,9 @@ public class UserDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Retrieves the user data for the given user from the database.
-	 * 
+	 *
 	 * @param user a User object containing the username and password to search for
 	 * @return a User object containing all the user's data if the username and
 	 *         password match a user in the database, or null if no matching user is
@@ -148,9 +148,9 @@ public class UserDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Updates the password for the given user in the database.
-	 * 
+	 *
 	 * @param newPassword - the new password to set for the user
 	 * @param user        - a User object containing the username of the user to
 	 *                    update
@@ -178,9 +178,9 @@ public class UserDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Updates the user data for the given user in the database.
-	 * 
+	 *
 	 * @param loggedInUser - a User object containing the updated user data
 	 */
 	public void updateUser( User loggedInUser ) {
@@ -210,9 +210,9 @@ public class UserDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Updates the profile photo for the given user in the database.
-	 * 
+	 *
 	 * @param loggedInUser - a User object containing the user to update
 	 * @param photo        - a File object containing the new profile photo
 	 */

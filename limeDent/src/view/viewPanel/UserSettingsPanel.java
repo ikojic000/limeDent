@@ -30,14 +30,14 @@ import view.View;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         UserSettingsPanel is a custom JPanel used to display and edit user
  *         information such as name, contact information and login credentials.
  *         It implements the UserObserver interface to receive notifications
  *         when the user's data is updated.
- * 		
+ *		
  */
 public class UserSettingsPanel extends RoundedShadowPanel implements UserObserver {
 	
@@ -65,10 +65,10 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	private Notification notification;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a UserSettingsPanel and initializes its components with the
 	 * specified CardPanel and View / JFrame.
-	 * 
+	 *
 	 * @param cardParent The CardPanel that the UserSettingsPanel belongs to.
 	 * @param view       The View instance that contains the UserSettingsPanel.
 	 */
@@ -175,7 +175,7 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	
 	
 	/**
-	 * 
+	 *
 	 * Activates the panel by setting up various listeners for its components. These
 	 * listeners are used to handle events like button clicks, textfield input,
 	 * table selection, etc. Once activated, this panel becomes fully functional and
@@ -185,6 +185,7 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 		
 		btnChooseImg.addActionListener( new ActionListener() {
 			
+			@Override
 			public void actionPerformed( ActionEvent e ) {
 				
 				notification.setLbMessageText( "Fotografija promijenjena" );
@@ -214,6 +215,7 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 		
 		btnSaveOP.addActionListener( new ActionListener() {
 			
+			@Override
 			public void actionPerformed( ActionEvent e ) {
 				
 				loginController.getLoggedInUser().setName( separateName( txtImePrezime.getText() )[0] );
@@ -235,6 +237,7 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 		
 		btnSaveSP.addActionListener( new ActionListener() {
 			
+			@Override
 			public void actionPerformed( ActionEvent e ) {
 				
 				if ( checkPassword() ) {
@@ -296,9 +299,9 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	
 	
 	/**
-	 * 
+	 *
 	 * Checks whether the entered password matches the current user's password.
-	 * 
+	 *
 	 * @return true if the entered password matches the current user's password,
 	 *         false otherwise
 	 */
@@ -320,7 +323,7 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	
 	
 	/**
-	 * 
+	 *
 	 * Clears all input fields and selections.
 	 */
 	private void clearAll() {
@@ -336,10 +339,10 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the text and image data of the user settings panel with the data from
 	 * the logged in user.
-	 * 
+	 *
 	 * @param loggedInUser the user data to display in the panel
 	 */
 	public void setUserData( User loggedInUser ) {
@@ -354,10 +357,10 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	
 	
 	/**
-	 * 
+	 *
 	 * Separates the full name into first name and last name, and returns them as an
 	 * array of Strings.
-	 * 
+	 *
 	 * @param fullName the full name to separate
 	 * @return an array of Strings containing the first name and last name,
 	 *         respectively
@@ -373,7 +376,7 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	
 	
 	/**
-	 * 
+	 *
 	 * Initiates the layout of the panel.
 	 */
 	public void initLayout() {
@@ -417,9 +420,9 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the LoginController object used by this user settings panel.
-	 * 
+	 *
 	 * @return the LoginController object used by this user settings panel
 	 */
 	public LoginController getLoginController() {
@@ -430,10 +433,10 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the LoginController object used by this user settings panel, and adds
 	 * this panel as an observer of the logged in user data.
-	 * 
+	 *
 	 * @param loginController the LoginController object to set for this user
 	 *                        settings panel
 	 */
@@ -447,10 +450,10 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	
 	
 	/**
-	 * 
+	 *
 	 * Updates the user profile photo data in the user settings panel with the data
 	 * from the logged in user.
-	 * 
+	 *
 	 * @param loggedInUser the user data containing the updated profile photo
 	 */
 	@Override
@@ -463,10 +466,10 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 	
 	
 	/**
-	 * 
+	 *
 	 * Updates the user information data in the user settings panel with the data
 	 * from the logged in user.
-	 * 
+	 *
 	 * @param loggedInUser the user data containing the updated user information
 	 */
 	@Override

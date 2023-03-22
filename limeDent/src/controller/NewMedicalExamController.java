@@ -11,10 +11,10 @@ import view.viewPanel.NewMedicalExamPanel;
 
 
 /**
- * 
+ *
  * @author ikojic000
  *
- * 
+ *
  *         The NoviPregledController class represents a controller for
  *         NoviPregledPanel, responsible for handling user interactions with the
  *         panel and for retrieving and modifying medical exams related to a
@@ -22,17 +22,17 @@ import view.viewPanel.NewMedicalExamPanel;
  */
 public class NewMedicalExamController {
 	
-	private ArrayList<MedicalExam> medicalExamList = new ArrayList<MedicalExam>();
+	private ArrayList<MedicalExam> medicalExamList = new ArrayList<>();
 	private NewMedicalExamPanel noviPregledPanel;
 	private MedicalExamDAO medicalExamDAO;
 	private Patient patient;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a NoviPregledController object with the specified
 	 * NoviPregledPanel. Initializes the medical exam DAO for retrieving and
 	 * modifying medical exams.
-	 * 
+	 *
 	 * @param noviPregledPanel The NoviPregledPanel associated with this controller.
 	 */
 	public NewMedicalExamController( NewMedicalExamPanel noviPregledPanel ) {
@@ -44,9 +44,9 @@ public class NewMedicalExamController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the MedicalExam object selected by the user in the table.
-	 * 
+	 *
 	 * @param row The row index of the selected MedicalExam object.
 	 * @return The selected MedicalExam object.
 	 */
@@ -58,11 +58,11 @@ public class NewMedicalExamController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Retrieves all medical exams related to the current patient from the medical
 	 * exam DAO. Updates the list of medical exams stored in the controller with the
 	 * retrieved exams.
-	 * 
+	 *
 	 * @return An ArrayList containing all medical exams related to the current
 	 *         patient.
 	 */
@@ -75,7 +75,7 @@ public class NewMedicalExamController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Updates the table displayed in the NoviPregledPanel with the list of medical
 	 * exams.
 	 */
@@ -89,11 +89,11 @@ public class NewMedicalExamController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Deletes a selected medical exam from the list of medical exams stored in the
 	 * controller and from the database through the medical exam DAO. Updates the
 	 * patient's last exam date. Clears all fields in the NoviPregledPanel.
-	 * 
+	 *
 	 * @param row The row index of the selected MedicalExam object to be deleted.
 	 */
 	public void deleteExam( int row ) {
@@ -109,12 +109,12 @@ public class NewMedicalExamController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Adds a new medical exam to the list of medical exams stored in the controller
 	 * and to the database through the medical exam DAO. Updates the table displayed
 	 * in the NoviPregledPanel with the updated list of medical exams. Updates the
 	 * patient's last exam date.
-	 * 
+	 *
 	 * @param exam The MedicalExam object to be added to the list of medical exams.
 	 */
 	public void addExam( MedicalExam exam ) {
@@ -128,9 +128,9 @@ public class NewMedicalExamController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the Patient object associated with this NoviPregledController.
-	 * 
+	 *
 	 * @param patient the Patient object to be associated with this
 	 *                NoviPregledController
 	 */

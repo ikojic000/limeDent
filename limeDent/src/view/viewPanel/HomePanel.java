@@ -40,9 +40,9 @@ import view.View;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         A class that represents the home panel for the application that
  *         extends RoundedShadowPanel
  */
@@ -70,10 +70,10 @@ public class HomePanel extends RoundedShadowPanel {
 	private HomeController homeController;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new HomePanel object with the specified CardPanel and View
 	 * objects
-	 * 
+	 *
 	 * @param cardParent - the parent panel for the card layout
 	 * @param view       - the view object / frame for the application
 	 */
@@ -137,7 +137,7 @@ public class HomePanel extends RoundedShadowPanel {
 		tableScrollPane = new JScrollPane();
 		tableScrollPane.setForeground( new Color( 0 , 0 , 0 ) );
 		tableScrollPane.setBackground( getBackground() );
-		tableScrollPane.setBorder( new MatteBorder( 1 , 1 , 1 , 1 , (Color) getBackground() ) );
+		tableScrollPane.setBorder( new MatteBorder( 1 , 1 , 1 , 1 , getBackground() ) );
 		tableScrollPane.getViewport().setBackground( getBackground() );
 		
 		tableScrollBar = new ScrollBarCustom( 80 );
@@ -204,7 +204,7 @@ public class HomePanel extends RoundedShadowPanel {
 			
 		} );
 		
-//		TEXTFIELD LISTENER - SEARCH		
+//		TEXTFIELD LISTENER - SEARCH
 		txtSearch.addKeyListener( new KeyAdapter() {
 			
 			@Override
@@ -219,6 +219,7 @@ public class HomePanel extends RoundedShadowPanel {
 //		BTN LISTENERI
 		btnPregled.addActionListener( new ActionListener() {
 			
+			@Override
 			public void actionPerformed( ActionEvent e ) {
 				
 				Patient patient = homeController.getSelectedPatient( table.getSelectedRow() );
@@ -420,7 +421,7 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Inserts the table data.
 	 */
 	private void insertTableData() {
@@ -431,7 +432,7 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Clears all input fields and selections.
 	 */
 	public void clearAll() {
@@ -445,7 +446,7 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Initiates the layout of the panel.
 	 */
 	private void initLayout() {
@@ -516,7 +517,7 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the NoviPregledPanel object for this class instance.
 	 *
 	 * @param noviPregledPanel the NoviPregledPanel to set
@@ -529,7 +530,7 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the DetaljiPanel object for this class instance.
 	 *
 	 * @param detaljiPanel the DetaljiPanel to set
@@ -542,7 +543,7 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the TextField object for the search field.
 	 *
 	 * @return the txtSearch TextField object
@@ -555,7 +556,7 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the ButtonShadow object for the "Dodaj" button.
 	 *
 	 * @return the btnDodaj ButtonShadow object
@@ -568,7 +569,7 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the ButtonShadow object for the "Izbrisi" button.
 	 *
 	 * @return the btnIzbrisi ButtonShadow object
@@ -581,7 +582,7 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the ButtonShadow object for the "Pregled" button.
 	 *
 	 * @return the btnPregled ButtonShadow object
@@ -594,7 +595,7 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the ButtonShadow object for the "Detalji" button.
 	 *
 	 * @return the btnDetalji ButtonShadow object
@@ -607,7 +608,7 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the CustomTable object for this class instance.
 	 *
 	 * @return the table CustomTable object
@@ -620,7 +621,7 @@ public class HomePanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the CardPanel object for this class instance.
 	 *
 	 * @return the cardParent CardPanel object

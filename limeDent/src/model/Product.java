@@ -5,9 +5,9 @@ import java.math.BigDecimal;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         Represents a product offered by a dental office, which can be an
  *         item, article, service, or product. The product can be initialized
  *         using various constructors which allow different combinations of
@@ -15,7 +15,7 @@ import java.math.BigDecimal;
  *         contains getter and setter methods for each of the fields, which can
  *         be used to retrieve or modify the values of the corresponding
  *         attributes.
- * 
+ *
  *
  */
 public class Product {
@@ -26,9 +26,9 @@ public class Product {
 	private BigDecimal price;
 	
 	/**
-	 * 
+	 *
 	 * Creates a new product with the specified ID.
-	 * 
+	 *
 	 * @param id The ID of the product.
 	 */
 	public Product( Integer id ) {
@@ -39,9 +39,9 @@ public class Product {
 	
 	
 	/**
-	 * 
+	 *
 	 * Creates a new product with the specified ID and code.
-	 * 
+	 *
 	 * @param id   The ID of the product.
 	 * @param code The code of the product.
 	 */
@@ -54,9 +54,9 @@ public class Product {
 	
 	
 	/**
-	 * 
+	 *
 	 * Creates a new product with the specified name and price.
-	 * 
+	 *
 	 * @param name  The name of the product.
 	 * @param price The price of the product.
 	 */
@@ -69,9 +69,9 @@ public class Product {
 	
 	
 	/**
-	 * 
+	 *
 	 * Creates a new product with the specified ID, name, and price.
-	 * 
+	 *
 	 * @param id    The ID of the product.
 	 * @param name  The name of the product.
 	 * @param price The price of the product.
@@ -86,9 +86,9 @@ public class Product {
 	
 	
 	/**
-	 * 
+	 *
 	 * Creates a new product with the specified ID, code, name, and price.
-	 * 
+	 *
 	 * @param id    The ID of the product.
 	 * @param code  The code of the product.
 	 * @param name  The name of the product.
@@ -105,9 +105,9 @@ public class Product {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the ID of the product.
-	 * 
+	 *
 	 * @return The ID of the product.
 	 */
 	public Integer getId() {
@@ -118,9 +118,9 @@ public class Product {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the ID of the product.
-	 * 
+	 *
 	 * @param id The ID to set.
 	 */
 	public void setId( Integer id ) {
@@ -131,9 +131,9 @@ public class Product {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the code of the product.
-	 * 
+	 *
 	 * @return The code of the product.
 	 */
 	public Integer getCode() {
@@ -144,9 +144,9 @@ public class Product {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the code of the product.
-	 * 
+	 *
 	 * @param code The code to set.
 	 */
 	public void setCode( Integer code ) {
@@ -157,9 +157,9 @@ public class Product {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the name of the product.
-	 * 
+	 *
 	 * @return The name of the product.
 	 */
 	public String getName() {
@@ -170,9 +170,9 @@ public class Product {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the name of the product.
-	 * 
+	 *
 	 * @param name The name to set.
 	 */
 	public void setName( String name ) {
@@ -183,9 +183,9 @@ public class Product {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the price of the product.
-	 * 
+	 *
 	 * @return The price of the product.
 	 */
 	public BigDecimal getPrice() {
@@ -196,9 +196,9 @@ public class Product {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the price of the product.
-	 * 
+	 *
 	 * @param price the price to set
 	 */
 	public void setPrice( BigDecimal price ) {
@@ -209,9 +209,9 @@ public class Product {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns a String representation of this Product object.
-	 * 
+	 *
 	 * @return The String representation of this Product object.
 	 */
 	@Override

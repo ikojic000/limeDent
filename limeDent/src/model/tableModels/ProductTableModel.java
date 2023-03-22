@@ -9,14 +9,14 @@ import model.Product;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         This class extends AbstractTableModel to provide a model for
  *         displaying data in a table for Product objects. It implements the
  *         necessary methods to define the structure of the table, as well as
  *         how the data is accessed and edited.
- * 		
+ *		
  */
 public class ProductTableModel extends AbstractTableModel {
 	
@@ -26,9 +26,9 @@ public class ProductTableModel extends AbstractTableModel {
 	boolean[] canEdit = new boolean[] { false , false , false , false };
 	
 	/**
-	 * 
+	 *
 	 * Constructs a ProductTableModel with a given ArrayList of Product objects.
-	 * 
+	 *
 	 * @param productList an ArrayList of Product objects to display in the table
 	 */
 	public ProductTableModel( ArrayList<Product> productList ) {
@@ -39,10 +39,10 @@ public class ProductTableModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the number of rows in the table, which is the size of the
 	 * productList.
-	 * 
+	 *
 	 * @return the number of rows in the table
 	 */
 	@Override
@@ -54,10 +54,10 @@ public class ProductTableModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the number of columns in the table, which is the length of the
 	 * columnNames array.
-	 * 
+	 *
 	 * @return the number of columns in the table
 	 */
 	@Override
@@ -69,9 +69,9 @@ public class ProductTableModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the name of the specified column.
-	 * 
+	 *
 	 * @param column the index of the column to retrieve the name for
 	 * @return the name of the specified column
 	 */
@@ -84,9 +84,9 @@ public class ProductTableModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns whether a cell is editable or not.
-	 * 
+	 *
 	 * @param rowIndex    the row index of the cell to check
 	 * @param columnIndex the column index of the cell to check
 	 * @return true if the cell is editable, false otherwise
@@ -100,9 +100,9 @@ public class ProductTableModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the value at the specified cell.
-	 * 
+	 *
 	 * @param rowIndex    the row index of the cell to retrieve the value from
 	 * @param columnIndex the column index of the cell to retrieve the value from
 	 * @return the value at the specified cell
@@ -135,9 +135,9 @@ public class ProductTableModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the list of Product objects stored in the table model.
-	 * 
+	 *
 	 * @return the list of Product objects stored in the table model
 	 */
 	public ArrayList<Product> getProductList() {
@@ -148,10 +148,10 @@ public class ProductTableModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the list of Product objects stored in the table model and fires a table
 	 * data change event.
-	 * 
+	 *
 	 * @param productList - the list of Product objects to be set
 	 */
 	public void setProductList( ArrayList<Product> productList ) {

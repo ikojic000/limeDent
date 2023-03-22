@@ -3,6 +3,7 @@ package controller;
 
 import java.awt.Desktop;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -12,6 +13,7 @@ import java.util.Objects;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Font.FontFamily;
 import com.itextpdf.text.FontFactory;
@@ -28,9 +30,9 @@ import model.tableModels.OfferTblPreviewModel;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The PDFGenerator class generates and opens a PDF file. It takes in
  *         the folder path, the offer object, and the offer table preview model
  *         object as parameters to create the PDF file. This class generates a
@@ -58,11 +60,11 @@ public class PDFGenerator {
 	private OfferTblPreviewModel tblModel;
 	
 	/**
-	 * 
+	 *
 	 * The constructor for the PDFGenerator class initializes the instance variables
 	 * and calls the generatePDF() method to create the PDF file and the openPDF()
 	 * method to open the file.
-	 * 
+	 *
 	 * @param folderPath The path to the folder where the PDF file will be saved.
 	 * @param offer      An instance of the Offer class containing the offer
 	 *                   details.
@@ -84,11 +86,11 @@ public class PDFGenerator {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method generates a PDF file with the offer details and saves it in the
 	 * specified folder path. It takes in the file name, offer object, and offer
 	 * table preview model object as parameters.
-	 * 
+	 *
 	 * @param fileName The name of the PDF file.
 	 * @param offer    An instance of the Offer class containing the offer details.
 	 * @param tblModel An instance of the OfferTblPreviewModel class containing the
@@ -124,7 +126,7 @@ public class PDFGenerator {
 			
 			Image image = Image.getInstance( Objects.requireNonNull( resource ) );
 			
-//			HEADER 
+//			HEADER
 			
 			float columnWidthTest[] = { 22f , 50f , 28f };
 			PdfPTable tableTest = new PdfPTable( columnWidthTest );
@@ -133,8 +135,8 @@ public class PDFGenerator {
 			PdfPCell cell13 = new PdfPCell( image , false );
 			cell13.setRowspan( 3 );
 			cell13.setPadding( 0 );
-			cell13.setHorizontalAlignment( PdfPCell.ALIGN_CENTER );
-			cell13.setVerticalAlignment( PdfPCell.ALIGN_CENTER );
+			cell13.setHorizontalAlignment( Element.ALIGN_CENTER );
+			cell13.setVerticalAlignment( Element.ALIGN_CENTER );
 			cell13.setBorder( com.itextpdf.text.Rectangle.NO_BORDER );
 			tableTest.addCell( cell13 );
 			
@@ -143,7 +145,7 @@ public class PDFGenerator {
 			tableTest.addCell( cell );
 			
 			cell = new PdfPCell( new Phrase( " Tel: +385 1 2345 678 " , font2 ) );
-			cell.setHorizontalAlignment( PdfPCell.ALIGN_RIGHT );
+			cell.setHorizontalAlignment( Element.ALIGN_RIGHT );
 			cell.setBorder( com.itextpdf.text.Rectangle.NO_BORDER );
 			tableTest.addCell( cell );
 			
@@ -152,7 +154,7 @@ public class PDFGenerator {
 			tableTest.addCell( cell );
 			
 			cell = new PdfPCell( new Phrase( "  " , font2 ) );
-			cell.setHorizontalAlignment( PdfPCell.ALIGN_RIGHT );
+			cell.setHorizontalAlignment( Element.ALIGN_RIGHT );
 			cell.setBorder( com.itextpdf.text.Rectangle.NO_BORDER );
 			tableTest.addCell( cell );
 			
@@ -161,7 +163,7 @@ public class PDFGenerator {
 			tableTest.addCell( cell );
 			
 			cell = new PdfPCell( new Phrase( " E: ivan.kojic@mail.com " , font2 ) );
-			cell.setHorizontalAlignment( PdfPCell.ALIGN_RIGHT );
+			cell.setHorizontalAlignment( Element.ALIGN_RIGHT );
 			cell.setBorder( com.itextpdf.text.Rectangle.NO_BORDER );
 			tableTest.addCell( cell );
 			
@@ -286,10 +288,10 @@ public class PDFGenerator {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method opens the PDF file with the default system application for PDF
 	 * files. It takes in the file name as a parameter.
-	 * 
+	 *
 	 * @param fileName The name of the PDF file.
 	 * @throws IOException If an error occurs while opening the PDF file.
 	 */
@@ -310,8 +312,8 @@ public class PDFGenerator {
 	
 	private static void headerCellDesign( PdfPCell artTblHead ) {
 		
-		artTblHead.setHorizontalAlignment( PdfPCell.ALIGN_CENTER );
-		artTblHead.setVerticalAlignment( PdfPCell.ALIGN_MIDDLE );
+		artTblHead.setHorizontalAlignment( Element.ALIGN_CENTER );
+		artTblHead.setVerticalAlignment( Element.ALIGN_MIDDLE );
 		artTblHead.setPaddingTop( 10 );
 		artTblHead.setPaddingBottom( 10 );
 		artTblHead.setPaddingLeft( 0 );
@@ -323,7 +325,7 @@ public class PDFGenerator {
 	
 	private static void cellArtikliDesign( PdfPCell cellArtikli ) {
 		
-		cellArtikli.setHorizontalAlignment( PdfPCell.ALIGN_CENTER );
+		cellArtikli.setHorizontalAlignment( Element.ALIGN_CENTER );
 		cellArtikli.setBorder( 0 );
 		cellArtikli.setPaddingTop( 5 );
 		cellArtikli.setPaddingBottom( 5 );
@@ -333,7 +335,7 @@ public class PDFGenerator {
 	
 	private static void prazniRedDesign( PdfPCell cellArtikli ) {
 		
-		cellArtikli.setHorizontalAlignment( PdfPCell.ALIGN_CENTER );
+		cellArtikli.setHorizontalAlignment( Element.ALIGN_CENTER );
 		cellArtikli.setBorder( com.itextpdf.text.Rectangle.TOP | com.itextpdf.text.Rectangle.BOTTOM );
 		cellArtikli.setPaddingTop( 5 );
 		cellArtikli.setPaddingBottom( 10 );
@@ -342,7 +344,7 @@ public class PDFGenerator {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the current folder path.
 	 *
 	 * @return the folder path as a String.
@@ -355,7 +357,7 @@ public class PDFGenerator {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the folder path to the specified String.
 	 *
 	 * @param folderPath the new folder path to be set.
@@ -368,7 +370,7 @@ public class PDFGenerator {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the current Offer object.
 	 *
 	 * @return the Offer object.
@@ -381,7 +383,7 @@ public class PDFGenerator {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the Offer object to the specified Offer.
 	 *
 	 * @param offer the new Offer object to be set.
@@ -394,7 +396,7 @@ public class PDFGenerator {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the current OfferTblPreviewModel object.
 	 *
 	 * @return the OfferTblPreviewModel object.
@@ -407,7 +409,7 @@ public class PDFGenerator {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the OfferTblPreviewModel object to the specified OfferTblPreviewModel.
 	 *
 	 * @param tblModel the new OfferTblPreviewModel object to be set.

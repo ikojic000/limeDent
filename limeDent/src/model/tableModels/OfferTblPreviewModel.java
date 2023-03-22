@@ -10,9 +10,9 @@ import model.OfferTblPreviewData;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         A model for the preview table of an offer that extends
  *         AbstractTableModel. This class defines the data and functionality for
  *         the preview table that displays the product name, price, quantity,
@@ -28,12 +28,12 @@ public class OfferTblPreviewModel extends AbstractTableModel {
 	private ArrayList<OfferTblPreviewData> tblPreviewData;
 	private String[] columnNames = { "Naziv" , "Cijena" , "Koli\u010Dina" , "Ukupno" , "Popust" , "Ukupno s popustom" };
 	boolean[] canEdit = new boolean[] { false , false , true , false , true , false };
-	private ArrayList<OfferTblPreviewObserver> observers = new ArrayList<OfferTblPreviewObserver>();
+	private ArrayList<OfferTblPreviewObserver> observers = new ArrayList<>();
 	
 	/**
-	 * 
+	 *
 	 * Constructs an OfferTblPreviewModel object with the given table preview data.
-	 * 
+	 *
 	 * @param tblPreviewData an ArrayList of OfferTblPreviewData objects that
 	 *                       represent the data for each row in the preview table
 	 */
@@ -45,10 +45,10 @@ public class OfferTblPreviewModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the number of rows in the table, which is equal to the size of
 	 * tblPreviewData.
-	 * 
+	 *
 	 * @return the number of rows in the table
 	 */
 	@Override
@@ -60,10 +60,10 @@ public class OfferTblPreviewModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the number of columns in the table, which is equal to the length of
 	 * columnNames.
-	 * 
+	 *
 	 * @return the number of columns in the table
 	 */
 	@Override
@@ -75,9 +75,9 @@ public class OfferTblPreviewModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the name of the column at the specified index.
-	 * 
+	 *
 	 * @param column the index of the column
 	 * @return the name of the column at the specified index
 	 */
@@ -90,9 +90,9 @@ public class OfferTblPreviewModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns whether a cell at the specified row and column is editable.
-	 * 
+	 *
 	 * @param rowIndex    the row index of the cell
 	 * @param columnIndex the column index of the cell
 	 * @return true if the cell is editable, false otherwise
@@ -106,10 +106,10 @@ public class OfferTblPreviewModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the class of the object in the specified column, which is the class
 	 * of the object returned by getValueAt(0, columnIndex).
-	 * 
+	 *
 	 * @param columnIndex the index of the column
 	 * @return the class of the object in the specified column
 	 */
@@ -122,13 +122,13 @@ public class OfferTblPreviewModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the value of the cell at the specified row and column.
-	 * 
+	 *
 	 * @param rowIndex    the row index of the cell
-	 * 
+	 *
 	 * @param columnIndex the column index of the cell
-	 * 
+	 *
 	 * @return the value of the cell at the specified row and column
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class OfferTblPreviewModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the value of the cell at the specified row and column indexes in the
 	 * table preview model. If the specified column is 2, the pieces value of the
 	 * corresponding OfferTblPreviewData object in the model is updated with the
@@ -175,7 +175,7 @@ public class OfferTblPreviewModel extends AbstractTableModel {
 	 * integer value cast from the specified Object value, and the table cell is
 	 * updated. If the specified column is not 2 or 4, an IllegalArgumentException
 	 * is thrown.
-	 * 
+	 *
 	 * @param value       the value to set
 	 * @param rowIndex    the row index of the cell
 	 * @param columnIndex the column index of the cell
@@ -210,9 +210,9 @@ public class OfferTblPreviewModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Registers an observer.
-	 * 
+	 *
 	 * @param observer the observer to be registered
 	 */
 	public void addObserver( OfferTblPreviewObserver observer ) {
@@ -223,9 +223,9 @@ public class OfferTblPreviewModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Unregisters an observer.
-	 * 
+	 *
 	 * @param observer the observer to be unregistered
 	 */
 	public void removeObserver( OfferTblPreviewObserver observer ) {
@@ -236,7 +236,7 @@ public class OfferTblPreviewModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Notifies all registered observers that there has been a change to the offer
 	 * tblPreview model.
 	 */

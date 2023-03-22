@@ -13,18 +13,18 @@ import model.Offer;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The OfferDAO class provides data access methods for Offer objects in
  *         the database. It provides methods to retrieve all offers, delete an
  *         offer and add a new offer.
- * 		
+ *		
  */
 public class OfferDAO {
 	
 	/**
-	 * 
+	 *
 	 * Constructor for OfferDAO class.
 	 */
 	public OfferDAO() {
@@ -33,16 +33,16 @@ public class OfferDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Retrieves all offers from the database and returns them as an ArrayList of
 	 * Offer objects.
-	 * 
+	 *
 	 * @return ArrayList allOffers - an ArrayList containing all the offers
 	 *         retrieved from the database.
 	 */
 	public ArrayList<Offer> getAllOffers() {
 		
-		ArrayList<Offer> allOffers = new ArrayList<Offer>();
+		ArrayList<Offer> allOffers = new ArrayList<>();
 		
 		String sql = "SELECT offer.id, offer.title, offer.authorID, CONCAT(user.ime, ' ', user.prezime) AS author, offer.patientName, offer.date, offer.url "
 				+ "FROM offers offer " + "INNER JOIN users user ON offer.authorID = user.id "
@@ -79,9 +79,9 @@ public class OfferDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Deletes an offer from the database.
-	 * 
+	 *
 	 * @param offer - the Offer object to be deleted.
 	 */
 	public void deleteOffer( Offer offer ) {
@@ -106,9 +106,9 @@ public class OfferDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Adds a new offer to the database.
-	 * 
+	 *
 	 * @param offer - the Offer object to be added.
 	 */
 	public void addOffer( Offer offer ) {

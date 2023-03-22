@@ -13,17 +13,17 @@ import model.Product;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The ProductDAO class provides methods for accessing and manipulating
  *         product data in the database.
- * 		
+ *		
  */
 public class ProductDAO {
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new ProductDAO object.
 	 */
 	public ProductDAO() {
@@ -32,14 +32,14 @@ public class ProductDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns a list of all products in the database.
-	 * 
+	 *
 	 * @return an ArrayList of Product objects
 	 */
 	public ArrayList<Product> getAllProducts() {
 		
-		ArrayList<Product> allProducts = new ArrayList<Product>();
+		ArrayList<Product> allProducts = new ArrayList<>();
 		
 		String sql = "select * from products";
 		
@@ -69,15 +69,15 @@ public class ProductDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns a list of products that match the specified search string.
-	 * 
+	 *
 	 * @param search the search string to match against product data
 	 * @return an ArrayList of Product objects that match the search string
 	 */
 	public ArrayList<Product> searchProduct( String search ) {
 		
-		ArrayList<Product> searchedProducts = new ArrayList<Product>();
+		ArrayList<Product> searchedProducts = new ArrayList<>();
 		
 		Connection connection = Database.getDatabase().getConnection();
 		
@@ -110,9 +110,9 @@ public class ProductDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Adds a new product to the database.
-	 * 
+	 *
 	 * @param product - the Product object to add to the database
 	 */
 	public void addProduct( Product product ) {
@@ -144,9 +144,9 @@ public class ProductDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Deletes the specified product from the database.
-	 * 
+	 *
 	 * @param product - the Product object to delete from the database
 	 */
 	public void deleteProduct( Product product ) {
@@ -167,13 +167,13 @@ public class ProductDAO {
 			
 		}
 		
-	};
+	}
 	
 	
 	/**
-	 * 
+	 *
 	 * Updates the specified product in the database.
-	 * 
+	 *
 	 * @param product - the Product to be updated in the database.
 	 */
 	public void updateProduct( Product product ) {

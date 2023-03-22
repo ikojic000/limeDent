@@ -6,9 +6,9 @@ import java.time.format.DateTimeFormatter;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The MedicalExam class represents a medical examination that can be
  *         carried out on a patient. It contains various attributes such as the
  *         examination ID, examination details, doctor ID and name, patient ID
@@ -17,7 +17,7 @@ import java.time.format.DateTimeFormatter;
  *         as well as getter and setter methods for each attribute. The
  *         getDateFormatted() method returns the examination date in the format
  *         "dd-MM-yyyy HH:mm".
- * 
+ *
  */
 public class MedicalExam {
 	
@@ -30,9 +30,9 @@ public class MedicalExam {
 	private LocalDateTime date;
 	
 	/**
-	 * 
+	 *
 	 * Creates a MedicalExam object with the specified ID.
-	 * 
+	 *
 	 * @param id the examination ID
 	 */
 	public MedicalExam( Integer id ) {
@@ -43,10 +43,10 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Creates a MedicalExam object with the specified ID, examination details, and
 	 * doctor name.
-	 * 
+	 *
 	 * @param id         the examination ID
 	 * @param info       the examination details
 	 * @param doctorName the name of the doctor who carried out the examination
@@ -61,10 +61,10 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Creates a MedicalExam object with the specified examination details, doctor
 	 * ID, and patient ID.
-	 * 
+	 *
 	 * @param info      the examination details
 	 * @param idDoctor  the ID of the doctor who carried out the examination
 	 * @param idPatient the ID of the patient who underwent the examination
@@ -79,9 +79,9 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Creates a MedicalExam object with all the specified attributes.
-	 * 
+	 *
 	 * @param id          the examination ID
 	 * @param info        the examination details
 	 * @param idDoctor    the ID of the doctor who carried out the examination
@@ -105,9 +105,9 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the examination ID.
-	 * 
+	 *
 	 * @return the examination ID
 	 */
 	public Integer getId() {
@@ -118,9 +118,9 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the examination ID.
-	 * 
+	 *
 	 * @param id the examination ID to set
 	 */
 	public void setId( Integer id ) {
@@ -131,9 +131,9 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the examination details.
-	 * 
+	 *
 	 * @return the examination details
 	 */
 	public String getInfo() {
@@ -144,9 +144,9 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the examination details.
-	 * 
+	 *
 	 * @param info the examination details to set
 	 */
 	public void setInfo( String info ) {
@@ -157,9 +157,9 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the ID of the doctor associated with this appointment.
-	 * 
+	 *
 	 * @return the ID of the doctor
 	 */
 	public Integer getIdDoctor() {
@@ -170,9 +170,9 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the ID of the doctor associated with this appointment.
-	 * 
+	 *
 	 * @param idDoctor the ID of the doctor
 	 */
 	public void setIdDoctor( Integer idDoctor ) {
@@ -183,9 +183,9 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the name of the doctor associated with this appointment.
-	 * 
+	 *
 	 * @return the name of the doctor
 	 */
 	public String getDoctorName() {
@@ -196,9 +196,9 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the name of the doctor associated with this appointment.
-	 * 
+	 *
 	 * @param doctorName the name of the doctor
 	 */
 	public void setDoctorName( String doctorName ) {
@@ -209,9 +209,9 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the ID of the patient associated with this appointment.
-	 * 
+	 *
 	 * @return the ID of the patient
 	 */
 	public Integer getIdPatient() {
@@ -222,9 +222,9 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the ID of the patient associated with this appointment.
-	 * 
+	 *
 	 * @param idPatient the ID of the patient
 	 */
 	public void setIdPatient( Integer idPatient ) {
@@ -235,9 +235,9 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the name of the patient associated with this appointment.
-	 * 
+	 *
 	 * @return the name of the patient
 	 */
 	public String getPatientName() {
@@ -248,9 +248,9 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the name of the patient associated with this appointment.
-	 * 
+	 *
 	 * @param patientName the name of the patient
 	 */
 	public void setPatientName( String patientName ) {
@@ -261,9 +261,9 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the date and time of this appointment.
-	 * 
+	 *
 	 * @return the date and time of this appointment
 	 */
 	public LocalDateTime getDate() {
@@ -274,10 +274,10 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns a formatted string representation of the date and time of this
 	 * appointment.
-	 * 
+	 *
 	 * @return a formatted string representation of the date and time of this
 	 *         appointment
 	 */
@@ -290,9 +290,9 @@ public class MedicalExam {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the date and time of this appointment.
-	 * 
+	 *
 	 * @param date the date and time of this appointment
 	 */
 	public void setDate( LocalDateTime date ) {

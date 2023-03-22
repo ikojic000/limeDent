@@ -42,15 +42,15 @@ import view.View;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         A UI panel for creating new offer. This panel extends the
  *         RoundedShadowPanel class. It includes various text fields, buttons,
  *         labels, table, combobox .... Fields that user fills in will generate
  *         in a PDF offer. This panel also contains a NovaPonudaController
  *         object to handle user actions.
- * 		
+ *		
  */
 public class NewOfferPanel extends RoundedShadowPanel {
 	
@@ -87,10 +87,10 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	private LoginController loginController;
 	
 	/**
-	 * 
+	 *
 	 * Creates a new instance of the NovaPonudaPanel class with the specified
 	 * CardPanel and View / JFrame objects.
-	 * 
+	 *
 	 * @param cardParent the parent CardPanel object of the panel
 	 * @param view       the View object representing the UI view
 	 */
@@ -121,7 +121,7 @@ public class NewOfferPanel extends RoundedShadowPanel {
 		txtImePrezime.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
 		txtImePrezime.setBackground( new Color( 244 , 244 , 249 ) );
 		
-		cbArtikli = new ComboBox<Product>();
+		cbArtikli = new ComboBox<>();
 		cbArtikli.setPreferredSize( new Dimension( 300 , 45 ) );
 		cbArtikli.setMinimumSize( new Dimension( 300 , 45 ) );
 		cbArtikli.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
@@ -169,7 +169,7 @@ public class NewOfferPanel extends RoundedShadowPanel {
 		tableScrollPane = new JScrollPane();
 		tableScrollPane.setForeground( new Color( 0 , 0 , 0 ) );
 		tableScrollPane.setBackground( getBackground() );
-		tableScrollPane.setBorder( new MatteBorder( 1 , 1 , 1 , 1 , (Color) getBackground() ) );
+		tableScrollPane.setBorder( new MatteBorder( 1 , 1 , 1 , 1 , getBackground() ) );
 		tableScrollPane.getViewport().setBackground( getBackground() );
 		
 		tableScrollBar = new ScrollBarCustom( 80 );
@@ -314,7 +314,7 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Activates the panel by setting up various listeners for its components. These
 	 * listeners are used to handle events like button clicks, textfield input,
 	 * table selection, etc. Once activated, this panel becomes fully functional and
@@ -382,6 +382,7 @@ public class NewOfferPanel extends RoundedShadowPanel {
 		
 		rbBtnGotovina.addActionListener( new ActionListener() {
 			
+			@Override
 			public void actionPerformed( ActionEvent e ) {
 				
 				cbKartica.setEnabled( false );
@@ -391,6 +392,7 @@ public class NewOfferPanel extends RoundedShadowPanel {
 		} );
 		rbBtnKartice.addActionListener( new ActionListener() {
 			
+			@Override
 			public void actionPerformed( ActionEvent e ) {
 				
 				cbKartica.setEnabled( true );
@@ -402,6 +404,7 @@ public class NewOfferPanel extends RoundedShadowPanel {
 		
 		btnDodaj.addActionListener( new ActionListener() {
 			
+			@Override
 			public void actionPerformed( ActionEvent e ) {
 				
 				novaPonudaController.addProductToTable( cbArtikli.getSelectedItem() ,
@@ -413,6 +416,7 @@ public class NewOfferPanel extends RoundedShadowPanel {
 		
 		btnIzbrisi.addActionListener( new ActionListener() {
 			
+			@Override
 			public void actionPerformed( ActionEvent e ) {
 				
 				novaPonudaController.removeProductFromTable();
@@ -423,6 +427,7 @@ public class NewOfferPanel extends RoundedShadowPanel {
 		
 		btnClear.addActionListener( new ActionListener() {
 			
+			@Override
 			public void actionPerformed( ActionEvent e ) {
 				
 				novaPonudaController.clearTable();
@@ -433,6 +438,7 @@ public class NewOfferPanel extends RoundedShadowPanel {
 		
 		cbArtikli.addActionListener( new ActionListener() {
 			
+			@Override
 			public void actionPerformed( ActionEvent e ) {
 				
 				novaPonudaController.setPriceTxt();
@@ -443,6 +449,7 @@ public class NewOfferPanel extends RoundedShadowPanel {
 		
 		btnPDF.addActionListener( new ActionListener() {
 			
+			@Override
 			public void actionPerformed( ActionEvent e ) {
 				
 				User loggedInUser = loginController.getLoggedInUser();
@@ -461,7 +468,7 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Inserts test data into the table, sets data in the combo box, and enables
 	 * autocomplete for patient name.
 	 */
@@ -475,9 +482,9 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Check if the entered quantity is valid.
-	 * 
+	 *
 	 * @return true if the quantity is valid, false otherwise.
 	 */
 	private boolean checkKolicina() {
@@ -507,9 +514,9 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Check if the entered discount percentage is valid.
-	 * 
+	 *
 	 * @return true if the discount percentage is valid, false otherwise.
 	 */
 	private boolean checkPopust() {
@@ -539,7 +546,7 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method clears all the UI fields that are related to the patient data.
 	 */
 	public void clearAll() {
@@ -563,7 +570,7 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Initiates the layout of the panel.
 	 */
 	private void initLayout() {
@@ -729,9 +736,9 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the text field for the offer name.
-	 * 
+	 *
 	 * @return the txtNazivPonude
 	 */
 	public TextField getTxtNazivPonude() {
@@ -742,9 +749,9 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the text field for the customer name.
-	 * 
+	 *
 	 * @return the txtImePrezime
 	 */
 	public TextField getTxtImePrezime() {
@@ -755,9 +762,9 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the text field for the quantity of products.
-	 * 
+	 *
 	 * @return the txtKolicina
 	 */
 	public TextField getTxtKolicina() {
@@ -768,9 +775,9 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the text field for the discount percentage.
-	 * 
+	 *
 	 * @return the txtPopust
 	 */
 	public TextField getTxtPopust() {
@@ -781,9 +788,9 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the table that displays the list of products.
-	 * 
+	 *
 	 * @return the table
 	 */
 	public CustomTable getTable() {
@@ -794,9 +801,9 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the text area for notes.
-	 * 
+	 *
 	 * @return the txtBiljeske
 	 */
 	public TextArea getTxtBiljeske() {
@@ -807,9 +814,9 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the combo box for selecting products.
-	 * 
+	 *
 	 * @return the cbArtikli
 	 */
 	public ComboBox<Product> getCbArtikli() {
@@ -820,9 +827,9 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the label for the total price.
-	 * 
+	 *
 	 * @return the lblUkupno
 	 */
 	public JLabel getLblUkupno() {
@@ -833,9 +840,9 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the text field for the price of a product.
-	 * 
+	 *
 	 * @return the txtCijena
 	 */
 	public TextField getTxtCijena() {
@@ -846,9 +853,9 @@ public class NewOfferPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the login controller.
-	 * 
+	 *
 	 * @param loginController the loginController to set
 	 */
 	public void setLoginController( LoginController loginController ) {

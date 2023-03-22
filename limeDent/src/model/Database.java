@@ -10,9 +10,9 @@ import java.util.Properties;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The Database class provides methods for connecting and disconnecting
  *         from a MySQL database, as well as accessing the database connection
  *         and configuration properties. The class is a singleton, meaning that
@@ -30,7 +30,7 @@ public class Database {
 	private static Database database = new Database();
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new Database object, which automatically calls the connect()
 	 * method to establish a connection with the database upon instantiation.
 	 */
@@ -42,7 +42,7 @@ public class Database {
 	
 	
 	/**
-	 * 
+	 *
 	 * Establishes a connection to the database by using the JDBC API, and the
 	 * necessary configuration properties read from a config.properties file. Upon
 	 * successful connection, the method outputs "DB Connected" to the console,
@@ -82,7 +82,7 @@ public class Database {
 	
 	
 	/**
-	 * 
+	 *
 	 * Closes the database connection. Upon successful closure, the method outputs
 	 * "DB Disconnected" to the console, otherwise it outputs the error message to
 	 * the console.
@@ -108,9 +108,9 @@ public class Database {
 	
 	
 	/**
-	 * 
+	 *
 	 * Retrieves Database URL from the config.properties file.
-	 * 
+	 *
 	 * @return URL- URL to access the database.
 	 */
 	private static String getDatabaseURL() {
@@ -137,9 +137,9 @@ public class Database {
 	
 	
 	/**
-	 * 
+	 *
 	 * Retrieves the username from the config.properties file.
-	 * 
+	 *
 	 * @return username - The username to access the database.
 	 */
 	private static String getDatabaseUsername() {
@@ -166,9 +166,9 @@ public class Database {
 	
 	
 	/**
-	 * 
+	 *
 	 * Retrieves the password from the config.properties file.
-	 * 
+	 *
 	 * @return password - The password to access the database.
 	 */
 	private static String getDatabasePassword() {
@@ -195,9 +195,9 @@ public class Database {
 	
 	
 	/**
-	 * 
+	 *
 	 * Retrieves the current database connection.
-	 * 
+	 *
 	 * @return connection - The current database connection.
 	 */
 	public Connection getConnection() {
@@ -208,12 +208,12 @@ public class Database {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the single instance of the Database class. If the instance is null,
 	 * it creates a new instance of the Database class in a thread-safe manner using
 	 * double-checked locking. This method ensures that only one instance of the
 	 * Database class is created while the application is running.
-	 * 
+	 *
 	 * @return the single instance of the Database class.
 	 */
 	public static Database getDatabase() {

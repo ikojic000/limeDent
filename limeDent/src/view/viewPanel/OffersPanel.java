@@ -35,7 +35,7 @@ import view.View;
 
 
 /**
- * 
+ *
  * @author ikojic000
  *
  *         The PonudePanel class represents a custom Swing panel used for
@@ -61,9 +61,9 @@ public class OffersPanel extends RoundedShadowPanel {
 	private OffersController ponudeController;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new PonudePanel with the specified cardParent and view / JFrame.
-	 * 
+	 *
 	 * @param cardParent the parent CardPanel for this panel
 	 * @param view       the parent View for this panel
 	 */
@@ -103,7 +103,7 @@ public class OffersPanel extends RoundedShadowPanel {
 		tableScrollPane = new JScrollPane();
 		tableScrollPane.setForeground( new Color( 0 , 0 , 0 ) );
 		tableScrollPane.setBackground( getBackground() );
-		tableScrollPane.setBorder( new MatteBorder( 1 , 1 , 1 , 1 , (Color) getBackground() ) );
+		tableScrollPane.setBorder( new MatteBorder( 1 , 1 , 1 , 1 , getBackground() ) );
 		tableScrollPane.getViewport().setBackground( getBackground() );
 		
 		tableScrollBar = new ScrollBarCustom( 80 );
@@ -143,7 +143,7 @@ public class OffersPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Activates the panel by setting up various listeners for its components. These
 	 * listeners are used to handle events like button clicks, textfield input,
 	 * table selection, etc. Once activated, this panel becomes fully functional and
@@ -225,7 +225,7 @@ public class OffersPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Inserts table data using the setTableData() method of ponudeController.
 	 */
 	public void insertTableData() {
@@ -236,7 +236,7 @@ public class OffersPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Clears the search text field and deselects any selected rows in the table.
 	 */
 	public void clearAll() {
@@ -248,7 +248,7 @@ public class OffersPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Initiates the layout of the panel.
 	 */
 	private void initLayout() {
@@ -289,9 +289,9 @@ public class OffersPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the table used by this object.
-	 * 
+	 *
 	 * @return The `CustomTable` object used by this object.
 	 */
 	public CustomTable getTable() {
@@ -302,9 +302,9 @@ public class OffersPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the search text field used by this object.
-	 * 
+	 *
 	 * @return The `TextField` object used by this object.
 	 */
 	public TextField getTxtSearch() {

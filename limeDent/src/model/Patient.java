@@ -15,14 +15,14 @@ import javax.swing.ImageIcon;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The Patient class represents a patient in a medical system, including
  *         personal and medical information. The class provides constructors to
  *         create patient objects with various combinations of information, and
  *         getters and setters to access and modify the patient's properties.
- * 		
+ *		
  */
 public class Patient {
 	
@@ -40,9 +40,9 @@ public class Patient {
 	private ImageIcon profilePhoto;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a patient object with the given id.
-	 * 
+	 *
 	 * @param id the patient's unique identifier
 	 */
 	public Patient( Integer id ) {
@@ -53,9 +53,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * Constructs a patient object with the given id and name.
-	 * 
+	 *
 	 * @param id   the patient's unique identifier
 	 * @param name the patient's name
 	 */
@@ -68,10 +68,10 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * Constructs a patient object with the given id, name, OIB, phone, email, and
 	 * date of last exam.
-	 * 
+	 *
 	 * @param id       the patient's unique identifier
 	 * @param name     the patient's name
 	 * @param oib      the patient's OIB
@@ -92,10 +92,10 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * Constructs a patient object with the given id, name, OIB, JMBG, email, phone,
 	 * address, city, medical history, allergies, and profile photo.
-	 * 
+	 *
 	 * @param id             the patient's unique identifier
 	 * @param name           the patient's name
 	 * @param oib            the patient's OIB
@@ -127,10 +127,10 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * Constructs a patient object with the given id, name, OIB, JMBG, email, phone,
 	 * address, city, medical history, allergies, and profile photo.
-	 * 
+	 *
 	 * @param id             the patient's unique identifier
 	 * @param name           the patient's name
 	 * @param oib            the patient's OIB
@@ -165,9 +165,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method retrieves the ID of the patient.
-	 * 
+	 *
 	 * @return the ID of the patient.
 	 */
 	public Integer getId() {
@@ -178,9 +178,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method sets the ID of the patient.
-	 * 
+	 *
 	 * @param id the ID to be set.
 	 */
 	public void setId( Integer id ) {
@@ -191,9 +191,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method retrieves the name of the patient.
-	 * 
+	 *
 	 * @return the name of the patient.
 	 */
 	public String getName() {
@@ -204,9 +204,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method sets the name of the patient.
-	 * 
+	 *
 	 * @param name the name to be set.
 	 */
 	public void setName( String name ) {
@@ -217,9 +217,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method retrieves the OIB of the patient.
-	 * 
+	 *
 	 * @return the OIB of the patient.
 	 */
 	public Long getOib() {
@@ -230,9 +230,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method sets the OIB of the patient.
-	 * 
+	 *
 	 * @param oib the OIB to be set.
 	 */
 	public void setOib( Long oib ) {
@@ -243,9 +243,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method retrieves the JMBG of the patient.
-	 * 
+	 *
 	 * @return the JMBG of the patient.
 	 */
 	public Long getJmbg() {
@@ -256,9 +256,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method sets the JMBG of the patient.
-	 * 
+	 *
 	 * @param jmbg the JMBG to be set.
 	 */
 	public void setJmbg( Long jmbg ) {
@@ -269,10 +269,10 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method retrieves the address of the patient. If the address is null, an
 	 * empty string is returned.
-	 * 
+	 *
 	 * @return the address of the patient.
 	 */
 	public String getAddress() {
@@ -289,9 +289,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method sets the address of the patient.
-	 * 
+	 *
 	 * @param address the address to be set.
 	 */
 	public void setAddress( String address ) {
@@ -302,10 +302,10 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method retrieves the city of the patient. If the city is null, an empty
 	 * string is returned.
-	 * 
+	 *
 	 * @return the city of the patient.
 	 */
 	public String getCity() {
@@ -322,9 +322,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method sets the city of the patient.
-	 * 
+	 *
 	 * @param city the city to be set.
 	 */
 	public void setCity( String city ) {
@@ -335,9 +335,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method retrieves the phone number of the patient.
-	 * 
+	 *
 	 * @return the phone number of the patient.
 	 */
 	public String getPhone() {
@@ -348,9 +348,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method sets the phone number of the patient.
-	 * 
+	 *
 	 * @param phone the phone number to be set.
 	 */
 	public void setPhone( String phone ) {
@@ -361,9 +361,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method retrieves the email of the patient.
-	 * 
+	 *
 	 * @return the email of the patient.
 	 */
 	public String getMail() {
@@ -374,9 +374,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method sets the email of the patient.
-	 * 
+	 *
 	 * @param mail the email to be set.
 	 */
 	public void setMail( String mail ) {
@@ -387,9 +387,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method retrieves the date and time of the last exam for the patient.
-	 * 
+	 *
 	 * @return the date and time of the last exam.
 	 */
 	public LocalDateTime getLastExam() {
@@ -400,10 +400,10 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method retrieves the formatted date and time of the last exam for the
 	 * patient. If the last exam is null, an empty string is returned.
-	 * 
+	 *
 	 * @return the formatted date and time of the last exam.
 	 */
 	public String getLastExamFormatted() {
@@ -422,9 +422,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the last examination date for this patient.
-	 * 
+	 *
 	 * @param lastExam The LocalDateTime object representing the date of the last
 	 *                 examination.
 	 */
@@ -436,10 +436,10 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * Gets the medical history of this patient. If the medical history is null,
 	 * sets it to an empty string before returning it.
-	 * 
+	 *
 	 * @return The medical history of this patient.
 	 */
 	public String getMedicalHistory() {
@@ -456,9 +456,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the medical history of this patient.
-	 * 
+	 *
 	 * @param medicalHistory The medical history to set for this patient.
 	 */
 	public void setMedicalHistory( String medicalHistory ) {
@@ -469,10 +469,10 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * Gets the allergies of this patient. If the allergies are null, sets them to
 	 * an empty string before returning them.
-	 * 
+	 *
 	 * @return The allergies of this patient.
 	 */
 	public String getAlergies() {
@@ -489,9 +489,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the allergies of this patient.
-	 * 
+	 *
 	 * @param alergies The allergies to set for this patient.
 	 */
 	public void setAlergies( String alergies ) {
@@ -502,9 +502,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * Gets the profile photo of this patient.
-	 * 
+	 *
 	 * @return The ImageIcon object representing the profile photo of this patient.
 	 */
 	public ImageIcon getProfilePhoto() {
@@ -515,9 +515,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the profile photo of this patient.
-	 * 
+	 *
 	 * @param profilePhoto The ImageIcon object representing the profile photo to
 	 *                     set for this patient.
 	 */
@@ -529,12 +529,12 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * Indicates whether some other object is "equal to" this one. Two objects are
 	 * considered equal if they are both instances of the {@code Patient} class, and
 	 * all of their corresponding properties have equal values (including the
 	 * profile photo, which is compared byte by byte).
-	 * 
+	 *
 	 * @param obj the reference object with which to compare
 	 * @return {@code true} if this object is equal to the obj argument or
 	 *         {@code false} otherwise
@@ -559,10 +559,10 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * Compares two image icons byte by byte to determine whether they have the same
 	 * content.
-	 * 
+	 *
 	 * @param img  the first image icon to compare
 	 * @param img2 the second image icon to compare
 	 * @return {@code true} if the image icons have the same byte content;
@@ -579,11 +579,11 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * Converts a profile photo to a byte array.
-	 * 
+	 *
 	 * @param profile - the profile photo to convert
-	 * 
+	 *
 	 * @return a byte array containing the profile photo data
 	 */
 	private byte[] getPhotoBytes( ImageIcon img ) {
@@ -620,9 +620,9 @@ public class Patient {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns a String representation of this patient object.
-	 * 
+	 *
 	 * @return The String representation of this patient object.
 	 */
 	@Override

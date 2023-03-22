@@ -21,9 +21,9 @@ import model.Patient;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The ImageCompressionThread class is responsible for compressing
  *         images that are larger than 512KB. If the image is already smaller
  *         than 512KB, it sets the patient's profile photo and no compression is
@@ -32,7 +32,7 @@ import model.Patient;
  *         indicating whether the compression was successful or not. This class
  *         extends Thread class to enable running the compression process in a
  *         separate thread.
- * 
+ *
  */
 public class ImageCompressionThread extends Thread {
 	
@@ -46,10 +46,10 @@ public class ImageCompressionThread extends Thread {
 	private static final int MAX_SIZE = 512 * 1024;
 	
 	/**
-	 * 
+	 *
 	 * Constructs an ImageCompressionThread with the specified selected image,
 	 * patient and notification.
-	 * 
+	 *
 	 * @param selectedImage the image to be compressed
 	 * @param patient       the patient whose image is being compressed
 	 * @param notification  the notification to display after compression is
@@ -65,7 +65,7 @@ public class ImageCompressionThread extends Thread {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method is called when the thread is started. It compresses the image and
 	 * sets the compressed image as the patient's profile photo. If the image cannot
 	 * be compressed any further, a notification is displayed indicating that the

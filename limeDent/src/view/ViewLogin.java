@@ -3,6 +3,7 @@ package view;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Frame;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
 import controller.LoginController;
@@ -30,12 +32,12 @@ import view.panel.titleBar.Buttont;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The ViewLogin class extends the JFrame class and provides a graphical
  *         user interface for the login screen.
- * 		
+ *		
  */
 @SuppressWarnings( "serial" )
 public class ViewLogin extends JFrame {
@@ -56,7 +58,7 @@ public class ViewLogin extends JFrame {
 	private LoginController loginController;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new instance of the ViewLogin class, which sets the application
 	 * icon and initializes the loginController and view fields.
 	 */
@@ -129,7 +131,7 @@ public class ViewLogin extends JFrame {
 		panelRight.setLayout( null );
 		
 		txtUsername = new TextField();
-		txtUsername.setText( "ikojic" );
+		txtUsername.setText( "test" );
 		txtUsername.setForeground( new Color( 44 , 51 , 51 ) );
 		txtUsername.setHintTextColor( new Color( 121 , 118 , 118 ) );
 		txtUsername.setLabelText( "Korisni\u010Dko ime" );
@@ -141,7 +143,7 @@ public class ViewLogin extends JFrame {
 		panelRight.add( txtUsername );
 		
 		txtPassword = new PasswordField();
-		txtPassword.setText( "ikojic" );
+		txtPassword.setText( "" );
 		txtPassword.setForeground( new Color( 44 , 51 , 51 ) );
 		txtPassword.setLabelText( "Lozinka" );
 		txtPassword.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
@@ -163,7 +165,7 @@ public class ViewLogin extends JFrame {
 		activatePanel();
 		
 		this.getRootPane().setDefaultButton( btnLogin );
-		setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+		setDefaultCloseOperation( WindowConstants.EXIT_ON_CLOSE );
 		setBackground( new Color( 244 , 249 , 249 ) );
 		setResizable( false );
 		setSize( 1000 , 800 );
@@ -175,7 +177,7 @@ public class ViewLogin extends JFrame {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method adds action listeners to the minimize and close buttons, the
 	 * panel, and the login button. It also handles user login and displays error
 	 * messages if necessary.
@@ -188,7 +190,7 @@ public class ViewLogin extends JFrame {
 			@Override
 			public void actionPerformed( ActionEvent ae ) {
 				
-				setState( JFrame.ICONIFIED );
+				setState( Frame.ICONIFIED );
 				
 			}
 			
@@ -220,6 +222,7 @@ public class ViewLogin extends JFrame {
 //		BTN LISTENERS
 		btnLogin.addActionListener( new ActionListener() {
 			
+			@Override
 			@SuppressWarnings( "deprecation" )
 			public void actionPerformed( ActionEvent e ) {
 				
@@ -257,11 +260,11 @@ public class ViewLogin extends JFrame {
 	
 	
 	/**
-	 * 
+	 *
 	 * This method displays an error message depending on the type of the result
 	 * returned by the checkCredentials method. If the result is a String, the error
 	 * message is displayed. Otherwise, a default error message is displayed.
-	 * 
+	 *
 	 * @param result The result object returned by the checkCredentials method.
 	 */
 	private void resultMessage( Object result ) {

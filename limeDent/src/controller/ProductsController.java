@@ -16,7 +16,7 @@ import view.viewPanel.ProductsPanel;
 
 
 /**
- * 
+ *
  * @author ikojic000
  *
  *         UslugeController class handles the business logic for the UslugePanel
@@ -26,18 +26,18 @@ import view.viewPanel.ProductsPanel;
  */
 public class ProductsController {
 	
-	private ArrayList<Product> productList = new ArrayList<Product>();
+	private ArrayList<Product> productList = new ArrayList<>();
 	private ProductTableModel tableModel;
 	private ProductsPanel uslugePanel;
 	private ProductDAO productDAO;
-	private Stack<ProductCommand> undoStack = new Stack<ProductCommand>();
+	private Stack<ProductCommand> undoStack = new Stack<>();
 	
 	/**
-	 * 
+	 *
 	 * Constructor for UslugeController class that initializes UslugePanel and
 	 * ProductDAO objects. It also gets the list of products from the database and
 	 * sets it to the productList.
-	 * 
+	 *
 	 * @param uslugePanel the UslugePanel GUI
 	 */
 	public ProductsController( ProductsPanel uslugePanel ) {
@@ -50,9 +50,9 @@ public class ProductsController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Method that returns the selected Product object from the table.
-	 * 
+	 *
 	 * @param row the row index of the selected Product object
 	 * @return the selected Product object
 	 */
@@ -64,10 +64,10 @@ public class ProductsController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Method that retrieves the list of products from the database using the
 	 * ProductDAO object.
-	 * 
+	 *
 	 * @return the list of products retrieved from the database
 	 */
 	private ArrayList<Product> getProductList() {
@@ -79,7 +79,7 @@ public class ProductsController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Method that sets the table data to the ProductTableModel and displays it in
 	 * the JTable.
 	 */
@@ -92,7 +92,7 @@ public class ProductsController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Method that filters the table data based on the search string entered by the
 	 * user. If the search string is empty or null, it displays all the products in
 	 * the table.
@@ -120,11 +120,11 @@ public class ProductsController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Method that adds the new product to the database using the ProductDAO object.
 	 * It also updates the productList and tableModel, clears the fields in the GUI
 	 * and scrolls the JTable to display the newly added product.
-	 * 
+	 *
 	 * @param product the new Product object to be added to the database
 	 */
 	public void addProduct( Product product ) {
@@ -146,11 +146,11 @@ public class ProductsController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Deletes the product at the specified row in the table. Removes the product
 	 * from the product list and updates the table data. Also creates a command
 	 * object to undo the deletion and adds it to the undo stack.
-	 * 
+	 *
 	 * @param row the row index of the product to delete
 	 */
 	public void deleteProduct( int row ) {
@@ -174,12 +174,12 @@ public class ProductsController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Updates the product at the specified row in the table with the values entered
 	 * in the UI. Sets the new name and price of the product and updates the
 	 * database. Also updates the table data to show the updated product
 	 * information.
-	 * 
+	 *
 	 * @param row the row index of the product to update
 	 */
 	public void updateProduct( int row ) {
@@ -202,12 +202,12 @@ public class ProductsController {
 	
 	
 	/**
-	 * 
+	 *
 	 * Undoes the most recent product deletion by executing the corresponding undo
 	 * command object. Adds the deleted product back to the product list and updates
 	 * the table data. If there are no more undo commands in the undo stack, returns
 	 * a message indicating that there is nothing to undo.
-	 * 
+	 *
 	 * @return a message indicating whether the undo was successful or not
 	 */
 	public String undoCommandAction() {

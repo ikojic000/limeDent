@@ -9,14 +9,14 @@ import model.MedicalExam;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The MedicalExamTableModel class is a table model for displaying and
  *         editing medical exam information. It extends the AbstractTableModel
  *         class. The table model contains a list of MedicalExam objects and
  *         defines the column names for the table.
- * 		
+ *		
  */
 public class MedicalExamTableModel extends AbstractTableModel {
 	
@@ -26,10 +26,10 @@ public class MedicalExamTableModel extends AbstractTableModel {
 	boolean[] canEdit = new boolean[] { false , false , false , true };
 	
 	/**
-	 * 
+	 *
 	 * Constructs an MedicalExamTableModel object with the given list of Offer
 	 * objects.
-	 * 
+	 *
 	 * @param examList - the list of MedicalExam objects to be displayed in the
 	 *                 table
 	 */
@@ -41,10 +41,10 @@ public class MedicalExamTableModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the number of rows in the table, which is equal to the size of the
 	 * examList.
-	 * 
+	 *
 	 * @return the number of rows in the table
 	 */
 	@Override
@@ -56,10 +56,10 @@ public class MedicalExamTableModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the number of columns in the table, which is equal to the length of
 	 * the columnNames array.
-	 * 
+	 *
 	 * @return the number of columns in the table
 	 */
 	@Override
@@ -71,9 +71,9 @@ public class MedicalExamTableModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the name of the column at the given index.
-	 * 
+	 *
 	 * @param column the index of the column
 	 * @return the name of the column at the given index
 	 */
@@ -86,9 +86,9 @@ public class MedicalExamTableModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns whether or not the cell at the given row and column can be edited.
-	 * 
+	 *
 	 * @param rowIndex    the index of the row
 	 * @param columnIndex the index of the column
 	 * @return true if the cell is editable, false otherwise
@@ -102,9 +102,9 @@ public class MedicalExamTableModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the value at the given row and column in the table.
-	 * 
+	 *
 	 * @param rowIndex    - the index of the row
 	 * @param columnIndex - the index of the column
 	 * @return the value at the given row and column
@@ -134,9 +134,9 @@ public class MedicalExamTableModel extends AbstractTableModel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the list of MedicalExam objects displayed in the table.
-	 * 
+	 *
 	 * @return the list of MedicalExam objects
 	 */
 	public ArrayList<MedicalExam> getExamList() {

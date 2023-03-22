@@ -13,15 +13,15 @@ import controller.observer.UserObserver;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The User class represents a user of the application. It contains
  *         information about the user, such as their username, password, name,
  *         last name, email, phone number, and profile photo. It also provides
  *         methods for observing changes to the user's profile, and for hashing
  *         and salting the user's password.
- * 		
+ *		
  */
 public class User {
 	
@@ -36,9 +36,9 @@ public class User {
 	private List<UserObserver> observers = new ArrayList<>();
 	
 	/**
-	 * 
+	 *
 	 * Constructor for creating a User object with only an ID.
-	 * 
+	 *
 	 * @param id the user's unique identifier
 	 */
 	public User( Integer id ) {
@@ -49,9 +49,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Constructor for creating a User object with only a username and password.
-	 * 
+	 *
 	 * @param username the user's username
 	 * @param password the user's password
 	 */
@@ -64,10 +64,10 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Constructor for creating a User object with a username, password, name, last
 	 * name, email, and phone number.
-	 * 
+	 *
 	 * @param username the user's username
 	 * @param password the user's password
 	 * @param name     the user's first name
@@ -88,10 +88,10 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Constructor for creating a User object with an ID, username, password, name,
 	 * last name, email, phone number, and profile photo.
-	 * 
+	 *
 	 * @param id           the user's unique identifier
 	 * @param username     the user's username
 	 * @param password     the user's password
@@ -117,9 +117,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the user's ID.
-	 * 
+	 *
 	 * @return the user's ID
 	 */
 	public Integer getId() {
@@ -130,9 +130,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the user's ID.
-	 * 
+	 *
 	 * @param id the user's ID to set
 	 */
 	public void setId( Integer id ) {
@@ -143,9 +143,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the user's username.
-	 * 
+	 *
 	 * @return the user's username
 	 */
 	public String getUsername() {
@@ -156,9 +156,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets user's username.
-	 * 
+	 *
 	 * @param username the username to set
 	 */
 	public void setUsername( String username ) {
@@ -169,9 +169,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns user's password.
-	 * 
+	 *
 	 * @return the password
 	 */
 	public String getPassword() {
@@ -182,9 +182,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets user's password.
-	 * 
+	 *
 	 * @param password the password to set
 	 */
 	public void setPassword( String password ) {
@@ -195,9 +195,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns users name.
-	 * 
+	 *
 	 * @return the name
 	 */
 	public String getName() {
@@ -208,9 +208,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets user's name.
-	 * 
+	 *
 	 * @param name the name to set
 	 */
 	public void setName( String name ) {
@@ -221,9 +221,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns user's last name .
-	 * 
+	 *
 	 * @return the lastName
 	 */
 	public String getLastName() {
@@ -234,9 +234,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets user's last name.
-	 * 
+	 *
 	 * @param lastName the lastName to set
 	 */
 	public void setLastName( String lastName ) {
@@ -247,9 +247,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns user's email.
-	 * 
+	 *
 	 * @return the mail
 	 */
 	public String getMail() {
@@ -260,9 +260,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets user's mail.
-	 * 
+	 *
 	 * @param mail the mail to set
 	 */
 	public void setMail( String mail ) {
@@ -273,9 +273,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns user's phone number.
-	 * 
+	 *
 	 * @return the phone
 	 */
 	public String getPhone() {
@@ -286,9 +286,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets user's phone number.
-	 * 
+	 *
 	 * @param phone the phone to set
 	 */
 	public void setPhone( String phone ) {
@@ -299,9 +299,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the user's profile photo.
-	 * 
+	 *
 	 * @return the profilePhoto
 	 */
 	public ImageIcon getProfilePhoto() {
@@ -312,9 +312,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the users's profile photo.
-	 * 
+	 *
 	 * @param profilePhoto the profilePhoto to set
 	 */
 	public void setProfilePhoto( ImageIcon profilePhoto ) {
@@ -325,9 +325,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Adds a user observer to the list of observers.
-	 * 
+	 *
 	 * @param observer the user observer to add
 	 */
 	public void addObserver( UserObserver observer ) {
@@ -338,9 +338,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Removes a user observer from the list of observers.
-	 * 
+	 *
 	 * @param observer the user observer to remove
 	 */
 	public void removeObserver( UserObserver observer ) {
@@ -351,7 +351,7 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Notifies all the user observers by calling their updateProfilePhoto() and
 	 * updateUserInfo() methods.
 	 */
@@ -370,9 +370,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Hashes the user's password using SHA-256 algorithm and a salt value.
-	 * 
+	 *
 	 * @param password the password to hash
 	 * @param salt     the salt value to use
 	 * @return the hashed password
@@ -398,9 +398,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Generates a random salt value for password hashing.
-	 * 
+	 *
 	 * @return the generated salt value
 	 */
 	@SuppressWarnings( "unused" )
@@ -415,9 +415,9 @@ public class User {
 	
 	
 	/**
-	 * 
+	 *
 	 * Converts an array of bytes into a hexadecimal string.
-	 * 
+	 *
 	 * @param bytes the byte array to convert
 	 * @return the hexadecimal string representation of the byte array
 	 */

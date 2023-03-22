@@ -5,9 +5,9 @@ import java.util.ArrayList;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         ProductListObservable is a class that serves as an observable object
  *         in the observer design pattern. It allows observers to register
  *         themselves and receive notifications when there is a change to the
@@ -20,7 +20,7 @@ public class ProductListObservable {
 	private ArrayList<ProductListObserver> observers = new ArrayList<>();
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new ProductListObservable object.
 	 */
 	private ProductListObservable() {
@@ -29,10 +29,10 @@ public class ProductListObservable {
 	
 	
 	/**
-	 * 
+	 *
 	 * Returns the singleton instance of ProductListObservable, creating it if it
 	 * does not exist.
-	 * 
+	 *
 	 * @return the singleton instance of ProductListObservable
 	 */
 	public static synchronized ProductListObservable getInstance() {
@@ -49,9 +49,9 @@ public class ProductListObservable {
 	
 	
 	/**
-	 * 
+	 *
 	 * Registers an observer with the ProductListObservable.
-	 * 
+	 *
 	 * @param observer the observer to be registered
 	 */
 	public void addObserver( ProductListObserver observer ) {
@@ -62,9 +62,9 @@ public class ProductListObservable {
 	
 	
 	/**
-	 * 
+	 *
 	 * Unregisters an observer from the ProductListObservable.
-	 * 
+	 *
 	 * @param observer the observer to be unregistered
 	 */
 	public void removeObserver( ProductListObserver observer ) {
@@ -75,7 +75,7 @@ public class ProductListObservable {
 	
 	
 	/**
-	 * 
+	 *
 	 * Notifies all registered observers that there has been a change to the product
 	 * list.
 	 */

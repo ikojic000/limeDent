@@ -22,7 +22,7 @@ import net.miginfocom.swing.MigLayout;
 public class Menu extends HalfRoundShadowPanel {
 	
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -2333006692423787699L;
 	private MigLayout layout;

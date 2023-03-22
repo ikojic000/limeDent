@@ -18,7 +18,7 @@ import net.miginfocom.swing.MigLayout;
 public class FooterBar extends JPanel {
 	
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -973683967357077782L;
 	private JLabel lblFooter;

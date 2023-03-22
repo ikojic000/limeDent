@@ -13,7 +13,7 @@ import view.viewPanel.HomePanel;
 
 
 /**
- * 
+ *
  * @author ikojic000
  *
  *         The HomeController class implements PatientListObserver and manages
@@ -23,17 +23,17 @@ import view.viewPanel.HomePanel;
  */
 public class HomeController implements PatientListObserver {
 	
-	private ArrayList<Patient> patientList = new ArrayList<Patient>();
+	private ArrayList<Patient> patientList = new ArrayList<>();
 	private PatientTableModel tableModel;
 	private HomePanel homePanel;
 	private PatientDAO patientDAO;
 	private PatientCheck patientCheck;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new HomeController object with a HomePanel UI component and
 	 * initializes it with the patient data.
-	 * 
+	 *
 	 * @param homePanel the HomePanel UI component
 	 */
 	public HomeController( HomePanel homePanel ) {
@@ -58,9 +58,9 @@ public class HomeController implements PatientListObserver {
 	
 	
 	/**
-	 * 
+	 *
 	 * Gets the patient object at the specified row in the patient table.
-	 * 
+	 *
 	 * @param row the row index of the patient object to retrieve
 	 * @return the patient object at the specified row
 	 */
@@ -72,9 +72,9 @@ public class HomeController implements PatientListObserver {
 	
 	
 	/**
-	 * 
+	 *
 	 * Retrieves all patients from the database and returns them as an ArrayList.
-	 * 
+	 *
 	 * @return the ArrayList of all patients
 	 */
 	public ArrayList<Patient> getPatients() {
@@ -86,9 +86,9 @@ public class HomeController implements PatientListObserver {
 	
 	
 	/**
-	 * 
+	 *
 	 * Retrieves the patient object with the specified ID from the database.
-	 * 
+	 *
 	 * @param id the ID of the patient to retrieve
 	 * @return the patient object with the specified ID
 	 */
@@ -101,7 +101,7 @@ public class HomeController implements PatientListObserver {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the data for the patient table UI component with the current patient
 	 * data.
 	 */
@@ -114,10 +114,10 @@ public class HomeController implements PatientListObserver {
 	
 	
 	/**
-	 * 
+	 *
 	 * Deletes the patient object at the specified row in the patient table from the
 	 * database and updates the UI component accordingly.
-	 * 
+	 *
 	 * @param row the row index of the patient object to delete
 	 */
 	public void deletePatient( int row ) {
@@ -136,7 +136,7 @@ public class HomeController implements PatientListObserver {
 	
 	
 	/**
-	 * 
+	 *
 	 * Filters the list of patients by name search and updates the UI component
 	 * accordingly.
 	 */

@@ -17,6 +17,7 @@ import java.util.Locale;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.table.DefaultTableModel;
 
 import controller.LoginController;
@@ -40,14 +41,14 @@ import view.View;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The NoviPregledPanel class extends RoundedShadowPanel and represents
  *         a panel for managing patient's medical examinations. It contains
  *         components for adding, updating, and deleting medical examinations,
  *         and displaying medical examinations in a table.
- * 		
+ *		
  */
 public class NewMedicalExamPanel extends RoundedShadowPanel {
 	
@@ -74,10 +75,10 @@ public class NewMedicalExamPanel extends RoundedShadowPanel {
 	private Patient patient;
 	
 	/**
-	 * 
+	 *
 	 * Constructs a new NoviPregledPanel with the given CardPanel and View / JFrame
 	 * objects. Initializes all UI components and sets up the panel's layout.
-	 * 
+	 *
 	 * @param cardParent the CardPanel parent for this panel
 	 * @param view       the View parent for this panel
 	 */
@@ -134,8 +135,8 @@ public class NewMedicalExamPanel extends RoundedShadowPanel {
 		allPregledScrollPane.getViewport().setBackground( this.getBackground() );
 		allPregledScrollPane.setBorder( BorderFactory.createEmptyBorder() );
 		allPregledScrollPane.setVerticalScrollBar( sc );
-		allPregledScrollPane.setVerticalScrollBarPolicy( JScrollPane.VERTICAL_SCROLLBAR_ALWAYS );
-		allPregledScrollPane.setHorizontalScrollBarPolicy( JScrollPane.HORIZONTAL_SCROLLBAR_NEVER );
+		allPregledScrollPane.setVerticalScrollBarPolicy( ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS );
+		allPregledScrollPane.setHorizontalScrollBarPolicy( ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER );
 		
 		table = new CustomTable();
 		table.setFirstBold( true );
@@ -179,7 +180,7 @@ public class NewMedicalExamPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Activates the panel by setting up various listeners for its components. These
 	 * listeners are used to handle events like button clicks, textfield input,
 	 * table selection, etc. Once activated, this panel becomes fully functional and
@@ -273,7 +274,7 @@ public class NewMedicalExamPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Initiates the layout of the panel.
 	 */
 	private void initLayout() {
@@ -326,9 +327,9 @@ public class NewMedicalExamPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the form title and table data for a given patient
-	 * 
+	 *
 	 * @param patient The patient to set data for
 	 */
 	public void setData( Patient patient ) {
@@ -340,7 +341,7 @@ public class NewMedicalExamPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Clears all the input fields and selections on the panel
 	 */
 	public void clearAll() {
@@ -353,7 +354,7 @@ public class NewMedicalExamPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * @return The label that displays the form title
 	 */
 	public JLabel getLblFormTitle() {
@@ -364,7 +365,7 @@ public class NewMedicalExamPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * @return The table on the panel
 	 */
 	public CustomTable getTable() {
@@ -375,7 +376,7 @@ public class NewMedicalExamPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * @return The patient associated with the panel
 	 */
 	public Patient getPatient() {
@@ -386,9 +387,9 @@ public class NewMedicalExamPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the patient for the panel and updates the data displayed on it
-	 * 
+	 *
 	 * @param patient The patient to set
 	 */
 	public void setPatient( Patient patient ) {
@@ -401,9 +402,9 @@ public class NewMedicalExamPanel extends RoundedShadowPanel {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the login controller for the panel
-	 * 
+	 *
 	 * @param loginController The login controller to set
 	 */
 	public void setLoginController( LoginController loginController ) {

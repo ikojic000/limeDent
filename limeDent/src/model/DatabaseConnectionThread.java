@@ -5,15 +5,15 @@ import java.sql.SQLException;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The DatabaseConnectionThread class is a thread that runs in the
  *         background and periodically checks the status of the database
  *         connection. If the connection is closed, it attempts to reconnect to
  *         the database. This class extends the Thread class and overrides the
  *         run() method to implement the connection checking functionality.
- * 		
+ *		
  */
 public class DatabaseConnectionThread extends Thread {
 	
@@ -22,7 +22,7 @@ public class DatabaseConnectionThread extends Thread {
 	private Database database;
 	
 	/**
-	 * 
+	 *
 	 * Constructor that initializes the instance variables
 	 */
 	public DatabaseConnectionThread() {
@@ -34,7 +34,7 @@ public class DatabaseConnectionThread extends Thread {
 	
 	
 	/**
-	 * 
+	 *
 	 * Sets the running to false, which will cause the thread to stop running
 	 */
 	public void stopThread() {
@@ -45,7 +45,7 @@ public class DatabaseConnectionThread extends Thread {
 	
 	
 	/**
-	 * 
+	 *
 	 * The run() method is called when the thread is started, and it contains the
 	 * logic for checking the database connection status and attempting to reconnect
 	 * if necessary.
@@ -63,7 +63,7 @@ public class DatabaseConnectionThread extends Thread {
 				if ( database.getConnection().isClosed() ) {
 					
 					System.out.println( "Database disconnected...Trying to connect again" );
-					database.connect();
+					Database.connect();
 					
 				} else {
 					

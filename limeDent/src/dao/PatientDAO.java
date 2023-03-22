@@ -20,9 +20,9 @@ import model.Patient;
 
 
 /**
- * 
+ *
  * @author ikojic000
- * 
+ *
  *         The PatientDAO class represents the data access object for patients.
  *         It provides methods to retrieve and modify patient data in the
  *         database.
@@ -39,14 +39,14 @@ public class PatientDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Retrieves all patients from the database.
-	 * 
+	 *
 	 * @return an ArrayList containing all patients.
 	 */
 	public ArrayList<Patient> getAllPatients() {
 		
-		ArrayList<Patient> allPatients = new ArrayList<Patient>();
+		ArrayList<Patient> allPatients = new ArrayList<>();
 		
 		String sql = "SELECT p.*, m.date as lastExam " + "FROM patients p "
 				+ "LEFT JOIN (SELECT idPatient, MAX(date) AS date FROM medicalexam GROUP BY idPatient) m ON p.id = m.idPatient";
@@ -104,11 +104,11 @@ public class PatientDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Retrieves a patient from the database by ID.
-	 * 
+	 *
 	 * @param id - the ID of the patient to retrieve.
-	 * 
+	 *
 	 * @return the patient with the specified ID, or null if not found.
 	 */
 	public Patient getPatientByID( Integer id ) {
@@ -164,9 +164,9 @@ public class PatientDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Adds a new patient to the database.
-	 * 
+	 *
 	 * @param patient - the patient to add to the database
 	 */
 	public void addPatient( Patient patient ) {
@@ -210,9 +210,9 @@ public class PatientDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Updates the information of a patient in the database.
-	 * 
+	 *
 	 * @param patient - the patient whose information will be updated
 	 */
 	public void updatePatient( Patient patient ) {
@@ -257,9 +257,9 @@ public class PatientDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Updates the profile photo of a patient in the database.
-	 * 
+	 *
 	 * @param patient - the patient whose photo will be updated
 	 */
 	public void updatePatientPhoto( Patient patient ) {
@@ -288,9 +288,9 @@ public class PatientDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Converts a profile photo to a byte array.
-	 * 
+	 *
 	 * @param profile - the profile photo to convert
 	 * @return a byte array containing the profile photo data
 	 */
@@ -328,9 +328,9 @@ public class PatientDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Deletes a patient from the database.
-	 * 
+	 *
 	 * @param patient - the patient to be deleted
 	 */
 	public void deletePatient( Patient patient ) {
@@ -356,16 +356,16 @@ public class PatientDAO {
 	
 	
 	/**
-	 * 
+	 *
 	 * Searches for patients based on the provided search string. Uses SQL query to
 	 * retrieve the data from the database.
-	 * 
+	 *
 	 * @param search the search string to filter patients
 	 * @return an ArrayList of Patient objects that match the search criteria
 	 */
 	public ArrayList<Patient> searchPatient( String search ) {
 		
-		ArrayList<Patient> searchedPatients = new ArrayList<Patient>();
+		ArrayList<Patient> searchedPatients = new ArrayList<>();
 		String sql = "SELECT p.*, m.date AS lastExam\r\n" + "FROM patients p \r\n" + "LEFT JOIN (\r\n"
 				+ "  SELECT idPatient, MAX(date) AS date \r\n" + "  FROM medicalExam \r\n" + "  GROUP BY idPatient\r\n"
 				+ ") m ON p.id = m.idPatient \r\n" + "WHERE p.imePrezime like ?;";

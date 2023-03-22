@@ -24,7 +24,7 @@ import net.miginfocom.swing.MigLayout;
 public class Header extends JPanel implements UserObserver {
 	
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 4018943012787520053L;
 	private float alpha;
