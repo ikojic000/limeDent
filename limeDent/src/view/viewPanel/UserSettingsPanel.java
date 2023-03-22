@@ -203,7 +203,7 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 					
 					notification.setType( NotificationType.SUCCESS );
 					notification.setLblTitle( "Fotografija promijenjena" );
-					notification.setLbMessageText( "Profilna fotografija uspješno promijenjena" );
+					notification.setLbMessageText( "Profilna fotografija uspje\u0161no promijenjena" );
 					notification.showNotification();
 					
 				}
@@ -226,7 +226,7 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 				
 				notification.setType( NotificationType.SUCCESS );
 				notification.setLblTitle( "Podaci promijenjeni" );
-				notification.setLbMessageText( "Uspiješno ste promijenili svoje podatke ..." );
+				notification.setLbMessageText( "Uspije\u0161no ste promijenili svoje podatke ..." );
 				notification.showNotification();
 				
 			}
@@ -243,7 +243,7 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 						
 						Message msg = new Message();
 						msg.setMessageTitle( "Promjena lozinke" );
-						msg.setMessageText( "Jeste li sigurni da želite promijeniti lozinku?" );
+						msg.setMessageText( "Jeste li sigurni da \u017eelite promijeniti lozinku?" );
 						msg.eventOK( new ActionListener() {
 							
 							@Override
@@ -259,7 +259,7 @@ public class UserSettingsPanel extends RoundedShadowPanel implements UserObserve
 								
 								notification.setType( NotificationType.SUCCESS );
 								notification.setLblTitle( "Lozinka promijenjena" );
-								notification.setLbMessageText( "Uspiješno ste promijenili svoju lozinku..." );
+								notification.setLbMessageText( "Uspije\u0161no ste promijenili svoju lozinku..." );
 								notification.showNotification();
 								
 								GlassPanePopup.closePopupLast();

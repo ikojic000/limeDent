@@ -52,7 +52,6 @@ public class ViewLogin extends JFrame {
 	private ImageIcon imgLogo;
 	private JLabel lblLogo;
 	private JPanel panelRight;
-	private JFrame view;
 	private Notification notification;
 	private LoginController loginController;
 	
@@ -68,7 +67,6 @@ public class ViewLogin extends JFrame {
 		this.setIconImage( appIcon );
 		
 		this.loginController = new LoginController();
-		this.view = this;
 		
 		contentPane = new JPanel();
 		contentPane.setBackground( new Color( 244 , 244 , 249 ) );
@@ -76,7 +74,7 @@ public class ViewLogin extends JFrame {
 		contentPane.setLayout( null );
 		setContentPane( contentPane );
 		
-		notification = new Notification( view , NotificationType.WARNING , Location.TOP_CENTER , "" , "" );
+		notification = new Notification( this , NotificationType.WARNING , Location.TOP_CENTER , "" , "" );
 		
 		btnMinimize = new Buttont();
 		btnMinimize.setHoverColor( new Color( 210 , 214 , 214 ) );
@@ -244,9 +242,6 @@ public class ViewLogin extends JFrame {
 					long end = System.currentTimeMillis();
 					System.out.println( "End - " + end );
 					System.out.println( "Time to show frame: " + (end - start) + " milliseconds" );
-		
-//					View view = new View( loginController );
-//					view.setVisible( true );
 					
 				} else {
 					

@@ -93,6 +93,39 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 		lblFormTitle.setForeground( new Color( 121 , 118 , 118 ) );
 		lblFormTitle.setFont( new Font( "Century Gothic" , Font.BOLD , 18 ) );
 		
+		txtimePrezime = new TextField();
+		txtimePrezime.setPreferredSize( new Dimension( 340 , 65 ) );
+		txtimePrezime.setMinimumSize( new Dimension( 340 , 65 ) );
+		txtimePrezime.setMaximumSize( new Dimension( 340 , 65 ) );
+		txtimePrezime.setLineColor( new Color( 46 , 191 , 165 ) );
+		txtimePrezime.setLabelText( "Ime i prezime" );
+		txtimePrezime.setHintTextColor( new Color( 121 , 118 , 118 ) );
+		txtimePrezime.setForeground( new Color( 44 , 51 , 51 ) );
+		txtimePrezime.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
+		txtimePrezime.setBackground( new Color( 244 , 244 , 249 ) );
+		
+		txtOIB = new TextField();
+		txtOIB.setPreferredSize( new Dimension( 340 , 65 ) );
+		txtOIB.setMinimumSize( new Dimension( 340 , 65 ) );
+		txtOIB.setMaximumSize( new Dimension( 340 , 65 ) );
+		txtOIB.setLineColor( new Color( 46 , 191 , 165 ) );
+		txtOIB.setLabelText( "OIB" );
+		txtOIB.setHintTextColor( new Color( 121 , 118 , 118 ) );
+		txtOIB.setForeground( new Color( 44 , 51 , 51 ) );
+		txtOIB.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
+		txtOIB.setBackground( new Color( 244 , 244 , 249 ) );
+		
+		txtJMBG = new TextField();
+		txtJMBG.setPreferredSize( new Dimension( 340 , 65 ) );
+		txtJMBG.setMinimumSize( new Dimension( 340 , 65 ) );
+		txtJMBG.setMaximumSize( new Dimension( 340 , 65 ) );
+		txtJMBG.setLineColor( new Color( 46 , 191 , 165 ) );
+		txtJMBG.setLabelText( "JMBG" );
+		txtJMBG.setHintTextColor( new Color( 121 , 118 , 118 ) );
+		txtJMBG.setForeground( new Color( 44 , 51 , 51 ) );
+		txtJMBG.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
+		txtJMBG.setBackground( new Color( 244 , 244 , 249 ) );
+		
 		txtAdresa = new TextField();
 		txtAdresa.setPreferredSize( new Dimension( 340 , 65 ) );
 		txtAdresa.setMinimumSize( new Dimension( 340 , 65 ) );
@@ -251,7 +284,8 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 					notification.setLbMessageText( "Dodali ste novog pacijenta: " + txtimePrezime.getText() );
 					
 					Message msg = new Message();
-					msg.setMessageTitle( "Jeste li sigurni da želite dodati pacijenta: " + txtimePrezime.getText() );
+					msg.setMessageTitle(
+							"Jeste li sigurni da \u017eelite dodati pacijenta: " + txtimePrezime.getText() );
 					msg.setMessageText( "Pritiskom gumba OK pacijent će biti dodan u sustav." );
 					
 					msg.eventOK( new ActionListener() {
@@ -405,17 +439,6 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 		gbc_lblFormTitle.gridy = 1;
 		add( lblFormTitle , gbc_lblFormTitle );
 		
-		txtimePrezime = new TextField();
-		txtimePrezime.setPreferredSize( new Dimension( 340 , 65 ) );
-		txtimePrezime.setMinimumSize( new Dimension( 340 , 65 ) );
-		txtimePrezime.setMaximumSize( new Dimension( 340 , 65 ) );
-		txtimePrezime.setLineColor( new Color( 46 , 191 , 165 ) );
-		txtimePrezime.setLabelText( "Ime i prezime" );
-		txtimePrezime.setHintTextColor( new Color( 121 , 118 , 118 ) );
-		txtimePrezime.setForeground( new Color( 44 , 51 , 51 ) );
-		txtimePrezime.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
-		txtimePrezime.setBackground( new Color( 244 , 244 , 249 ) );
-		
 		GridBagConstraints gbc_txtimePrezime = new GridBagConstraints();
 		gbc_txtimePrezime.gridwidth = 2;
 		gbc_txtimePrezime.anchor = GridBagConstraints.SOUTHWEST;
@@ -424,17 +447,6 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 		gbc_txtimePrezime.gridy = 3;
 		add( txtimePrezime , gbc_txtimePrezime );
 		
-		txtOIB = new TextField();
-		txtOIB.setPreferredSize( new Dimension( 340 , 65 ) );
-		txtOIB.setMinimumSize( new Dimension( 340 , 65 ) );
-		txtOIB.setMaximumSize( new Dimension( 340 , 65 ) );
-		txtOIB.setLineColor( new Color( 46 , 191 , 165 ) );
-		txtOIB.setLabelText( "OIB" );
-		txtOIB.setHintTextColor( new Color( 121 , 118 , 118 ) );
-		txtOIB.setForeground( new Color( 44 , 51 , 51 ) );
-		txtOIB.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
-		txtOIB.setBackground( new Color( 244 , 244 , 249 ) );
-		
 		GridBagConstraints gbc_txtOIB = new GridBagConstraints();
 		gbc_txtOIB.gridwidth = 2;
 		gbc_txtOIB.anchor = GridBagConstraints.NORTHWEST;
@@ -442,17 +454,6 @@ public class NoviPacijentPanel extends RoundedShadowPanel {
 		gbc_txtOIB.gridx = 1;
 		gbc_txtOIB.gridy = 5;
 		add( txtOIB , gbc_txtOIB );
-		
-		txtJMBG = new TextField();
-		txtJMBG.setPreferredSize( new Dimension( 340 , 65 ) );
-		txtJMBG.setMinimumSize( new Dimension( 340 , 65 ) );
-		txtJMBG.setMaximumSize( new Dimension( 340 , 65 ) );
-		txtJMBG.setLineColor( new Color( 46 , 191 , 165 ) );
-		txtJMBG.setLabelText( "JMBG" );
-		txtJMBG.setHintTextColor( new Color( 121 , 118 , 118 ) );
-		txtJMBG.setForeground( new Color( 44 , 51 , 51 ) );
-		txtJMBG.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
-		txtJMBG.setBackground( new Color( 244 , 244 , 249 ) );
 		
 		GridBagConstraints gbc_txtJMBG = new GridBagConstraints();
 		gbc_txtJMBG.gridwidth = 2;

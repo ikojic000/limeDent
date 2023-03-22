@@ -56,9 +56,6 @@ import view.View;
 public class NoviPregledPanel extends RoundedShadowPanel {
 	
 	private static final long serialVersionUID = 4380414859779004657L;
-	private JScrollPane tblUslugeScrollPane;
-	private ScrollBarCustom tblUslugeScrollBar;
-	private CustomTable tblUsluge;
 	protected static final DecimalFormat dfKoristenje = new DecimalFormat( "0.00" ,
 			DecimalFormatSymbols.getInstance( Locale.US ) );
 	protected static final DecimalFormat dfPrikaz = new DecimalFormat( "###.00" ,
@@ -129,45 +126,12 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 		btnNoviPregled.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
 		btnNoviPregled.setFocusPainted( false );
 		
-		tblUslugeScrollPane = new JScrollPane();
-		tblUslugeScrollPane.setForeground( Color.BLACK );
-		tblUslugeScrollPane.setBorder( new MatteBorder( 1 , 1 , 1 , 1 , (Color) getBackground() ) );
-		tblUslugeScrollPane.setBackground( new Color( 244 , 244 , 249 ) );
-		tblUslugeScrollPane.getViewport().setBackground( new Color( 244 , 244 , 249 ) );
-		
-		tblUslugeScrollBar = new ScrollBarCustom( 80 );
-		tblUslugeScrollBar.setUnitIncrement( 5 );
-		tblUslugeScrollBar.setThumbSize( 80 );
-		tblUslugeScrollBar.setForeground( new Color( 46 , 191 , 165 ) );
-		tblUslugeScrollPane.setVerticalScrollBar( tblUslugeScrollBar );
-		
-		tblUsluge = new CustomTable();
-		tblUsluge.setFirstBold( false );
-		tblUsluge.setForeground( new Color( 0 , 0 , 0 ) );
-		tblUsluge.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
-		tblUsluge.setCursor( Cursor.getPredefinedCursor( Cursor.HAND_CURSOR ) );
-		tblUsluge.setBackground( getBackground() );
-		tblUsluge.setBorder( null );
-		tblUsluge.setShowVerticalLines( false );
-		tblUsluge.setShowHorizontalLines( false );
-		tblUsluge.setShowGrid( false );
-		
-		tblUsluge.setModel(
-				new DefaultTableModel( new Object[][] {} , new String[] { "Šifra dijagnoze" , "Naziv dijagnoze" } ) );
-		
-		tblUsluge.getTableHeader().setPreferredSize( new Dimension( 785 , 40 ) );
-		tblUsluge.getTableHeader().setFont( new Font( "Century Gothic" , Font.BOLD , 15 ) );
-		
-		tblUslugeScrollPane.setViewportView( tblUsluge );
-		tblUsluge.setDefaultEditor( Object.class , null );
-		insertTableDataDijagnoze( tblUsluge );
-		
-		lblProsliPregledi = new JLabel( "Prošli pregledi" );
-		lblProsliPregledi.setForeground( new Color( 121 , 118 , 118 ) );
-		lblProsliPregledi.setFont( new Font( "Century Gothic" , Font.BOLD , 16 ) );
-		
 		ScrollBarCustom sc = new ScrollBarCustom( 80 );
 		sc.setUnitIncrement( 5 );
+		
+		lblProsliPregledi = new JLabel( "Pro\u0161li pregledi" );
+		lblProsliPregledi.setForeground( new Color( 121 , 118 , 118 ) );
+		lblProsliPregledi.setFont( new Font( "Century Gothic" , Font.BOLD , 16 ) );
 		
 		allPregledScrollPane = new JScrollPane();
 		allPregledScrollPane.setBackground( new Color( 244 , 244 , 249 ) );
@@ -227,26 +191,6 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 	 */
 	private void activatePanel() {
 		
-//		PANEL LISTENER - CLEAR ALL
-		addMouseListener( new MouseAdapter() {
-			
-			@Override
-			public void mouseClicked( MouseEvent e ) {
-				
-				if ( tblUsluge.getSelectionModel().isSelectionEmpty() ) {
-					
-					tblUsluge.clearSelection();
-					
-				} else {
-					
-					clearAll();
-					
-				}
-				
-			}
-			
-		} );
-		
 //		TABLE LISTENERS
 		TableActionEvent event = new TableActionEvent() {
 			
@@ -274,7 +218,7 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 				
 				Message msg = new Message();
 				msg.setMessageTitle( "Brisanje pregleda" );
-				msg.setMessageText( "Jeste li sigurni da želite izbrisati pregled napravljen dana:  \n"
+				msg.setMessageText( "Jeste li sigurni da \u017eelite izbrisati pregled napravljen dana:  \n"
 						+ noviPregledController.getSelectedExam( row ).getDateFormatted() + " ?"
 						+ "\nPregled napravio/la: " + noviPregledController.getSelectedExam( row ).getDoctorName() );
 				
@@ -312,23 +256,6 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 		};
 		
 		table.setActionEvent( event );
-		
-		tblUsluge.addMouseListener( new MouseAdapter() {
-			
-			@Override
-			public void mouseClicked( MouseEvent e ) {
-				
-				if ( e.getClickCount() == 2 && !e.isConsumed() ) {
-					
-					e.consume();
-					String dijagnoza = tblUsluge.getValueAt( tblUsluge.getSelectedRow() , 1 ).toString();
-					txtNoviPregled.setText( txtNoviPregled.getText() + "\n" + dijagnoza );
-					
-				}
-				
-			}
-			
-		} );
 		
 //		BUTTON LISTENER
 		btnNoviPregled.addActionListener( new ActionListener() {
@@ -377,12 +304,19 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 		gbc_txtNoviPregledScroll.gridy = 2;
 		add( txtNoviPregledScroll , gbc_txtNoviPregledScroll );
 		
+		GridBagConstraints gbc_lblProliPregledi = new GridBagConstraints();
+		gbc_lblProliPregledi.anchor = GridBagConstraints.WEST;
+		gbc_lblProliPregledi.insets = new Insets( 5 , 25 , 5 , 5 );
+		gbc_lblProliPregledi.gridx = 1;
+		gbc_lblProliPregledi.gridy = 4;
+		add( lblProsliPregledi , gbc_lblProliPregledi );
+		
 		GridBagConstraints gbc_tblUslugeScrollPane = new GridBagConstraints();
+		gbc_tblUslugeScrollPane.gridwidth = 2;
 		gbc_tblUslugeScrollPane.insets = new Insets( 0 , 30 , 5 , 5 );
 		gbc_tblUslugeScrollPane.fill = GridBagConstraints.BOTH;
-		gbc_tblUslugeScrollPane.gridheight = 4;
-		gbc_tblUslugeScrollPane.gridx = 2;
-		gbc_tblUslugeScrollPane.gridy = 2;
+		gbc_tblUslugeScrollPane.gridx = 1;
+		gbc_tblUslugeScrollPane.gridy = 5;
 		add( allPregledScrollPane , gbc_tblUslugeScrollPane );
 		
 		GridBagConstraints gbc_btnNoviPregled = new GridBagConstraints();
@@ -391,41 +325,6 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 		gbc_btnNoviPregled.gridx = 1;
 		gbc_btnNoviPregled.gridy = 3;
 		add( btnNoviPregled , gbc_btnNoviPregled );
-		
-		GridBagConstraints gbc_lblProliPregledi = new GridBagConstraints();
-		gbc_lblProliPregledi.anchor = GridBagConstraints.WEST;
-		gbc_lblProliPregledi.insets = new Insets( 5 , 25 , 5 , 5 );
-		gbc_lblProliPregledi.gridx = 2;
-		gbc_lblProliPregledi.gridy = 1;
-		add( lblProsliPregledi , gbc_lblProliPregledi );
-		
-		GridBagConstraints gbc_allPregledScrollPane = new GridBagConstraints();
-		gbc_allPregledScrollPane.insets = new Insets( 0 , 0 , 5 , 5 );
-		gbc_allPregledScrollPane.fill = GridBagConstraints.BOTH;
-		gbc_allPregledScrollPane.gridx = 1;
-		gbc_allPregledScrollPane.gridy = 5;
-		add( tblUslugeScrollPane , gbc_allPregledScrollPane );
-		
-	}
-	
-	
-	/**
-	 * 
-	 * Inserts data into the table with random values for testing purposes
-	 * 
-	 * @param table The table to insert data into
-	 */
-	private void insertTableDataDijagnoze( CustomTable table ) {
-		
-		DefaultTableModel model = (DefaultTableModel) table.getModel();
-		Random random = new Random();
-		
-		for ( int i = 0; i < 50; i++ ) {
-			
-			model.addRow( new Object[] { (random.nextInt( 100 ) * 10000) + (random.nextInt( 100 ) / 100) ,
-										 "Dijagnoza " + i } );
-			
-		}
 		
 	}
 	
@@ -451,8 +350,6 @@ public class NoviPregledPanel extends RoundedShadowPanel {
 	public void clearAll() {
 		
 		txtNoviPregled.setText( "" );
-		tblUsluge.clearSelection();
-		tblUslugeScrollPane.getVerticalScrollBar().setValue( 0 );
 		allPregledScrollPane.getVerticalScrollBar().setValue( 0 );
 		this.requestFocus();
 		

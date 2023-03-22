@@ -83,9 +83,9 @@ public class HomePanel extends RoundedShadowPanel {
 		this.view = view;
 		this.cardParent = cardParent;
 		this.homeController = new HomeController( this );
-		homeController.startPatientCheckThread();
+//		homeController.startPatientCheckThread();
 		
-		setToolTipText( "Klikni za odzna�?avanje pacijenta ..." );
+		setToolTipText( "Klikni za odzna\u010davanje pacijenta ..." );
 		setOpaque( false );
 		setFont( new Font( "Century Gothic" , Font.BOLD , 16 ) );
 		setBackground( new Color( 244 , 244 , 249 ) );
@@ -107,7 +107,7 @@ public class HomePanel extends RoundedShadowPanel {
 		txtSearch.setMinimumSize( new Dimension( 340 , 65 ) );
 		txtSearch.setMaximumSize( new Dimension( 340 , 65 ) );
 		txtSearch.setLineColor( new Color( 46 , 191 , 165 ) );
-		txtSearch.setLabelText( "Pretra\u017Ei" );
+		txtSearch.setLabelText( "Pretra\u017ei" );
 		txtSearch.setHintTextColor( new Color( 121 , 118 , 118 ) );
 		txtSearch.setForeground( new Color( 44 , 51 , 51 ) );
 		txtSearch.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
@@ -288,7 +288,7 @@ public class HomePanel extends RoundedShadowPanel {
 					
 					notification.setType( NotificationType.WARNING );
 					notification.setLblTitle( "Upozorenje" );
-					notification.setLbMessageText( "Odznačite odabranog pacijenta" );
+					notification.setLbMessageText( "Odzna\u010dite odabranog pacijenta" );
 					notification.showNotification();
 					
 				}
@@ -337,9 +337,9 @@ public class HomePanel extends RoundedShadowPanel {
 						"Pacijent " + table.getValueAt( table.getSelectedRow() , 1 ) + " izbrisan ..." );
 				
 				Message msg = new Message();
-				msg.setMessageTitle( "Jeste li sigurni da želite izbrisati pacijenta: "
+				msg.setMessageTitle( "Jeste li sigurni da \u017eelite izbrisati pacijenta: "
 						+ table.getValueAt( table.getSelectedRow() , 1 ) );
-				msg.setMessageText( "Pritiskom gumba OK pacijent se briše nepovratno." );
+				msg.setMessageText( "Pritiskom gumba OK pacijent se bri\u0161e nepovratno." );
 				msg.eventOK( new ActionListener() {
 					
 					@Override

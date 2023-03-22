@@ -220,7 +220,7 @@ public class DetaljiPanel extends RoundedShadowPanel {
 		txtAlergijeScroll.setViewportView( txtAlergije );
 		
 		btnUredi = new ButtonShadow();
-		btnUredi.setText( "Ažuriraj" );
+		btnUredi.setText( "A\u017euriraj" );
 		btnUredi.setPreferredSize( new Dimension( 170 , 45 ) );
 		btnUredi.setMinimumSize( new Dimension( 170 , 45 ) );
 		btnUredi.setMaximumSize( new Dimension( 170 , 45 ) );
@@ -229,7 +229,7 @@ public class DetaljiPanel extends RoundedShadowPanel {
 		btnUredi.setFocusPainted( false );
 		
 		btnIzbrisi = new ButtonShadow();
-		btnIzbrisi.setText( "Izbriši" );
+		btnIzbrisi.setText( "Izbri\u0161i" );
 		btnIzbrisi.setPreferredSize( new Dimension( 170 , 45 ) );
 		btnIzbrisi.setMinimumSize( new Dimension( 170 , 45 ) );
 		btnIzbrisi.setMaximumSize( new Dimension( 170 , 45 ) );
@@ -264,8 +264,8 @@ public class DetaljiPanel extends RoundedShadowPanel {
 				notification.setLbMessageText( "Pacijent " + patient.getName() + " izbrisan" );
 				
 				Message msg = new Message();
-				msg.setMessageTitle( "Jeste li sigurni da želite izbrisati pacijenta: " + patient.getName() );
-				msg.setMessageText( "Pritiskom gumba OK pacijent se briše nepovratno." );
+				msg.setMessageTitle( "Jeste li sigurni da \u017eelite izbrisati pacijenta: " + patient.getName() );
+				msg.setMessageText( "Pritiskom gumba OK pacijent se bri\u0161e nepovratno." );
 				msg.eventOK( new ActionListener() {
 					
 					@Override
@@ -292,12 +292,12 @@ public class DetaljiPanel extends RoundedShadowPanel {
 			public void actionPerformed( ActionEvent e ) {
 				
 				notification.setType( NotificationType.INFO );
-				notification.setLblTitle( "Pacijent ažuriran" );
-				notification.setLbMessageText( "Pacijent " + patient.getName() + " ažuriran" );
+				notification.setLblTitle( "Pacijent a\u017euriran" );
+				notification.setLbMessageText( "Pacijent " + patient.getName() + " a\u017euriran" );
 				
 				Message msg = new Message();
-				msg.setMessageTitle( "Jeste li sigurni da želite ažurirati pacijenta: " + patient.getName() );
-				msg.setMessageText( "Pritiskom gumba OK pacijent će se ažurirati." );
+				msg.setMessageTitle( "Jeste li sigurni da \u017eelite a\u017eurirati pacijenta: " + patient.getName() );
+				msg.setMessageText( "Pritiskom gumba OK pacijent će se a\u017eurirati." );
 				msg.eventOK( new ActionListener() {
 					
 					@Override
@@ -397,7 +397,7 @@ public class DetaljiPanel extends RoundedShadowPanel {
 							detaljiController.updatePatientPhoto( patient );
 							notification.setType( NotificationType.SUCCESS );
 							notification.setLblTitle( "Fotografija promijenjena" );
-							notification.setLbMessageText( "Uspiješno ste promijenili fotografiju" );
+							notification.setLbMessageText( "Uspije\u0161no ste promijenili fotografiju" );
 							notification.showNotification();
 							
 						}

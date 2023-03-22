@@ -94,7 +94,7 @@ public class PonudePanel extends RoundedShadowPanel {
 		txtSearch.setMinimumSize( new Dimension( 350 , 65 ) );
 		txtSearch.setPreferredSize( new Dimension( 350 , 65 ) );
 		txtSearch.setLineColor( new Color( 46 , 191 , 165 ) );
-		txtSearch.setLabelText( "Pretraži.." );
+		txtSearch.setLabelText( "Pretra\u017ei.." );
 		txtSearch.setHintTextColor( new Color( 121 , 118 , 118 ) );
 		txtSearch.setForeground( new Color( 44 , 51 , 51 ) );
 		txtSearch.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
@@ -176,7 +176,7 @@ public class PonudePanel extends RoundedShadowPanel {
 						"Ponuda " + table.getValueAt( table.getSelectedRow() , 1 ) + " izbrisana ..." );
 				Message msg = new Message();
 				msg.setMessageTitle( "Brisanje ponude" );
-				msg.setMessageText( "Jeste li sigurni da želite izbrisati ponudu "
+				msg.setMessageText( "Jeste li sigurni da \u017eelite izbrisati ponudu "
 						+ table.getValueAt( table.getSelectedRow() , 1 ) + " ?" );
 				
 				msg.eventOK( new ActionListener() {

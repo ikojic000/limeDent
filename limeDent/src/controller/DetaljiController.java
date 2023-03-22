@@ -62,6 +62,7 @@ public class DetaljiController {
 	 */
 	public void updatePatient( Patient patient ) {
 		
+		System.out.println( "Update Patient" );
 		patient.setName( detaljiPanel.getTxtimePrezime().getText() );
 		patient.setOib( Long.valueOf( detaljiPanel.getTxtOIB().getText() ) );
 		patient.setJmbg( Long.valueOf(

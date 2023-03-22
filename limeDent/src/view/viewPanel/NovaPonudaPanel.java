@@ -146,7 +146,7 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 		txtKolicina = new TextField();
 		txtKolicina.setText( "1" );
 		txtKolicina.setLineColor( new Color( 46 , 191 , 165 ) );
-		txtKolicina.setLabelText( "Količina" );
+		txtKolicina.setLabelText( "Koli\u010dina" );
 		txtKolicina.setHintTextColor( new Color( 121 , 118 , 118 ) );
 		txtKolicina.setForeground( new Color( 44 , 51 , 51 ) );
 		txtKolicina.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
@@ -190,7 +190,7 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 		table.setShowGrid( false );
 		
 		table.setModel( new DefaultTableModel( new Object[][] {} ,
-				new String[] { "Naziv" , "Cijena" , "Količina" , "Ukupno" , "Popust" , "Ukupno s popustom" ,
+				new String[] { "Naziv" , "Cijena" , "Koli\u010dina" , "Ukupno" , "Popust" , "Ukupno s popustom" ,
 							   "Ukupno s PDV-om" } ) );
 		table.getColumnModel().getColumn( 0 ).setMinWidth( 325 );
 		table.getColumnModel().getColumn( 0 ).setMaxWidth( 325 );
@@ -217,7 +217,7 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 		
 		btnIzbrisi = new ButtonShadow();
 		btnIzbrisi.setMaximumSize( new Dimension( 150 , 45 ) );
-		btnIzbrisi.setText( "Izbriši" );
+		btnIzbrisi.setText( "Izbri\u0161i" );
 		btnIzbrisi.setForegroundColorOUT( new Color( 146 , 20 , 12 ) );
 		btnIzbrisi.setForegroundColorIN( new Color( 146 , 20 , 12 ) );
 		btnIzbrisi.setForeground( new Color( 146 , 20 , 12 ) );
@@ -226,7 +226,7 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 		
 		btnClear = new ButtonShadow();
 		btnClear.setMaximumSize( new Dimension( 150 , 45 ) );
-		btnClear.setText( "Očisti tablicu" );
+		btnClear.setText( "O\u010disti tablicu" );
 		btnClear.setForegroundColorOUT( new Color( 81 , 62 , 0 ) );
 		btnClear.setForegroundColorIN( new Color( 81 , 62 , 0 ) );
 		btnClear.setForeground( new Color( 81 , 62 , 0 ) );
@@ -282,7 +282,7 @@ public class NovaPonudaPanel extends RoundedShadowPanel {
 		textAreaScroll.setMinimumSize( new Dimension( 250 , 250 ) );
 		textAreaScroll.setForeground( new Color( 44 , 51 , 51 ) );
 		textAreaScroll.setLineColor( new Color( 46 , 191 , 165 ) );
-		textAreaScroll.setLabelText( "Bilješke" );
+		textAreaScroll.setLabelText( "Bilje\u0161ke" );
 		textAreaScroll.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
 		textAreaScroll.setBackground( new Color( 244 , 244 , 249 ) );
 		

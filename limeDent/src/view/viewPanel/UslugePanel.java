@@ -140,7 +140,7 @@ public class UslugePanel extends RoundedShadowPanel {
 		btnUpdate.setPreferredSize( new Dimension( 170 , 45 ) );
 		btnUpdate.setMinimumSize( new Dimension( 170 , 45 ) );
 		btnUpdate.setMaximumSize( new Dimension( 170 , 45 ) );
-		btnUpdate.setText( "Ažuriraj" );
+		btnUpdate.setText( "A\u017euriraj" );
 		btnUpdate.setForeground( new Color( 121 , 118 , 118 ) );
 		btnUpdate.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
 		btnUpdate.setFocusPainted( false );
@@ -160,7 +160,7 @@ public class UslugePanel extends RoundedShadowPanel {
 		txtSearch.setMaximumSize( new Dimension( 350 , 65 ) );
 		txtSearch.setPreferredSize( new Dimension( 350 , 65 ) );
 		txtSearch.setLineColor( new Color( 46 , 191 , 165 ) );
-		txtSearch.setLabelText( "Pretraži.." );
+		txtSearch.setLabelText( "Pretra\u017ei.." );
 		txtSearch.setHintTextColor( new Color( 121 , 118 , 118 ) );
 		txtSearch.setForeground( new Color( 44 , 51 , 51 ) );
 		txtSearch.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
@@ -169,7 +169,7 @@ public class UslugePanel extends RoundedShadowPanel {
 		btnUndo = new ButtonTable();
 		btnUndo.setIconTextGap( 20 );
 		btnUndo.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
-		btnUndo.setText( "Poništi brisanje" );
+		btnUndo.setText( "Poni\u0161ti brisanje" );
 		btnUndo.setFocusPainted( false );
 		btnUndo.setIcon( new ImageIcon( UslugePanel.class.getResource( "/undo.png" ) ) );
 		
@@ -209,7 +209,7 @@ public class UslugePanel extends RoundedShadowPanel {
 		table.setShowGrid( false );
 		
 		table.setModel(
-				new DefaultTableModel( new Object[][] {} , new String[] { "ID" , "Šifra" , "Naziv" , "Cijena" , } ) );
+				new DefaultTableModel( new Object[][] {} , new String[] { "ID" , "\u0160ifra" , "Naziv" , "Cijena" , } ) );
 		
 		table.getTableHeader().setPreferredSize( new Dimension( 785 , 40 ) );
 		table.getTableHeader().setFont( new Font( "Century Gothic" , Font.BOLD , 15 ) );
@@ -289,7 +289,7 @@ public class UslugePanel extends RoundedShadowPanel {
 					btnDodaj.setEnabled( false );
 					btnUpdate.setEnabled( true );
 					btnDelete.setEnabled( true );
-					lblFormTitle.setText( "Ažuriraj / izbriši odabran uslugu" );
+					lblFormTitle.setText( "A\u017euriraj / izbri\u0161i odabran uslugu" );
 					
 				}
 				
@@ -307,7 +307,7 @@ public class UslugePanel extends RoundedShadowPanel {
 					
 					notification.setType( NotificationType.WARNING );
 					notification.setLblTitle( "Upozorenje" );
-					notification.setLbMessageText( "Odznačite odabranog uslugu ..." );
+					notification.setLbMessageText( "Odzna\u010dite odabranog uslugu ..." );
 					notification.showNotification();
 					
 				}
@@ -346,7 +346,7 @@ public class UslugePanel extends RoundedShadowPanel {
 					
 					notification.setType( NotificationType.WARNING );
 					notification.setLblTitle( "Upozorenje" );
-					notification.setLbMessageText( "Označite uslugu ..." );
+					notification.setLbMessageText( "Odzna\u010dite uslugu ..." );
 					notification.showNotification();
 					
 				}
@@ -360,14 +360,14 @@ public class UslugePanel extends RoundedShadowPanel {
 			public void actionPerformed( ActionEvent e ) {
 				
 				notification.setType( NotificationType.SUCCESS );
-				notification.setLblTitle( "Ažurirana usluga" );
+				notification.setLblTitle( "A\u017eurirana usluga" );
 				notification
-						.setLbMessageText( "Ažurirali ste " + table.getValueAt( table.getSelectedRow() , 2 ) + " ..." );
+						.setLbMessageText( "A\u017eurirali ste " + table.getValueAt( table.getSelectedRow() , 2 ) + " ..." );
 				
 				Message msg = new Message();
-				msg.setMessageTitle( "Jeste li sigurni da želite ažurirati uslugu: "
+				msg.setMessageTitle( "Jeste li sigurni da želite a\u017eurirati uslugu: "
 						+ table.getValueAt( table.getSelectedRow() , 2 ) );
-				msg.setMessageText( "Pritiskom gumba OK usluga će se ažurirati: \n" + "Stara vrijednosti: "
+				msg.setMessageText( "Pritiskom gumba OK usluga će se a\u017eurirati: \n" + "Stara vrijednosti: "
 						+ table.getValueAt( table.getSelectedRow() , 2 ) + " - €"
 						+ table.getValueAt( table.getSelectedRow() , 3 ) + "\n" + "Nove vrijednosti: "
 						+ txtNazivArtikla.getText() + " - €" + txtCijenaArtikla.getText() );
@@ -400,7 +400,7 @@ public class UslugePanel extends RoundedShadowPanel {
 					
 					notification.setType( NotificationType.WARNING );
 					notification.setLblTitle( "Upozorenje" );
-					notification.setLbMessageText( "Označite uslugu ..." );
+					notification.setLbMessageText( "Odzna\u010dite uslugu ..." );
 					notification.showNotification();
 					
 				}
@@ -420,9 +420,9 @@ public class UslugePanel extends RoundedShadowPanel {
 						"Izbrisali ste " + table.getValueAt( table.getSelectedRow() , 2 ) + " iz baze ..." );
 				
 				Message msg = new Message();
-				msg.setMessageTitle( "Jeste li sigurni da želite izbrisati uslugu: "
+				msg.setMessageTitle( "Jeste li sigurni da \u017eelite izbrisati uslugu: "
 						+ table.getValueAt( table.getSelectedRow() , 2 ) );
-				msg.setMessageText( "Pritiskom gumba OK usluga se briše nepovratno." );
+				msg.setMessageText( "Pritiskom gumba OK usluga se bri\u0161e nepovratno." );
 				msg.eventOK( new ActionListener() {
 					
 					@Override

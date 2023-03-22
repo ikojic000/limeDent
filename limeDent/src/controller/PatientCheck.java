@@ -46,6 +46,17 @@ public class PatientCheck extends Thread {
 		Thread.currentThread().setName( "PatientCheckThread" );
 		System.out.println( "*** PatientCheckThread started on " + Thread.currentThread().getName() + "***" );
 		
+		try {
+			
+			System.out.println( "Patient Check Thread Sleeping" );
+			Thread.sleep( SLEEP_TIME );
+			
+		} catch ( InterruptedException e ) {
+			
+			e.printStackTrace();
+			
+		}
+		
 		while ( running ) {
 			
 			try {
