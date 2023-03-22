@@ -37,7 +37,7 @@ public class OfferDAO {
 	 * Retrieves all offers from the database and returns them as an ArrayList of
 	 * Offer objects.
 	 * 
-	 * @return ArrayList<Offer> allOffers - an ArrayList containing all the offers
+	 * @return ArrayList allOffers - an ArrayList containing all the offers
 	 *         retrieved from the database.
 	 */
 	public ArrayList<Offer> getAllOffers() {

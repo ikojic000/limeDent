@@ -578,8 +578,6 @@ public class PatientDetailsPanel extends RoundedShadowPanel {
 	 * field, city field, phone field, mail field, medical history field, allergies
 	 * field and profile photo field.
 	 * 
-	 * @param patient An object of Patient class representing the patient whose data
-	 *                is to be set in the UI fields.
 	 */
 	public void setData() {
 		

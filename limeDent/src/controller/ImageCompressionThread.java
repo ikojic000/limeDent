@@ -119,8 +119,8 @@ public class ImageCompressionThread extends Thread {
 						patient.setProfilePhoto( new ImageIcon( compressedImage ) );
 						
 						notification.setType( NotificationType.SUCCESS );
-						notification.setLblTitle( "Uspiješna kompresija" );
-						notification.setLbMessageText( "Fotografiji je uspješno smanjena veličina" );
+						notification.setLblTitle( "Uspije\u0161na kompresija" );
+						notification.setLbMessageText( "Fotografiji je uspje\u0161no smanjena veli\u010Dina" );
 						notification.showNotification();
 						
 						try {

@@ -201,7 +201,7 @@ public class View extends JFrame {
 		btnKalendarIcon.setColor1( new Color( 244 , 244 , 249 ) );
 		btnKalendarIcon.setColor2( new Color( 244 , 244 , 249 ) );
 		
-		menu.addMenu( new ModelMenu( "Početna" , btnHomeIcon.toIcon() ) );
+		menu.addMenu( new ModelMenu( "Po\u010Detna" , btnHomeIcon.toIcon() ) );
 		menu.addMenu( new ModelMenu( "Usluge" , btnArtikliIcon.toIcon() ) );
 		menu.addMenu( new ModelMenu( "Ponude" , btnPonudeIcon.toIcon() ) );
 		menu.addMenu( new ModelMenu( "Nova Ponuda" , btnNovaPonudaIcon.toIcon() ) );

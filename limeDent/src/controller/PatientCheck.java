@@ -8,10 +8,13 @@ import model.Patient;
 
 /**
  * 
- * A class representing a thread that periodically checks if there are any
- * changes in the list of patients stored in the application database compared
- * to the list of patients displayed in the GUI, and updates the GUI
- * accordingly.
+ * @author ikojic000
+ * 
+ *         A class representing a thread that periodically checks if there are
+ *         any changes in the list of patients stored in the application
+ *         database compared to the list of patients displayed in the GUI, and
+ *         updates the GUI accordingly.
+ * 		
  */
 public class PatientCheck extends Thread {
 	

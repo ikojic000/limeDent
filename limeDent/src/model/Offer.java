@@ -72,7 +72,7 @@ public class Offer {
 	 * This constructor creates an Offer object with the specified properties.
 	 * 
 	 * @param title       The title of the Offer.
-	 * @param user        User object representing the user who made the Offer.
+	 * @param author      User object representing the user who made the Offer.
 	 * @param patientName The name of the patient for whom the Offer is made.
 	 * @param date        The date on which the Offer was made.
 	 * @param total       The total amount of the Offer.

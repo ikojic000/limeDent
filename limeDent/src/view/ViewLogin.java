@@ -132,7 +132,7 @@ public class ViewLogin extends JFrame {
 		txtUsername.setText( "ikojic" );
 		txtUsername.setForeground( new Color( 44 , 51 , 51 ) );
 		txtUsername.setHintTextColor( new Color( 121 , 118 , 118 ) );
-		txtUsername.setLabelText( "Korisničko ime" );
+		txtUsername.setLabelText( "Korisni\u010Dko ime" );
 		txtUsername.setFont( new Font( "Century Gothic" , Font.PLAIN , 15 ) );
 		txtUsername.setHorizontalAlignment( SwingConstants.LEFT );
 		txtUsername.setBounds( 100 , 220 , 300 , 70 );
@@ -278,7 +278,7 @@ public class ViewLogin extends JFrame {
 			
 		} else {
 			
-			notification.setLbMessageText( "Ne postoji korisnik s tim korisničkim imenom." );
+			notification.setLbMessageText( "Ne postoji korisnik s tim korisni\u010Dkim imenom." );
 			notification.showNotification();
 			
 		}
